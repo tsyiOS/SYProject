@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F8C5F461DBA7FD200AF87D4 /* SYBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5F451DBA7FD200AF87D4 /* SYBottomView.m */; };
+		9F8C5F491DBA819900AF87D4 /* SYImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5F481DBA819900AF87D4 /* SYImagePickerCell.m */; };
+		9F8C5F4C1DBA84AC00AF87D4 /* sy_photo-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F4A1DBA84AC00AF87D4 /* sy_photo-normal.png */; };
+		9F8C5F4D1DBA84AC00AF87D4 /* sy_photo-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F4B1DBA84AC00AF87D4 /* sy_photo-selected.png */; };
 		F069B6CF1DBA22AA0030EA98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6CE1DBA22AA0030EA98 /* main.m */; };
 		F069B6D21DBA22AA0030EA98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6D11DBA22AA0030EA98 /* AppDelegate.m */; };
 		F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6D41DBA22AA0030EA98 /* ViewController.m */; };
@@ -14,10 +18,16 @@
 		F069B6DA1DBA22AA0030EA98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F069B6D91DBA22AA0030EA98 /* Assets.xcassets */; };
 		F069B6DD1DBA22AA0030EA98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F069B6DB1DBA22AA0030EA98 /* LaunchScreen.storyboard */; };
 		F069B6E71DBA23270030EA98 /* SYImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6E61DBA23270030EA98 /* SYImagePickerViewController.m */; };
-		F069B6EA1DBA23F90030EA98 /* SYNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6E91DBA23F90030EA98 /* SYNavBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F8C5F431DBA64D900AF87D4 /* SYImagePickerConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePickerConstant.h; sourceTree = "<group>"; };
+		9F8C5F441DBA7FD200AF87D4 /* SYBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBottomView.h; sourceTree = "<group>"; };
+		9F8C5F451DBA7FD200AF87D4 /* SYBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBottomView.m; sourceTree = "<group>"; };
+		9F8C5F471DBA819900AF87D4 /* SYImagePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePickerCell.h; sourceTree = "<group>"; };
+		9F8C5F481DBA819900AF87D4 /* SYImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagePickerCell.m; sourceTree = "<group>"; };
+		9F8C5F4A1DBA84AC00AF87D4 /* sy_photo-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy_photo-normal.png"; sourceTree = "<group>"; };
+		9F8C5F4B1DBA84AC00AF87D4 /* sy_photo-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy_photo-selected.png"; sourceTree = "<group>"; };
 		F069B6CA1DBA22AA0030EA98 /* SYImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F069B6CE1DBA22AA0030EA98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F069B6D01DBA22AA0030EA98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -30,8 +40,6 @@
 		F069B6DE1DBA22AA0030EA98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F069B6E51DBA23270030EA98 /* SYImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePickerViewController.h; sourceTree = "<group>"; };
 		F069B6E61DBA23270030EA98 /* SYImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagePickerViewController.m; sourceTree = "<group>"; };
-		F069B6E81DBA23F90030EA98 /* SYNavBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNavBarView.h; sourceTree = "<group>"; };
-		F069B6E91DBA23F90030EA98 /* SYNavBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNavBarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +97,15 @@
 		F069B6E41DBA23060030EA98 /* SYImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				F069B6E81DBA23F90030EA98 /* SYNavBarView.h */,
-				F069B6E91DBA23F90030EA98 /* SYNavBarView.m */,
+				9F8C5F4A1DBA84AC00AF87D4 /* sy_photo-normal.png */,
+				9F8C5F4B1DBA84AC00AF87D4 /* sy_photo-selected.png */,
+				9F8C5F431DBA64D900AF87D4 /* SYImagePickerConstant.h */,
 				F069B6E51DBA23270030EA98 /* SYImagePickerViewController.h */,
 				F069B6E61DBA23270030EA98 /* SYImagePickerViewController.m */,
+				9F8C5F441DBA7FD200AF87D4 /* SYBottomView.h */,
+				9F8C5F451DBA7FD200AF87D4 /* SYBottomView.m */,
+				9F8C5F471DBA819900AF87D4 /* SYImagePickerCell.h */,
+				9F8C5F481DBA819900AF87D4 /* SYImagePickerCell.m */,
 			);
 			path = SYImagePicker;
 			sourceTree = "<group>";
@@ -129,6 +142,7 @@
 				TargetAttributes = {
 					F069B6C91DBA22AA0030EA98 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5Z3XUN2VRQ;
 					};
 				};
 			};
@@ -156,6 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F069B6DD1DBA22AA0030EA98 /* LaunchScreen.storyboard in Resources */,
+				9F8C5F4C1DBA84AC00AF87D4 /* sy_photo-normal.png in Resources */,
+				9F8C5F4D1DBA84AC00AF87D4 /* sy_photo-selected.png in Resources */,
 				F069B6DA1DBA22AA0030EA98 /* Assets.xcassets in Resources */,
 				F069B6D81DBA22AA0030EA98 /* Main.storyboard in Resources */,
 			);
@@ -170,9 +186,10 @@
 			files = (
 				F069B6E71DBA23270030EA98 /* SYImagePickerViewController.m in Sources */,
 				F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */,
+				9F8C5F461DBA7FD200AF87D4 /* SYBottomView.m in Sources */,
+				9F8C5F491DBA819900AF87D4 /* SYImagePickerCell.m in Sources */,
 				F069B6D21DBA22AA0030EA98 /* AppDelegate.m in Sources */,
 				F069B6CF1DBA22AA0030EA98 /* main.m in Sources */,
-				F069B6EA1DBA23F90030EA98 /* SYNavBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +301,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SYImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -295,10 +316,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SYImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -321,6 +346,7 @@
 				F069B6E31DBA22AA0030EA98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

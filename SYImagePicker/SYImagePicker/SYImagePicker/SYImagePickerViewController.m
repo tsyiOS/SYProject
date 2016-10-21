@@ -7,12 +7,44 @@
 //
 
 #import "SYImagePickerViewController.h"
+#import "SYImagePickerConstant.h"
+#import "SYBottomView.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "SYImagePickerCell.h"
 
-@interface SYImagePickerViewController ()
-@property (nonatomic, strong) UIView *navBarView;
+@interface SYImagePickerViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (nonatomic, strong) UINavigationBar *sy_navigationBar;
+@property (nonatomic, strong) UINavigationItem *sy_navigationItem;
+@property (nonatomic, strong) UIBarButtonItem *cancleItem;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) SYBottomView *bottomView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *flowlayout;
+@property (nonatomic, strong) NSMutableArray *selectedIndexPaths;
+@property (nonatomic, strong) NSArray *photoAssets;
 @end
 
 @implementation SYImagePickerViewController
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _sy_tintColor = [UIColor blackColor];
+        _sy_columns = 4;
+        _sy_rowSpacing = 2;
+        _sy_lineSpacing = 2;
+        
+    }
+    return self;
+}
+
+- (void)setUpUI {
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.sy_navigationBar];
+    [self.view addSubview:self.collectionView];
+    [self.view addSubview:self.bottomView];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getPhotoAssets];
+    });
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -26,22 +58,148 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setUpUI];
+    [self.collectionView registerClass:[SYImagePickerCell class] forCellWithReuseIdentifier:NSStringFromClass([SYImagePickerCell class])];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma maSY - UICollectionView代理方法
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.photoAssets.count;
 }
-*/
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    SYImagePickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SYImagePickerCell class]) forIndexPath:indexPath];
+    ALAsset *asset = self.photoAssets[indexPath.item];
+    cell.image = [UIImage imageWithCGImage:asset.thumbnail];
+    cell.isSelected = [self.selectedIndexPaths containsObject:indexPath];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.selectedIndexPaths containsObject:indexPath]) {
+        [self.selectedIndexPaths removeObject:indexPath];
+    }else {
+        [self.selectedIndexPaths addObject:indexPath];
+    }
+    [collectionView reloadData];
+    self.bottomView.selectedNumber = self.selectedIndexPaths.count;
+}
+
+// 设置内边距
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(0, _sy_rowSpacing, 0, _sy_rowSpacing);
+}
+
+- (void)cancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (ALAssetsLibrary *)defaultAssetsLibrary {
+    static dispatch_once_t pred = 0;
+    static ALAssetsLibrary *library = nil;
+    dispatch_once(&pred, ^{
+                      library = [[ALAssetsLibrary alloc] init];
+                  });
+    return library;
+}
+
+/**
+ *  获取照片资源
+ */
+- (void)getPhotoAssets {
+    ALAssetsLibrary *assetLibrary = [self defaultAssetsLibrary];
+    __block NSMutableArray *groupPhotos = [[NSMutableArray alloc]init];
+    __weak typeof(self) weakSelf = self;
+    [assetLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+        if(group){
+            [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                if(nil == result){
+                    return ;
+                }
+                [groupPhotos addObject:result];
+            }];
+            self.photoAssets = [[groupPhotos reverseObjectEnumerator] allObjects];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.collectionView reloadData];
+            });
+        }
+    } failureBlock:^(NSError *error) {
+        NSLog(@"error --- %@",error);
+    }];
+}
+
+#pragma mark - 懒加载
+
+- (SYBottomView *)bottomView {
+    if (_bottomView == nil) {
+        _bottomView = [[SYBottomView alloc] initWithFrame:CGRectMake(0, ScreenH - 49, ScreenW, 49)];
+    }
+    return _bottomView;
+}
+
+- (NSMutableArray *)selectedIndexPaths {
+    if (_selectedIndexPaths == nil) {
+        _selectedIndexPaths = [NSMutableArray array];
+    }
+    return _selectedIndexPaths;
+}
+
+- (NSArray *)photoAssets {
+    if (_photoAssets == nil) {
+        _photoAssets = [NSArray array];
+    }
+    return _photoAssets;
+}
+
+
+- (UICollectionViewFlowLayout *)flowlayout {
+    if (_flowlayout == nil) {
+        _flowlayout = [[UICollectionViewFlowLayout alloc] init];
+        CGFloat width = (ScreenW - (_sy_columns + 1) * _sy_rowSpacing)/_sy_columns;
+        _flowlayout.itemSize = CGSizeMake(width, width);
+        _flowlayout.minimumLineSpacing = _sy_lineSpacing;
+        _flowlayout.minimumInteritemSpacing = _sy_rowSpacing;
+    }
+    return _flowlayout;
+}
+
+- (UICollectionView *)collectionView {
+    if (_collectionView == nil) {
+        CGRect rect = CGRectMake(0, 64, ScreenW, ScreenH - 49 -64);
+        _collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:self.flowlayout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.backgroundColor = [UIColor clearColor];
+    }
+    return _collectionView;
+}
+
+- (UINavigationItem *)sy_navigationItem {
+    if (_sy_navigationItem == nil) {
+        _sy_navigationItem = [[UINavigationItem alloc] initWithTitle:@"相册"];
+        _sy_navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+    }
+    return _sy_navigationItem;
+}
+
+- (UINavigationBar *)sy_navigationBar {
+    if (_sy_navigationBar == nil) {
+        _sy_navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 64)];
+        [_sy_navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:self.sy_tintColor}];
+        _sy_navigationBar.barTintColor = self.sy_barTintColor;
+        _sy_navigationBar.tintColor = self.sy_tintColor;
+        [_sy_navigationBar setItems:@[self.sy_navigationItem]];
+    }
+    return _sy_navigationBar;
+}
+
+
+- (void)dealloc {
+    NSLog(@"控制器消失");
+}
 @end

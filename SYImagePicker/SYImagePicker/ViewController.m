@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "SYImagePickerViewController.h"
 @interface ViewController ()
 
 @end
@@ -22,6 +22,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)imagePicker {
+    SYImagePickerViewController *imagePicker = [[SYImagePickerViewController alloc] init];
+    imagePicker.sy_columns = 3;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 @end
