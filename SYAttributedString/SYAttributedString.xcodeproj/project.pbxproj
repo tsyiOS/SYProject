@@ -13,6 +13,7 @@
 		F098E64F1DB9B459005153E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F098E64D1DB9B459005153E0 /* Main.storyboard */; };
 		F098E6511DB9B459005153E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F098E6501DB9B459005153E0 /* Assets.xcassets */; };
 		F098E6541DB9B459005153E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F098E6521DB9B459005153E0 /* LaunchScreen.storyboard */; };
+		F098E65D1DB9C4BF005153E0 /* SYAttributedStringModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F098E65C1DB9C4BF005153E0 /* SYAttributedStringModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		F098E6501DB9B459005153E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F098E6531DB9B459005153E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F098E6551DB9B459005153E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F098E65B1DB9C4BF005153E0 /* SYAttributedStringModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAttributedStringModel.h; sourceTree = "<group>"; };
+		F098E65C1DB9C4BF005153E0 /* SYAttributedStringModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAttributedStringModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				F098E6481DB9B459005153E0 /* AppDelegate.m */,
 				F098E64A1DB9B459005153E0 /* ViewController.h */,
 				F098E64B1DB9B459005153E0 /* ViewController.m */,
+				F098E65B1DB9C4BF005153E0 /* SYAttributedStringModel.h */,
+				F098E65C1DB9C4BF005153E0 /* SYAttributedStringModel.m */,
 				F098E64D1DB9B459005153E0 /* Main.storyboard */,
 				F098E6501DB9B459005153E0 /* Assets.xcassets */,
 				F098E6521DB9B459005153E0 /* LaunchScreen.storyboard */,
@@ -105,11 +110,13 @@
 		F098E6391DB9B459005153E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SY;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = tsy;
 				TargetAttributes = {
 					F098E6401DB9B459005153E0 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5Z3XUN2VRQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F098E65D1DB9C4BF005153E0 /* SYAttributedStringModel.m in Sources */,
 				F098E64C1DB9B459005153E0 /* ViewController.m in Sources */,
 				F098E6491DB9B459005153E0 /* AppDelegate.m in Sources */,
 				F098E6461DB9B459005153E0 /* main.m in Sources */,
@@ -270,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
 				INFOPLIST_FILE = SYAttributedString/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYAttributedString;
@@ -281,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
 				INFOPLIST_FILE = SYAttributedString/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYAttributedString;
@@ -307,6 +317,7 @@
 				F098E65A1DB9B459005153E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
