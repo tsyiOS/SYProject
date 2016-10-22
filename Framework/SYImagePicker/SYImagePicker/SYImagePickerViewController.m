@@ -230,11 +230,7 @@
     return _sy_navigationBar;
 }
 
-
-- (void)dealloc {
-    NSLog(@"控制器消失");
-}
+@end
 
 NSString *const SYSelectedImages = @"SYSelectedImages";
 NSString *const SYSelectedAssets = @"SYSelectedAssets";
-@end
