@@ -14,15 +14,8 @@
  */
 @property (nonatomic, copy) void (^finishedChooseImages)();
 /**
- *  允许选择完成照片后裁剪的Block回调，
- */
-@property (nonatomic, copy) void (^finishedChooseImagesAndAllowsEditing)();
-/**
  *  预览选择照片的Block回调
  */
 @property (nonatomic, copy) void (^previewSelectedImages)();
-/**
- *  选择照片后是否编辑
- */
-@property (nonatomic, assign) BOOL allowsEditing;
+
 @end

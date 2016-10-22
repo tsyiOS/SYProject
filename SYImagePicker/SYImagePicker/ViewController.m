@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SYImagePickerViewController.h"
-@interface ViewController ()
+@interface ViewController ()<SYImagePickerControllerDelegate>
 
 @end
 
@@ -25,8 +25,13 @@
 }
 - (IBAction)imagePicker {
     SYImagePickerViewController *imagePicker = [[SYImagePickerViewController alloc] init];
-    imagePicker.sy_columns = 3;
+    imagePicker.delegate = self;
+    
     [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
+    NSLog(@"%@",info);
 }
 
 @end

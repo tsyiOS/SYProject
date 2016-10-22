@@ -11,8 +11,9 @@
 #import "SYBottomView.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "SYImagePickerCell.h"
+#import "SYPhotoBrowserViewController.h"
 
-@interface SYImagePickerViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface SYImagePickerViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UINavigationBar *sy_navigationBar;
 @property (nonatomic, strong) UINavigationItem *sy_navigationItem;
 @property (nonatomic, strong) UIBarButtonItem *cancleItem;
@@ -31,7 +32,6 @@
         _sy_columns = 4;
         _sy_rowSpacing = 2;
         _sy_lineSpacing = 2;
-        
     }
     return self;
 }
@@ -66,7 +66,6 @@
     [super didReceiveMemoryWarning];
 }
 
-
 #pragma maSY - UICollectionView代理方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.photoAssets.count;
@@ -95,7 +94,7 @@
     return UIEdgeInsetsMake(0, _sy_rowSpacing, 0, _sy_rowSpacing);
 }
 
-- (void)cancel {
+- (void)dismissViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -133,11 +132,42 @@
     }];
 }
 
+- (NSDictionary *)getAssetsAndImages {
+    NSMutableArray *selectedAssets = [NSMutableArray array];
+    NSMutableArray *selectedImages = [NSMutableArray array];
+    for (NSIndexPath *index in self.selectedIndexPaths) {
+        ALAsset *asset = self.photoAssets[index.item];
+        UIImage *image = [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+        [selectedAssets addObject:asset];
+        [selectedImages addObject:image];
+    }
+    return @{SYSelectedImages:selectedImages,SYSelectedAssets:selectedAssets};
+}
+
 #pragma mark - 懒加载
 
 - (SYBottomView *)bottomView {
     if (_bottomView == nil) {
         _bottomView = [[SYBottomView alloc] initWithFrame:CGRectMake(0, ScreenH - 49, ScreenW, 49)];
+        __weak typeof(self) weakSelf = self;
+        
+        [_bottomView setFinishedChooseImages:^{
+            if ([weakSelf.delegate respondsToSelector:@selector(sy_didFinishedPickingMediaWithInfo:)]) {
+                [weakSelf.delegate sy_didFinishedPickingMediaWithInfo:[weakSelf getAssetsAndImages]];
+            }
+            [weakSelf dismissViewController];
+        }];
+        
+        [_bottomView setPreviewSelectedImages:^{
+            NSDictionary *info = [weakSelf getAssetsAndImages];
+            NSArray *selectedAssets = info[SYSelectedAssets];
+            if (selectedAssets.count > 0) {
+                SYPhotoBrowserViewController *browserVc = [[SYPhotoBrowserViewController alloc] init];
+                browserVc.assets = selectedAssets;
+                [weakSelf presentViewController:browserVc animated:YES completion:nil];
+            }
+            
+        }];
     }
     return _bottomView;
 }
@@ -182,7 +212,7 @@
 - (UINavigationItem *)sy_navigationItem {
     if (_sy_navigationItem == nil) {
         _sy_navigationItem = [[UINavigationItem alloc] initWithTitle:@"相册"];
-        _sy_navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+        _sy_navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(dismissViewController)];
     }
     return _sy_navigationItem;
 }
@@ -202,4 +232,7 @@
 - (void)dealloc {
     NSLog(@"控制器消失");
 }
+
+NSString *const SYSelectedImages = @"SYSelectedImages";
+NSString *const SYSelectedAssets = @"SYSelectedAssets";
 @end

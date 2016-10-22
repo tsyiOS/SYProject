@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		9F8C5F461DBA7FD200AF87D4 /* SYBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5F451DBA7FD200AF87D4 /* SYBottomView.m */; };
 		9F8C5F491DBA819900AF87D4 /* SYImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5F481DBA819900AF87D4 /* SYImagePickerCell.m */; };
-		9F8C5F4C1DBA84AC00AF87D4 /* sy_photo-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F4A1DBA84AC00AF87D4 /* sy_photo-normal.png */; };
-		9F8C5F4D1DBA84AC00AF87D4 /* sy_photo-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F4B1DBA84AC00AF87D4 /* sy_photo-selected.png */; };
+		9F8C5F521DBB2C2000AF87D4 /* SYBrowserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5F4F1DBB2C2000AF87D4 /* SYBrowserViewCell.m */; };
+		9F8C5F531DBB2C2000AF87D4 /* SYPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5F511DBB2C2000AF87D4 /* SYPhotoBrowserViewController.m */; };
+		9F8C5F6B1DBB7C6000AF87D4 /* SYImagePickerSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F6A1DBB7C6000AF87D4 /* SYImagePickerSource.bundle */; };
 		F069B6CF1DBA22AA0030EA98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6CE1DBA22AA0030EA98 /* main.m */; };
 		F069B6D21DBA22AA0030EA98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6D11DBA22AA0030EA98 /* AppDelegate.m */; };
 		F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6D41DBA22AA0030EA98 /* ViewController.m */; };
@@ -26,8 +27,11 @@
 		9F8C5F451DBA7FD200AF87D4 /* SYBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBottomView.m; sourceTree = "<group>"; };
 		9F8C5F471DBA819900AF87D4 /* SYImagePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePickerCell.h; sourceTree = "<group>"; };
 		9F8C5F481DBA819900AF87D4 /* SYImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagePickerCell.m; sourceTree = "<group>"; };
-		9F8C5F4A1DBA84AC00AF87D4 /* sy_photo-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy_photo-normal.png"; sourceTree = "<group>"; };
-		9F8C5F4B1DBA84AC00AF87D4 /* sy_photo-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy_photo-selected.png"; sourceTree = "<group>"; };
+		9F8C5F4E1DBB2C2000AF87D4 /* SYBrowserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBrowserViewCell.h; sourceTree = "<group>"; };
+		9F8C5F4F1DBB2C2000AF87D4 /* SYBrowserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBrowserViewCell.m; sourceTree = "<group>"; };
+		9F8C5F501DBB2C2000AF87D4 /* SYPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		9F8C5F511DBB2C2000AF87D4 /* SYPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		9F8C5F6A1DBB7C6000AF87D4 /* SYImagePickerSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYImagePickerSource.bundle; sourceTree = "<group>"; };
 		F069B6CA1DBA22AA0030EA98 /* SYImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F069B6CE1DBA22AA0030EA98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F069B6D01DBA22AA0030EA98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,15 +101,18 @@
 		F069B6E41DBA23060030EA98 /* SYImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				9F8C5F4A1DBA84AC00AF87D4 /* sy_photo-normal.png */,
-				9F8C5F4B1DBA84AC00AF87D4 /* sy_photo-selected.png */,
 				9F8C5F431DBA64D900AF87D4 /* SYImagePickerConstant.h */,
 				F069B6E51DBA23270030EA98 /* SYImagePickerViewController.h */,
 				F069B6E61DBA23270030EA98 /* SYImagePickerViewController.m */,
+				9F8C5F4E1DBB2C2000AF87D4 /* SYBrowserViewCell.h */,
+				9F8C5F4F1DBB2C2000AF87D4 /* SYBrowserViewCell.m */,
+				9F8C5F501DBB2C2000AF87D4 /* SYPhotoBrowserViewController.h */,
+				9F8C5F511DBB2C2000AF87D4 /* SYPhotoBrowserViewController.m */,
 				9F8C5F441DBA7FD200AF87D4 /* SYBottomView.h */,
 				9F8C5F451DBA7FD200AF87D4 /* SYBottomView.m */,
 				9F8C5F471DBA819900AF87D4 /* SYImagePickerCell.h */,
 				9F8C5F481DBA819900AF87D4 /* SYImagePickerCell.m */,
+				9F8C5F6A1DBB7C6000AF87D4 /* SYImagePickerSource.bundle */,
 			);
 			path = SYImagePicker;
 			sourceTree = "<group>";
@@ -170,9 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F069B6DD1DBA22AA0030EA98 /* LaunchScreen.storyboard in Resources */,
-				9F8C5F4C1DBA84AC00AF87D4 /* sy_photo-normal.png in Resources */,
-				9F8C5F4D1DBA84AC00AF87D4 /* sy_photo-selected.png in Resources */,
 				F069B6DA1DBA22AA0030EA98 /* Assets.xcassets in Resources */,
+				9F8C5F6B1DBB7C6000AF87D4 /* SYImagePickerSource.bundle in Resources */,
 				F069B6D81DBA22AA0030EA98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,10 +192,12 @@
 			files = (
 				F069B6E71DBA23270030EA98 /* SYImagePickerViewController.m in Sources */,
 				F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */,
+				9F8C5F531DBB2C2000AF87D4 /* SYPhotoBrowserViewController.m in Sources */,
 				9F8C5F461DBA7FD200AF87D4 /* SYBottomView.m in Sources */,
 				9F8C5F491DBA819900AF87D4 /* SYImagePickerCell.m in Sources */,
 				F069B6D21DBA22AA0030EA98 /* AppDelegate.m in Sources */,
 				F069B6CF1DBA22AA0030EA98 /* main.m in Sources */,
+				9F8C5F521DBB2C2000AF87D4 /* SYBrowserViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

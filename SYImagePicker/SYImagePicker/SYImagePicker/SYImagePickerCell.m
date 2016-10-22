@@ -7,6 +7,8 @@
 
 #import "SYImagePickerCell.h"
 
+#define SYImagePickerSrcName(file) [@"SYImagePickerSource.bundle" stringByAppendingPathComponent:file]
+
 @interface SYImagePickerCell ()
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImageView *markView;
@@ -33,7 +35,7 @@
 
 - (void)setIsSelected:(BOOL)isSelected {
     _isSelected = isSelected;
-    NSString *imageName = isSelected ? @"sy_photo-selected":@"sy_photo-normal";
+    NSString *imageName = isSelected ? SYImagePickerSrcName(@"sy_photo-selected"):SYImagePickerSrcName(@"sy_photo-normal");
     _markView.image = [UIImage imageNamed:imageName];
 }
 

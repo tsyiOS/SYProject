@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SYImagePickerControllerDelegate <NSObject>
+
+@required
+/**
+ * 点击完成后选择的照片回调
+ */
+- (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info;
+
+@end
+
+
 @interface SYImagePickerViewController : UIViewController
 /**
  * 导航栏的背景颜色
@@ -30,4 +41,10 @@
  */
 @property (nonatomic, assign) NSInteger sy_columns;
 
+
+@property (nonatomic, weak) id <SYImagePickerControllerDelegate>delegate;
 @end
+
+extern NSString *const SYSelectedImages;
+
+extern NSString *const SYSelectedAssets;

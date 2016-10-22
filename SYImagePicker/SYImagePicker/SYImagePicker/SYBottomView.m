@@ -40,16 +40,9 @@
 }
 
 - (void)doneButtonClick {
-    if (self.allowsEditing) {
-        if (self.finishedChooseImagesAndAllowsEditing) {
-            self.finishedChooseImagesAndAllowsEditing();
-        }
-    }else {
-        if (self.finishedChooseImages) {
-            self.finishedChooseImages();
-        }
+    if (self.finishedChooseImages) {
+        self.finishedChooseImages();
     }
-   
 }
 
 #pragma mark - 懒加载
