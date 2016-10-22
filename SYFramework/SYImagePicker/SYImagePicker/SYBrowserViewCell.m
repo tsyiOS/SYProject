@@ -62,7 +62,7 @@
     self.scrollView.contentInset = UIEdgeInsetsZero;
     self.scrollView.contentOffset = CGPointZero;
     self.scrollView.contentSize = CGSizeZero;
-    
+    self.scrollView.zoomScale = 1;
 }
 
 - (CGSize)getImageDisplaySizeWith:(UIImage *)image {
