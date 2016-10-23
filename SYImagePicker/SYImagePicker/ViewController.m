@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import <SYImagePicker/SYImagePickerViewController.h>
+//#import <SYImagePicker/SYImagePickerViewController.h>
+#import "SYImagePickerViewController.h"
+
 @interface ViewController ()<SYImagePickerControllerDelegate>
 
 @end

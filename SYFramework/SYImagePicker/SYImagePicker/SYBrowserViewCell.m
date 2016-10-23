@@ -10,7 +10,7 @@
 #define ScrollViewSize self.scrollView.bounds.size
 
 @interface SYBrowserViewCell () <UIScrollViewDelegate>
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic,strong) UIImageView *imageView;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @end
 

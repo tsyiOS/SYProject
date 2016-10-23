@@ -26,12 +26,11 @@ NSString *const SYBrowserCell = @"SYBrowserCell";
     [self setupUI];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
-- (void)setupUI{
+- (void)setupUI {
     
     self.flowLayout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width +20, [UIScreen mainScreen].bounds.size.height);
     self.flowLayout.minimumInteritemSpacing = 0;
