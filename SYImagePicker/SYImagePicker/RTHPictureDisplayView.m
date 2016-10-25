@@ -9,11 +9,18 @@
 #import "RTHPictureDisplayView.h"
 #import <SYCategory/SYCategory.h>
 
+@interface RTHPictureDisplayView ()
+@property (nonatomic, assign) RTHPictuerDisplayType type;
+@end
+
 @implementation RTHPictureDisplayView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame andType:(RTHPictuerDisplayType)type{
     if (self = [super initWithFrame:frame]) {
-        
+        self.type = type;
+        if (type == RTHPictuerDisplayTypePublish) {
+            [self initialActionBtn];
+        }
     }
     return self;
 }
@@ -23,28 +30,63 @@
     for (UIView *sub in self.subviews) {
         [sub removeFromSuperview];
     }
-    if (images.count > 0) {
-        
-        CGFloat margin = 15;
-        CGFloat ItemW = (self.sy_width - margin*5)/4;
-        
-        for (int i = 0; i< (self.maxCount > images.count?images.count + 1:self.maxCount); i++ ) {
-            NSInteger row = i/4;
-            NSInteger col = i%4;
+    
+    if (self.type == RTHPictuerDisplayTypePublish) {
+        if (images.count > 0) {
+            CGFloat margin = 15;
+            CGFloat ItemW = (self.sy_width - margin*5)/4;
             
-            RTHPictureItem *item = [[RTHPictureItem alloc] initWithFrame:CGRectMake(col * (margin + ItemW) + margin, row * (margin + ItemW) + margin, ItemW, ItemW) andImage:i == images.count?[UIImage imageNamed:@"picture_add"]:images[i] isAddBtn:i == images.count];
-            __weak typeof(self) weakSelf = self;
-            [item setDeleateItem:^{
-                [weakSelf deleteItemAtIndex:i];
-            }];
-            
-            if (i == images.count) {
-                item.clickAction = self.addPcitureAction;
+            for (int i = 0; i< (self.maxCount > images.count?images.count + 1:self.maxCount); i++ ) {
+                NSInteger row = i/4;
+                NSInteger col = i%4;
+                
+                RTHPictureItem *item = [[RTHPictureItem alloc] initWithFrame:CGRectMake(col * (margin + ItemW) + margin, row * (margin + ItemW) + margin, ItemW, ItemW) andImage:i == images.count?[UIImage imageNamed:@"picture_add"]:images[i] isAddBtn:i == images.count];
+                __weak typeof(self) weakSelf = self;
+                [item setDeleateItem:^{
+                    [weakSelf deleteItemAtIndex:i];
+                }];
+                
+                if (i == images.count) {
+                    item.clickAction = self.addPcitureAction;
+                }
+                [self addSubview:item];
             }
-            [self addSubview:item];
+            self.sy_height = (images.count/4 + 1)*(ItemW + margin) + margin;
+        }else {
+             [self initialActionBtn];
         }
-        self.sy_height = (images.count/4 + 1)*(ItemW + margin) + margin;
+    }else {
+        if (images.count > 0) {
+            CGFloat margin = 15;
+            CGFloat ItemW = (self.sy_width - margin*5)/4;
+            
+            for (int i = 0; i< (self.maxCount > images.count?images.count:self.maxCount); i++ ) {
+                NSInteger row = i/4;
+                NSInteger col = i%4;
+                
+                RTHPictureItem *item = [[RTHPictureItem alloc] initWithFrame:CGRectMake(col * (margin + ItemW) + margin, row * (margin + ItemW) + margin, ItemW, ItemW) andImage:images[i] isAddBtn:YES];
+                [self addSubview:item];
+            }
+            self.sy_height = (images.count/4 + 1)*(ItemW + margin) + margin;
+        }else {
+            self.sy_height = 0;
+        }
     }
+}
+
+- (void)initialActionBtn {
+    CGFloat margin = 15;
+    CGFloat ItemW = (self.sy_width - margin*5)/4;
+    
+    self.sy_height =  margin * 2 + ItemW;
+    
+    RTHPictureItem *cameraItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_takephoto"] isAddBtn:YES];
+    cameraItem.clickAction = self.takePhotoAction;
+    [self addSubview:cameraItem];
+    
+    RTHPictureItem *photoItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin*2 + ItemW, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_photo"] isAddBtn:YES];
+    photoItem.clickAction = self.addPcitureAction;
+    [self addSubview:photoItem];
 }
 
 - (void)deleteItemAtIndex:(NSInteger)index {

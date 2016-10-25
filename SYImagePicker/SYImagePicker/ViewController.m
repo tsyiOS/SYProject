@@ -43,7 +43,7 @@
 
 - (RTHPictureDisplayView *)display {
     if (_display == nil) {
-        _display = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 20, ScreenW, 0)];
+        _display = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 20, ScreenW, 0) andType:RTHPictuerDisplayTypeNormal];
         _display.maxCount = 6;
         [_display setAddPcitureAction:^{
             NSLog(@"点击发布");
