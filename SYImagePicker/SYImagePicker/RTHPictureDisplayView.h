@@ -33,6 +33,10 @@ typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
  */
 @property (nonatomic, copy) void (^takePhotoAction)();
 /**
+ *  删除照片
+ */
+@property (nonatomic, copy) void (^cancelPhotoAction)(NSInteger index);
+/**
  *  最大张数
  */
 @property (nonatomic, assign) NSInteger maxCount;

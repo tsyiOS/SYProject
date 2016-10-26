@@ -127,6 +127,9 @@
     NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.images];
     [tempArray removeObjectAtIndex:index];
     [self dispalyImages:tempArray];
+    if (self.cancelPhotoAction) {
+        self.cancelPhotoAction(index);
+    }
 }
 
 @end

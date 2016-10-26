@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SYImagePickerControllerDelegate <NSObject>
+@protocol SYImagePickerDelegate <NSObject>
 
 @required
 /**
@@ -40,9 +40,12 @@
  *  列数
  */
 @property (nonatomic, assign) NSInteger sy_columns;
+/**
+ *  一次性最多选择的张数
+ */
+@property (nonatomic, assign) NSInteger sy_maxCount;
 
-
-@property (nonatomic, weak) id <SYImagePickerControllerDelegate>delegate;
+@property (nonatomic, weak) id <SYImagePickerDelegate>delegate;
 @end
 
 extern NSString *const SYSelectedImages;

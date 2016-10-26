@@ -22,7 +22,7 @@
 		F069B6D81DBA22AA0030EA98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F069B6D61DBA22AA0030EA98 /* Main.storyboard */; };
 		F069B6DA1DBA22AA0030EA98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F069B6D91DBA22AA0030EA98 /* Assets.xcassets */; };
 		F069B6DD1DBA22AA0030EA98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F069B6DB1DBA22AA0030EA98 /* LaunchScreen.storyboard */; };
-		F0917BB21DC03ED1004FE764 /* SYImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F0917BB11DC03ED1004FE764 /* SYImagePicker.m */; };
+		F0917BB21DC03ED1004FE764 /* SYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0917BB11DC03ED1004FE764 /* SYImageManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +51,8 @@
 		F069B6D91DBA22AA0030EA98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F069B6DC1DBA22AA0030EA98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F069B6DE1DBA22AA0030EA98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0917BB01DC03ED1004FE764 /* SYImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePicker.h; sourceTree = "<group>"; };
-		F0917BB11DC03ED1004FE764 /* SYImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagePicker.m; sourceTree = "<group>"; };
+		F0917BB01DC03ED1004FE764 /* SYImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImageManager.h; sourceTree = "<group>"; };
+		F0917BB11DC03ED1004FE764 /* SYImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImageManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 				9F939FCD1DBCAD1200EEFED2 /* SYImagePickerViewController.m */,
 				9F939FCE1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.h */,
 				9F939FCF1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m */,
-				F0917BB01DC03ED1004FE764 /* SYImagePicker.h */,
-				F0917BB11DC03ED1004FE764 /* SYImagePicker.m */,
+				F0917BB01DC03ED1004FE764 /* SYImageManager.h */,
+				F0917BB11DC03ED1004FE764 /* SYImageManager.m */,
 			);
 			path = SYImagePicker;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */,
-				F0917BB21DC03ED1004FE764 /* SYImagePicker.m in Sources */,
+				F0917BB21DC03ED1004FE764 /* SYImageManager.m in Sources */,
 				9F939FD31DBCAD1200EEFED2 /* SYImagePickerViewController.m in Sources */,
 				9F939FD41DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m in Sources */,
 				9F939FD11DBCAD1200EEFED2 /* SYBrowserViewCell.m in Sources */,

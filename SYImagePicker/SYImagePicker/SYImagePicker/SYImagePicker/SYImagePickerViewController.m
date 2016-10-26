@@ -34,6 +34,7 @@
         _sy_columns = 4;
         _sy_rowSpacing = 2;
         _sy_lineSpacing = 2;
+        _sy_maxCount = LONG_MAX;
     }
     return self;
 }
@@ -82,12 +83,19 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     if ([self.selectedIndexPaths containsObject:indexPath]) {
         [self.selectedIndexPaths removeObject:indexPath];
     }else {
-        [self.selectedIndexPaths addObject:indexPath];
+        if (self.selectedIndexPaths.count == self.sy_maxCount) {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:[NSString stringWithFormat:@"您最多可选择%zd张图片!",self.sy_maxCount] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            [alertView show];
+            return;
+        }else {
+            [self.selectedIndexPaths addObject:indexPath];
+        }
     }
-    [collectionView reloadData];
+    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
     self.bottomView.selectedNumber = self.selectedIndexPaths.count;
 }
 

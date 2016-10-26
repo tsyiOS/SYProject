@@ -8,11 +8,11 @@
 
 #import "ViewController.h"
 //#import <SYImagePicker/SYImagePickerViewController.h>
-#import "SYImagePickerViewController.h"
+#import "SYImageManager.h"
 #import "RTHPictureDisplayView.h"
 #import <SYCategory/SYCategory.h>
 
-@interface ViewController ()<SYImagePickerControllerDelegate>
+@interface ViewController ()<SYImagePickerDelegate>
 @property (nonatomic, strong) RTHPictureDisplayView *display;
 @end
 
@@ -29,10 +29,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)imagePicker {
-    SYImagePickerViewController *imagePicker = [[SYImagePickerViewController alloc] init];
-    imagePicker.delegate = self;
-    
-    [self presentViewController:imagePicker animated:YES completion:nil];
+//    SYImagePickerViewController *imagePicker = [[SYImagePickerViewController alloc] init];
+//    imagePicker.delegate = self;
+//    
+//    [self presentViewController:imagePicker animated:YES completion:nil];
+    SYImageManager *manager  = [[SYImageManager alloc] init];
+    manager.delegate = self;
+    manager.imagePicker.sy_maxCount = 8;
+    [manager sy_OpenCamera];
 }
 
 - (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
@@ -51,6 +55,10 @@
         
         [_display setTakePhotoAction:^{
             NSLog(@"拍照");
+        }];
+        
+        [_display setCancelPhotoAction:^(NSInteger index) {
+            NSLog(@"删除照片后把数组中对应的位置的图片删除");
         }];
     }
     return _display;
