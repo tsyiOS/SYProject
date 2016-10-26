@@ -148,6 +148,7 @@
     for (NSIndexPath *index in self.selectedIndexPaths) {
         ALAsset *asset = self.photoAssets[index.item];
 //        UIImage *image = [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+        
         UIImage *image = [UIImage imageWithCGImage:asset.thumbnail];
         [selectedAssets addObject:asset];
         [selectedImages addObject:image];
