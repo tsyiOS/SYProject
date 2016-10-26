@@ -10,6 +10,10 @@
 
 typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
     /**
+     *  编辑资料
+     */
+    RTHPictuerDisplayTypeEdit,
+    /**
      *  发布状态
      */
     RTHPictuerDisplayTypePublish,
@@ -29,10 +33,6 @@ typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
  */
 @property (nonatomic, copy) void (^takePhotoAction)();
 /**
- *  数据源
- */
-@property (nonatomic, strong) NSArray *images;
-/**
  *  最大张数
  */
 @property (nonatomic, assign) NSInteger maxCount;
@@ -45,6 +45,14 @@ typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
  *  @return 实例对象
  */
 - (instancetype)initWithFrame:(CGRect)frame andType:(RTHPictuerDisplayType) type;
+/**
+ *  展示图片
+ *
+ *  @param images 图片数组
+ *
+ *  @return 高度
+ */
+- (CGFloat)dispalyImages:(NSArray *)images;
 @end
 
 @interface RTHPictureItem : UIView

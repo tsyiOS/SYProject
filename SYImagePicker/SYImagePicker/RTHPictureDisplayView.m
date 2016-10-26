@@ -9,8 +9,12 @@
 #import "RTHPictureDisplayView.h"
 #import <SYCategory/SYCategory.h>
 
+#define CameraTag 1000
+#define AddPictureTag 1001
+
 @interface RTHPictureDisplayView ()
 @property (nonatomic, assign) RTHPictuerDisplayType type;
+@property (nonatomic, strong) NSArray *images;
 @end
 
 @implementation RTHPictureDisplayView
@@ -18,25 +22,28 @@
 - (instancetype)initWithFrame:(CGRect)frame andType:(RTHPictuerDisplayType)type{
     if (self = [super initWithFrame:frame]) {
         self.type = type;
-        if (type == RTHPictuerDisplayTypePublish) {
+        self.maxCount = LONG_MAX;
+        if (type != RTHPictuerDisplayTypeNormal) {
             [self initialActionBtn];
         }
     }
     return self;
 }
 
-- (void)setImages:(NSArray *)images {
+- (CGFloat)dispalyImages:(NSArray *)images {
     _images = images;
     for (UIView *sub in self.subviews) {
         [sub removeFromSuperview];
     }
     
-    if (self.type == RTHPictuerDisplayTypePublish) {
+    if (self.type != RTHPictuerDisplayTypeNormal) {
         if (images.count > 0) {
             CGFloat margin = 15;
             CGFloat ItemW = (self.sy_width - margin*5)/4;
             
-            for (int i = 0; i< (self.maxCount > images.count?images.count + 1:self.maxCount); i++ ) {
+            NSInteger totalCount = self.maxCount > images.count?images.count + 1:self.maxCount;
+            
+            for (int i = 0; i< totalCount; i++ ) {
                 NSInteger row = i/4;
                 NSInteger col = i%4;
                 
@@ -51,27 +58,28 @@
                 }
                 [self addSubview:item];
             }
-            self.sy_height = (images.count/4 + 1)*(ItemW + margin) + margin;
+            self.sy_height = (totalCount/4 + 1)*(ItemW + margin) + margin;
         }else {
-             [self initialActionBtn];
+            [self initialActionBtn];
         }
     }else {
         if (images.count > 0) {
             CGFloat margin = 15;
             CGFloat ItemW = (self.sy_width - margin*5)/4;
-            
-            for (int i = 0; i< (self.maxCount > images.count?images.count:self.maxCount); i++ ) {
+            NSInteger totalCount = self.maxCount > images.count?images.count:self.maxCount;
+            for (int i = 0; i< totalCount; i++ ) {
                 NSInteger row = i/4;
                 NSInteger col = i%4;
                 
                 RTHPictureItem *item = [[RTHPictureItem alloc] initWithFrame:CGRectMake(col * (margin + ItemW) + margin, row * (margin + ItemW) + margin, ItemW, ItemW) andImage:images[i] isAddBtn:YES];
                 [self addSubview:item];
             }
-            self.sy_height = (images.count/4 + 1)*(ItemW + margin) + margin;
+            self.sy_height = (totalCount/4 + 1)*(ItemW + margin) + margin;
         }else {
             self.sy_height = 0;
         }
     }
+    return self.sy_height;
 }
 
 - (void)initialActionBtn {
@@ -80,19 +88,45 @@
     
     self.sy_height =  margin * 2 + ItemW;
     
-    RTHPictureItem *cameraItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_takephoto"] isAddBtn:YES];
-    cameraItem.clickAction = self.takePhotoAction;
-    [self addSubview:cameraItem];
-    
-    RTHPictureItem *photoItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin*2 + ItemW, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_photo"] isAddBtn:YES];
-    photoItem.clickAction = self.addPcitureAction;
-    [self addSubview:photoItem];
+    if (self.type == RTHPictuerDisplayTypePublish) {
+        RTHPictureItem *cameraItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_takephoto"] isAddBtn:YES];
+        cameraItem.clickAction = self.takePhotoAction;
+        cameraItem.tag = CameraTag;
+        [self addSubview:cameraItem];
+        
+        RTHPictureItem *photoItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin*2 + ItemW, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_photo"] isAddBtn:YES];
+        photoItem.clickAction = self.addPcitureAction;
+        photoItem.tag = AddPictureTag;
+        [self addSubview:photoItem];
+
+    }else {
+        RTHPictureItem *photoItem = [[RTHPictureItem alloc]initWithFrame:CGRectMake(margin, margin, ItemW, ItemW) andImage:[UIImage imageNamed:@"picture_add"] isAddBtn:YES];
+        photoItem.clickAction = self.addPcitureAction;
+        photoItem.tag = AddPictureTag;
+        [self addSubview:photoItem];
+    }
+}
+
+- (void)setTakePhotoAction:(void (^)())takePhotoAction {
+    _takePhotoAction = takePhotoAction;
+    RTHPictureItem *item = [self viewWithTag:CameraTag];
+    if (item) {
+        item.clickAction = takePhotoAction;
+    }
+}
+
+- (void)setAddPcitureAction:(void (^)())addPcitureAction {
+    _addPcitureAction = addPcitureAction;
+    RTHPictureItem *item = [self viewWithTag:AddPictureTag];
+    if (item) {
+        item.clickAction = addPcitureAction;
+    }
 }
 
 - (void)deleteItemAtIndex:(NSInteger)index {
     NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.images];
     [tempArray removeObjectAtIndex:index];
-    self.images = tempArray;
+    [self dispalyImages:tempArray];
 }
 
 @end

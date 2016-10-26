@@ -37,16 +37,20 @@
 
 - (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
     NSLog(@"%@",info);
-    self.display.images = info[SYSelectedImages];
-    
+    [self.display dispalyImages:info[SYSelectedImages]];
 }
 
 - (RTHPictureDisplayView *)display {
     if (_display == nil) {
-        _display = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 20, ScreenW, 0) andType:RTHPictuerDisplayTypeNormal];
+        _display = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 20, ScreenW, 0) andType:RTHPictuerDisplayTypeEdit];
         _display.maxCount = 6;
+        
         [_display setAddPcitureAction:^{
-            NSLog(@"点击发布");
+            NSLog(@"添加照片");
+        }];
+        
+        [_display setTakePhotoAction:^{
+            NSLog(@"拍照");
         }];
     }
     return _display;
