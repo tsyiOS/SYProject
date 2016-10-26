@@ -8,39 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		9F8C5FA21DBB86D700AF87D4 /* SYImagePickerSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5FA11DBB86D700AF87D4 /* SYImagePickerSource.bundle */; };
-		9F939FD01DBCAD1200EEFED2 /* SYBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939FC71DBCAD1200EEFED2 /* SYBottomView.m */; };
-		9F939FD11DBCAD1200EEFED2 /* SYBrowserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939FC91DBCAD1200EEFED2 /* SYBrowserViewCell.m */; };
-		9F939FD21DBCAD1200EEFED2 /* SYImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939FCB1DBCAD1200EEFED2 /* SYImagePickerCell.m */; };
-		9F939FD31DBCAD1200EEFED2 /* SYImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939FCD1DBCAD1200EEFED2 /* SYImagePickerViewController.m */; };
-		9F939FD41DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939FCF1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m */; };
 		9F939FE71DBE63B500EEFED2 /* SYCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F939FE51DBE63B500EEFED2 /* SYCategory.framework */; };
 		9F939FE81DBE63B500EEFED2 /* SYRefreshSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F939FE61DBE63B500EEFED2 /* SYRefreshSource.bundle */; };
 		9F939FEB1DBE67EE00EEFED2 /* RTHPictureDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939FEA1DBE67EE00EEFED2 /* RTHPictureDisplayView.m */; };
+		9FDA6E8A1DC109D000192371 /* SYBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E7D1DC109D000192371 /* SYBottomView.m */; };
+		9FDA6E8B1DC109D000192371 /* SYBrowserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E7F1DC109D000192371 /* SYBrowserViewCell.m */; };
+		9FDA6E8C1DC109D000192371 /* SYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E811DC109D000192371 /* SYImageManager.m */; };
+		9FDA6E8D1DC109D000192371 /* SYImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E831DC109D000192371 /* SYImagePickerCell.m */; };
+		9FDA6E8E1DC109D000192371 /* SYImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E851DC109D000192371 /* SYImagePickerViewController.m */; };
+		9FDA6E8F1DC109D000192371 /* SYPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E871DC109D000192371 /* SYPhotoBrowserViewController.m */; };
+		9FDA6E901DC109D000192371 /* UIImage+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E891DC109D000192371 /* UIImage+SYExtension.m */; };
 		F069B6CF1DBA22AA0030EA98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6CE1DBA22AA0030EA98 /* main.m */; };
 		F069B6D21DBA22AA0030EA98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6D11DBA22AA0030EA98 /* AppDelegate.m */; };
 		F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F069B6D41DBA22AA0030EA98 /* ViewController.m */; };
 		F069B6D81DBA22AA0030EA98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F069B6D61DBA22AA0030EA98 /* Main.storyboard */; };
 		F069B6DA1DBA22AA0030EA98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F069B6D91DBA22AA0030EA98 /* Assets.xcassets */; };
 		F069B6DD1DBA22AA0030EA98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F069B6DB1DBA22AA0030EA98 /* LaunchScreen.storyboard */; };
-		F0917BB21DC03ED1004FE764 /* SYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0917BB11DC03ED1004FE764 /* SYImageManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F8C5FA11DBB86D700AF87D4 /* SYImagePickerSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYImagePickerSource.bundle; sourceTree = "<group>"; };
-		9F939FC61DBCAD1200EEFED2 /* SYBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBottomView.h; sourceTree = "<group>"; };
-		9F939FC71DBCAD1200EEFED2 /* SYBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBottomView.m; sourceTree = "<group>"; };
-		9F939FC81DBCAD1200EEFED2 /* SYBrowserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBrowserViewCell.h; sourceTree = "<group>"; };
-		9F939FC91DBCAD1200EEFED2 /* SYBrowserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBrowserViewCell.m; sourceTree = "<group>"; };
-		9F939FCA1DBCAD1200EEFED2 /* SYImagePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePickerCell.h; sourceTree = "<group>"; };
-		9F939FCB1DBCAD1200EEFED2 /* SYImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagePickerCell.m; sourceTree = "<group>"; };
-		9F939FCC1DBCAD1200EEFED2 /* SYImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImagePickerViewController.h; sourceTree = "<group>"; };
-		9F939FCD1DBCAD1200EEFED2 /* SYImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImagePickerViewController.m; sourceTree = "<group>"; };
-		9F939FCE1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPhotoBrowserViewController.h; sourceTree = "<group>"; };
-		9F939FCF1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		9F939FE51DBE63B500EEFED2 /* SYCategory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SYCategory.framework; sourceTree = "<group>"; };
 		9F939FE61DBE63B500EEFED2 /* SYRefreshSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYRefreshSource.bundle; sourceTree = "<group>"; };
 		9F939FE91DBE67EE00EEFED2 /* RTHPictureDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPictureDisplayView.h; sourceTree = "<group>"; };
 		9F939FEA1DBE67EE00EEFED2 /* RTHPictureDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPictureDisplayView.m; sourceTree = "<group>"; };
+		9FDA6E7C1DC109D000192371 /* SYBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYBottomView.h; path = SYImagePicker/SYBottomView.h; sourceTree = "<group>"; };
+		9FDA6E7D1DC109D000192371 /* SYBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYBottomView.m; path = SYImagePicker/SYBottomView.m; sourceTree = "<group>"; };
+		9FDA6E7E1DC109D000192371 /* SYBrowserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYBrowserViewCell.h; path = SYImagePicker/SYBrowserViewCell.h; sourceTree = "<group>"; };
+		9FDA6E7F1DC109D000192371 /* SYBrowserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYBrowserViewCell.m; path = SYImagePicker/SYBrowserViewCell.m; sourceTree = "<group>"; };
+		9FDA6E801DC109D000192371 /* SYImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYImageManager.h; path = SYImagePicker/SYImageManager.h; sourceTree = "<group>"; };
+		9FDA6E811DC109D000192371 /* SYImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYImageManager.m; path = SYImagePicker/SYImageManager.m; sourceTree = "<group>"; };
+		9FDA6E821DC109D000192371 /* SYImagePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYImagePickerCell.h; path = SYImagePicker/SYImagePickerCell.h; sourceTree = "<group>"; };
+		9FDA6E831DC109D000192371 /* SYImagePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYImagePickerCell.m; path = SYImagePicker/SYImagePickerCell.m; sourceTree = "<group>"; };
+		9FDA6E841DC109D000192371 /* SYImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYImagePickerViewController.h; path = SYImagePicker/SYImagePickerViewController.h; sourceTree = "<group>"; };
+		9FDA6E851DC109D000192371 /* SYImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYImagePickerViewController.m; path = SYImagePicker/SYImagePickerViewController.m; sourceTree = "<group>"; };
+		9FDA6E861DC109D000192371 /* SYPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYPhotoBrowserViewController.h; path = SYImagePicker/SYPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		9FDA6E871DC109D000192371 /* SYPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYPhotoBrowserViewController.m; path = SYImagePicker/SYPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		9FDA6E881DC109D000192371 /* UIImage+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SYExtension.h"; path = "SYImagePicker/UIImage+SYExtension.h"; sourceTree = "<group>"; };
+		9FDA6E891DC109D000192371 /* UIImage+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SYExtension.m"; path = "SYImagePicker/UIImage+SYExtension.m"; sourceTree = "<group>"; };
 		F069B6CA1DBA22AA0030EA98 /* SYImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F069B6CE1DBA22AA0030EA98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F069B6D01DBA22AA0030EA98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,8 +56,6 @@
 		F069B6D91DBA22AA0030EA98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F069B6DC1DBA22AA0030EA98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F069B6DE1DBA22AA0030EA98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0917BB01DC03ED1004FE764 /* SYImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImageManager.h; sourceTree = "<group>"; };
-		F0917BB11DC03ED1004FE764 /* SYImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImageManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,25 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F939FC51DBCAD1200EEFED2 /* SYImagePicker */ = {
-			isa = PBXGroup;
-			children = (
-				9F939FC61DBCAD1200EEFED2 /* SYBottomView.h */,
-				9F939FC71DBCAD1200EEFED2 /* SYBottomView.m */,
-				9F939FC81DBCAD1200EEFED2 /* SYBrowserViewCell.h */,
-				9F939FC91DBCAD1200EEFED2 /* SYBrowserViewCell.m */,
-				9F939FCA1DBCAD1200EEFED2 /* SYImagePickerCell.h */,
-				9F939FCB1DBCAD1200EEFED2 /* SYImagePickerCell.m */,
-				9F939FCC1DBCAD1200EEFED2 /* SYImagePickerViewController.h */,
-				9F939FCD1DBCAD1200EEFED2 /* SYImagePickerViewController.m */,
-				9F939FCE1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.h */,
-				9F939FCF1DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m */,
-				F0917BB01DC03ED1004FE764 /* SYImageManager.h */,
-				F0917BB11DC03ED1004FE764 /* SYImageManager.m */,
-			);
-			path = SYImagePicker;
-			sourceTree = "<group>";
-		};
 		9F939FD51DBE630C00EEFED2 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +124,22 @@
 		F069B6E41DBA23060030EA98 /* SYImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				9FDA6E7C1DC109D000192371 /* SYBottomView.h */,
+				9FDA6E7D1DC109D000192371 /* SYBottomView.m */,
+				9FDA6E7E1DC109D000192371 /* SYBrowserViewCell.h */,
+				9FDA6E7F1DC109D000192371 /* SYBrowserViewCell.m */,
+				9FDA6E801DC109D000192371 /* SYImageManager.h */,
+				9FDA6E811DC109D000192371 /* SYImageManager.m */,
+				9FDA6E821DC109D000192371 /* SYImagePickerCell.h */,
+				9FDA6E831DC109D000192371 /* SYImagePickerCell.m */,
+				9FDA6E841DC109D000192371 /* SYImagePickerViewController.h */,
+				9FDA6E851DC109D000192371 /* SYImagePickerViewController.m */,
+				9FDA6E861DC109D000192371 /* SYPhotoBrowserViewController.h */,
+				9FDA6E871DC109D000192371 /* SYPhotoBrowserViewController.m */,
+				9FDA6E881DC109D000192371 /* UIImage+SYExtension.h */,
+				9FDA6E891DC109D000192371 /* UIImage+SYExtension.m */,
 				9F939FE51DBE63B500EEFED2 /* SYCategory.framework */,
 				9F939FE61DBE63B500EEFED2 /* SYRefreshSource.bundle */,
-				9F939FC51DBCAD1200EEFED2 /* SYImagePicker */,
 				9F8C5FA11DBB86D700AF87D4 /* SYImagePickerSource.bundle */,
 			);
 			path = SYImagePicker;
@@ -223,15 +220,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F069B6D51DBA22AA0030EA98 /* ViewController.m in Sources */,
-				F0917BB21DC03ED1004FE764 /* SYImageManager.m in Sources */,
-				9F939FD31DBCAD1200EEFED2 /* SYImagePickerViewController.m in Sources */,
-				9F939FD41DBCAD1200EEFED2 /* SYPhotoBrowserViewController.m in Sources */,
-				9F939FD11DBCAD1200EEFED2 /* SYBrowserViewCell.m in Sources */,
-				9F939FD01DBCAD1200EEFED2 /* SYBottomView.m in Sources */,
-				9F939FD21DBCAD1200EEFED2 /* SYImagePickerCell.m in Sources */,
 				F069B6D21DBA22AA0030EA98 /* AppDelegate.m in Sources */,
+				9FDA6E8A1DC109D000192371 /* SYBottomView.m in Sources */,
+				9FDA6E8D1DC109D000192371 /* SYImagePickerCell.m in Sources */,
 				9F939FEB1DBE67EE00EEFED2 /* RTHPictureDisplayView.m in Sources */,
 				F069B6CF1DBA22AA0030EA98 /* main.m in Sources */,
+				9FDA6E8C1DC109D000192371 /* SYImageManager.m in Sources */,
+				9FDA6E8B1DC109D000192371 /* SYBrowserViewCell.m in Sources */,
+				9FDA6E8F1DC109D000192371 /* SYPhotoBrowserViewController.m in Sources */,
+				9FDA6E901DC109D000192371 /* UIImage+SYExtension.m in Sources */,
+				9FDA6E8E1DC109D000192371 /* SYImagePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +353,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYImagePicker;
+				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -375,7 +373,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYImagePicker;
+				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

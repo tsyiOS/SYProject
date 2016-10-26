@@ -1,0 +1,6 @@
+framework module SYImageManager {
+  umbrella header "SYImageManager.h"
+
+  export *
+  module * { export * }
+}

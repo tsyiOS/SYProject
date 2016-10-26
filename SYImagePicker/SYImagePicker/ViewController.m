@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 //#import <SYImagePicker/SYImagePickerViewController.h>
+//#import <SYImageManager/SYImageManager.h>
 #import "SYImageManager.h"
 #import "RTHPictureDisplayView.h"
 #import <SYCategory/SYCategory.h>
@@ -33,9 +34,13 @@
 //    imagePicker.delegate = self;
 //    
 //    [self presentViewController:imagePicker animated:YES completion:nil];
-    SYImageManager *manager  = [[SYImageManager alloc] init];
+    SYImageManager *manager  = [SYImageManager shareImageManager];
     manager.delegate = self;
-    manager.imagePicker.sy_maxCount = 8;
+    [manager sy_OpenImagePicker];
+}
+- (IBAction)camera {
+    SYImageManager *manager  = [SYImageManager shareImageManager];
+    manager.delegate = self;
     [manager sy_OpenCamera];
 }
 
@@ -47,7 +52,7 @@
 - (RTHPictureDisplayView *)display {
     if (_display == nil) {
         _display = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 20, ScreenW, 0) andType:RTHPictuerDisplayTypeEdit];
-        _display.maxCount = 6;
+        _display.maxCount = LONG_MAX;
         
         [_display setAddPcitureAction:^{
             NSLog(@"添加照片");

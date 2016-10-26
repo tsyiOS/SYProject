@@ -17,18 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP5-PH-12x">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP5-PH-12x">
+                                <rect key="frame" x="285" y="255" width="30" height="30"/>
                                 <state key="normal" title="相册"/>
                                 <connections>
                                     <action selector="imagePicker" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRz-DI-Lrh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAQ-LN-Xaw">
+                                <rect key="frame" x="285" y="335" width="30" height="30"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="camera" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yj3-SN-18m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SP5-PH-12x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6ma-np-TVs"/>
+                            <constraint firstItem="FAQ-LN-Xaw" firstAttribute="top" secondItem="SP5-PH-12x" secondAttribute="bottom" constant="50" id="1VW-u2-Rsp"/>
+                            <constraint firstItem="SP5-PH-12x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="6ma-np-TVs"/>
                             <constraint firstItem="SP5-PH-12x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LvK-4R-hSg"/>
+                            <constraint firstItem="FAQ-LN-Xaw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iUH-cL-0a1"/>
                         </constraints>
                     </view>
                 </viewController>
