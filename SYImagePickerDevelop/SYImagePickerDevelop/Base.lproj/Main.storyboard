@@ -1,25 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLC-FG-D26">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcY-TA-FOs">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                        <state key="normal" title="相机"/>
+                                        <connections>
+                                            <action selector="camera" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpZ-37-BB2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAg-hI-UhU">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                        <state key="normal" title="相册"/>
+                                        <connections>
+                                            <action selector="album" destination="BYZ-38-t0r" eventType="touchUpInside" id="SJA-pB-hEO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="58W-Zs-MOF"/>
+                                    <constraint firstItem="dcY-TA-FOs" firstAttribute="top" secondItem="tLC-FG-D26" secondAttribute="top" id="5z9-tM-HT3"/>
+                                    <constraint firstItem="rAg-hI-UhU" firstAttribute="leading" secondItem="dcY-TA-FOs" secondAttribute="trailing" id="Hss-RA-KqU"/>
+                                    <constraint firstAttribute="bottom" secondItem="dcY-TA-FOs" secondAttribute="bottom" id="KMU-KX-aqh"/>
+                                    <constraint firstItem="rAg-hI-UhU" firstAttribute="width" secondItem="dcY-TA-FOs" secondAttribute="width" id="X5q-Re-7EI"/>
+                                    <constraint firstAttribute="trailing" secondItem="rAg-hI-UhU" secondAttribute="trailing" id="g3M-Ha-E4D"/>
+                                    <constraint firstAttribute="bottom" secondItem="rAg-hI-UhU" secondAttribute="bottom" id="j6L-RM-ojA"/>
+                                    <constraint firstItem="dcY-TA-FOs" firstAttribute="leading" secondItem="tLC-FG-D26" secondAttribute="leading" id="kVn-cT-Acj"/>
+                                    <constraint firstItem="rAg-hI-UhU" firstAttribute="height" secondItem="dcY-TA-FOs" secondAttribute="height" id="mzu-GF-8MR"/>
+                                    <constraint firstItem="rAg-hI-UhU" firstAttribute="top" secondItem="tLC-FG-D26" secondAttribute="top" id="oGy-iA-YEp"/>
+                                    <constraint firstItem="rAg-hI-UhU" firstAttribute="leading" secondItem="dcY-TA-FOs" secondAttribute="trailing" id="spn-C2-mV7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tLC-FG-D26" secondAttribute="bottom" id="PlX-B0-alV"/>
+                            <constraint firstItem="tLC-FG-D26" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f5S-yp-22f"/>
+                            <constraint firstAttribute="trailing" secondItem="tLC-FG-D26" secondAttribute="trailing" id="tY3-cc-M6u"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131" y="396"/>
         </scene>
     </scenes>
 </document>

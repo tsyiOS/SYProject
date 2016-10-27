@@ -13,6 +13,7 @@
 		F0BCF26B1DC19D2000E6556F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BCF2691DC19D2000E6556F /* Main.storyboard */; };
 		F0BCF26D1DC19D2000E6556F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BCF26C1DC19D2000E6556F /* Assets.xcassets */; };
 		F0BCF2701DC19D2000E6556F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BCF26E1DC19D2000E6556F /* LaunchScreen.storyboard */; };
+		F0BCF2791DC1A0D400E6556F /* RTHPictureDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BCF2781DC1A0D400E6556F /* RTHPictureDisplayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		F0BCF26C1DC19D2000E6556F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0BCF26F1DC19D2000E6556F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0BCF2711DC19D2000E6556F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0BCF2771DC1A0D400E6556F /* RTHPictureDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPictureDisplayView.h; sourceTree = "<group>"; };
+		F0BCF2781DC1A0D400E6556F /* RTHPictureDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPictureDisplayView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		F0BCF25F1DC19D2000E6556F /* SYImagePickerDevelop */ = {
 			isa = PBXGroup;
 			children = (
+				F0BCF2771DC1A0D400E6556F /* RTHPictureDisplayView.h */,
+				F0BCF2781DC1A0D400E6556F /* RTHPictureDisplayView.m */,
 				F0BCF2631DC19D2000E6556F /* AppDelegate.h */,
 				F0BCF2641DC19D2000E6556F /* AppDelegate.m */,
 				F0BCF2661DC19D2000E6556F /* ViewController.h */,
@@ -150,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0BCF2681DC19D2000E6556F /* ViewController.m in Sources */,
+				F0BCF2791DC1A0D400E6556F /* RTHPictureDisplayView.m in Sources */,
 				F0BCF2651DC19D2000E6556F /* AppDelegate.m in Sources */,
 				F0BCF2621DC19D2000E6556F /* main.m in Sources */,
 			);
@@ -300,6 +306,7 @@
 				F0BCF2761DC19D2000E6556F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
