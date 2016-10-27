@@ -10,7 +10,6 @@
 #import "SYImagePickerViewController.h"
 
 @interface SYImageManager : NSObject
-@property (nonatomic, strong) SYImagePickerViewController *imagePicker;
 @property (nonatomic, weak) UIViewController <SYImagePickerDelegate>*delegate;
 + (instancetype)shareImageManager;
 - (void)sy_OpenImagePicker;

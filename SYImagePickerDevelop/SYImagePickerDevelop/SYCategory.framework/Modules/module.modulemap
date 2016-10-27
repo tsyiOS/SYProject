@@ -1,0 +1,6 @@
+framework module SYCategory {
+  umbrella header "SYCategory.h"
+
+  export *
+  module * { export * }
+}

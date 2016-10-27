@@ -39,11 +39,6 @@ static SYImageManager *manager;
     return manager;
 }
 
-- (void)setDelegate:(UIViewController <SYImagePickerDelegate>*)delegate {
-    _delegate = delegate;
-    _imagePicker = [[SYImagePickerViewController alloc] init];
-    _imagePicker.delegate = delegate;
-}
 /*
  ALAuthorizationStatusNotDetermined = 0, 用户尚未做出了选择这个应用程序的问候
  ALAuthorizationStatusRestricted,        此应用程序没有被授权访问的照片数据。可能是家长控制权限。
@@ -56,7 +51,9 @@ static SYImageManager *manager;
     if (status == AVAuthorizationStatusRestricted || status ==AVAuthorizationStatusDenied) {
         [self showErrorWithType:SYImageManagerTypePhoto];
     }else {
-        [self.delegate presentViewController:self.imagePicker animated:YES completion:nil];
+        SYImagePickerViewController *imagePicker = [[SYImagePickerViewController alloc] init];
+        imagePicker.delegate = self.delegate;
+        [self.delegate presentViewController:imagePicker animated:YES completion:nil];
     }
 }
 

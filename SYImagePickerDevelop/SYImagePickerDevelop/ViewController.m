@@ -10,7 +10,7 @@
 #import "RTHPictureDisplayView.h"
 #import "SYImageManager.h"
 
-@interface ViewController ()
+@interface ViewController ()<SYImagePickerDelegate>
 @property (nonatomic, strong) RTHPictureDisplayView *display;
 @end
 
@@ -27,16 +27,25 @@
 }
 
 - (IBAction)camera {
-    
+    SYImageManager *manager = [SYImageManager shareImageManager];
+    manager.delegate = self;
+    [manager sy_OpenCamera];
 }
 - (IBAction)album {
-    
+    SYImageManager *manager = [SYImageManager shareImageManager];
+    manager.delegate = self;
+    [manager sy_OpenImagePicker];
+}
+
+- (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
+    [self.display dispalyImages:info[SYSelectedImages]];
 }
 
 - (RTHPictureDisplayView *)display {
     if (_display == nil) {
         _display = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 0) andType:RTHPictuerDisplayTypeEdit];
 //        _display.maxCount = LONG_MAX;
+        [self.view addSubview:_display];
         
         [_display setAddPcitureAction:^{
             NSLog(@"添加照片");
