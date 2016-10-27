@@ -12,7 +12,7 @@
 
 @required
 /**
- * 点击完成后选择的照片回调
+ * 点击完成后选择的照片回调，@{SYSelectedImages:选择的图片数组(小图),SYSelectedAssets:选择图片的Assets数组}
  */
 - (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info;
 
@@ -51,3 +51,4 @@
 extern NSString *const SYSelectedImages;
 
 extern NSString *const SYSelectedAssets;
+

@@ -7,8 +7,6 @@
 
 #import "SYBrowserViewCell.h"
 
-#define ScrollViewSize self.scrollView.bounds.size
-
 @interface SYBrowserViewCell () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic,strong) UIScrollView *scrollView;
@@ -24,19 +22,22 @@
 }
 
 - (void)setImage:(UIImage *)image {
+    
     _image = image;
-    [self resetScrollView];
-    CGSize size = [self getImageDisplaySizeWith:image];
-    if (size.height < ScrollViewSize.height) {
-        //短图
-        CGFloat y = (ScrollViewSize.height - size.height) * 0.5;
-        self.imageView.frame = CGRectMake(0, 0, size.width, size.height);
-        self.scrollView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0);
+    
+    self.scrollView.contentOffset = CGPointZero;
+    self.scrollView.contentSize = CGSizeZero;
+    self.scrollView.zoomScale = 1;
+    
+    CGSize size = [self getImageDisplaySizeWithImage:image];
+    
+    if (size.height < self.scrollView.bounds.size.height) {
+        CGFloat y = (self.scrollView.bounds.size.height - size.height) * 0.5;
+        self.imageView.frame = CGRectMake(0, y, size.width, size.height);
     }else {
-        //长图
         self.imageView.frame = CGRectMake(0, 0, size.width, size.height);
-        
     }
+    
     self.scrollView.contentSize = size;
     self.imageView.image = image;
 }
@@ -47,34 +48,15 @@
     }
 }
 
-- (void)resetScrollView{
-    self.scrollView.contentInset = UIEdgeInsetsZero;
-    self.scrollView.contentOffset = CGPointZero;
-    self.scrollView.contentSize = CGSizeZero;
-    self.scrollView.zoomScale = 1;
-}
-
-- (CGSize)getImageDisplaySizeWith:(UIImage *)image {
+- (CGSize)getImageDisplaySizeWithImage:(UIImage *)image {
     CGFloat scale = image.size.height / image.size.width;
     CGFloat height = scale *self.scrollView.bounds.size.width;
-    
     return CGSizeMake(self.scrollView.bounds.size.width, height);
 }
 
 #pragma mark : - scrollView代理方法
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
-}
-
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
-    
-    CGFloat offsetY = (ScrollViewSize.height - view.frame.size.height)*0.5;
-    if (scale == 1) {
-        self.image = self.imageView.image;
-    }else {
-        offsetY = offsetY < 0 ? 0 : offsetY;;
-        self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, 0, 0, 0);
-    }
 }
 
 #pragma mark : - 懒加载

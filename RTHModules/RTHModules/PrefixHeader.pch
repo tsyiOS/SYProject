@@ -14,9 +14,6 @@
 
 #endif /* PrefixHeader_pch */
 #import<SYCategory/SYCategory.h>
-//#import "NSAttributedString+SYExtension.h"
-//#import "NSDate+SYExtension.h"
-//#import "NSString+SYExtension.h"
-//#import "UIColor+SYExtension.h"
-//#import "UITableView+SYExtension.h"
-//#import "UIView+SYExtension.h"
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"

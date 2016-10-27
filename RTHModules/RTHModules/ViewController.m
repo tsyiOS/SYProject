@@ -12,6 +12,7 @@
 #import "RTHChatViewController.h"
 #import "RTHCircleViewController.h"
 #import "RTHPersonViewController.h"
+#import "RTHEditinformationController.h"
 
 @interface ViewController ()
 
@@ -60,7 +61,9 @@
  *  个人
  */
 - (IBAction)personPagePush {
-    RTHPersonViewController *personVc = [[RTHPersonViewController alloc]initWithNibName:@"RTHPersonViewController" bundle:nil];
-    [self.navigationController pushViewController:personVc animated:YES];
+//    RTHPersonViewController *personVc = [[RTHPersonViewController alloc]initWithNibName:@"RTHPersonViewController" bundle:nil];
+//    [self.navigationController pushViewController:personVc animated:YES];
+    RTHEditinformationController *edit = [[RTHEditinformationController alloc] init];
+    [self.navigationController pushViewController:edit animated:YES];
 }
 @end

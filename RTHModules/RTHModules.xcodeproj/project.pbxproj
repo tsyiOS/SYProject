@@ -76,6 +76,19 @@
 		F09D6ED21DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D6ED01DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib */; };
 		F09D6ED61DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D6ED41DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m */; };
 		F09D6ED71DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D6ED51DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib */; };
+		F09DEA871DC2116E0033D0B8 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA6F1DC2116E0033D0B8 /* MASCompositeConstraint.m */; };
+		F09DEA881DC2116E0033D0B8 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA721DC2116E0033D0B8 /* MASConstraint.m */; };
+		F09DEA891DC2116E0033D0B8 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA741DC2116E0033D0B8 /* MASConstraintMaker.m */; };
+		F09DEA8A1DC2116E0033D0B8 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA761DC2116E0033D0B8 /* MASLayoutConstraint.m */; };
+		F09DEA8B1DC2116E0033D0B8 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA7A1DC2116E0033D0B8 /* MASViewAttribute.m */; };
+		F09DEA8C1DC2116E0033D0B8 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA7C1DC2116E0033D0B8 /* MASViewConstraint.m */; };
+		F09DEA8D1DC2116E0033D0B8 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA7E1DC2116E0033D0B8 /* NSArray+MASAdditions.m */; };
+		F09DEA8E1DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA811DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		F09DEA8F1DC2116E0033D0B8 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA831DC2116E0033D0B8 /* View+MASAdditions.m */; };
+		F09DEA901DC2116E0033D0B8 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA861DC2116E0033D0B8 /* ViewController+MASAdditions.m */; };
+		F09DEA9A1DC211EA0033D0B8 /* RTHEditinformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */; };
+		F09DEA9B1DC211EA0033D0B8 /* RTHEditinformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */; };
+		F09DEA9C1DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA991DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m */; };
 		F0B2E2D01DB85682006D187F /* RTHCardPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */; };
 		F0B2E2D11DB85682006D187F /* RTHdynamicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C11DB85682006D187F /* RTHdynamicsTableViewController.m */; };
 		F0B2E2D21DB85682006D187F /* RTHPersonBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C31DB85682006D187F /* RTHPersonBaseTableViewController.m */; };
@@ -198,6 +211,37 @@
 		F09D6ED31DB0B66C00C4F4AE /* RTHCourseDownLoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTHCourseDownLoadCell.h; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadCell.h; sourceTree = SOURCE_ROOT; };
 		F09D6ED41DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTHCourseDownLoadCell.m; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadCell.m; sourceTree = SOURCE_ROOT; };
 		F09D6ED51DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RTHCourseDownLoadCell.xib; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadCell.xib; sourceTree = SOURCE_ROOT; };
+		F09DEA6E1DC2116E0033D0B8 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		F09DEA6F1DC2116E0033D0B8 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		F09DEA701DC2116E0033D0B8 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		F09DEA711DC2116E0033D0B8 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		F09DEA721DC2116E0033D0B8 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		F09DEA731DC2116E0033D0B8 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		F09DEA741DC2116E0033D0B8 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		F09DEA751DC2116E0033D0B8 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		F09DEA761DC2116E0033D0B8 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		F09DEA771DC2116E0033D0B8 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		F09DEA781DC2116E0033D0B8 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		F09DEA791DC2116E0033D0B8 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		F09DEA7A1DC2116E0033D0B8 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		F09DEA7B1DC2116E0033D0B8 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		F09DEA7C1DC2116E0033D0B8 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		F09DEA7D1DC2116E0033D0B8 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		F09DEA7E1DC2116E0033D0B8 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		F09DEA7F1DC2116E0033D0B8 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		F09DEA801DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		F09DEA811DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		F09DEA821DC2116E0033D0B8 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		F09DEA831DC2116E0033D0B8 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		F09DEA841DC2116E0033D0B8 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		F09DEA851DC2116E0033D0B8 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		F09DEA861DC2116E0033D0B8 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		F09DEA921DC211EA0033D0B8 /* RTHEditinformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEditinformationCell.h; sourceTree = "<group>"; };
+		F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditinformationCell.m; sourceTree = "<group>"; };
+		F09DEA941DC211EA0033D0B8 /* RTHEditinformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEditinformationController.h; sourceTree = "<group>"; };
+		F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditinformationController.m; sourceTree = "<group>"; };
+		F09DEA981DC211EA0033D0B8 /* RTHEditinformationFooterVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEditinformationFooterVIew.h; sourceTree = "<group>"; };
+		F09DEA991DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditinformationFooterVIew.m; sourceTree = "<group>"; };
 		F0B2E2BE1DB85682006D187F /* RTHCardPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCardPageTableViewController.h; sourceTree = "<group>"; };
 		F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCardPageTableViewController.m; sourceTree = "<group>"; };
 		F0B2E2C01DB85682006D187F /* RTHdynamicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHdynamicsTableViewController.h; sourceTree = "<group>"; };
@@ -245,12 +289,14 @@
 		9F47A9BD1DAFFAE100558743 /* RTHModules */ = {
 			isa = PBXGroup;
 			children = (
+				F09DEA911DC211DA0033D0B8 /* RTHPersonInfor */,
 				F0B2E2BC1DB85682006D187F /* RTHPerson */,
 				9F47A9DB1DAFFBAD00558743 /* RTHChat */,
 				9F47A9E91DAFFBAD00558743 /* RTHCircle */,
 				9F47AA081DAFFBAD00558743 /* RTHCourses */,
 				9F47AA141DAFFBAD00558743 /* RTHExpect */,
 				9F47AA391DAFFBAD00558743 /* SYSlideSelect */,
+				F09DEA6D1DC2116E0033D0B8 /* Masonry */,
 				9F47A9C11DAFFAE100558743 /* AppDelegate.h */,
 				9F47A9C21DAFFAE100558743 /* AppDelegate.m */,
 				9F47A9D91DAFFBAD00558743 /* Assets.xcassets */,
@@ -461,6 +507,51 @@
 			path = SYSlideSelect;
 			sourceTree = "<group>";
 		};
+		F09DEA6D1DC2116E0033D0B8 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				F09DEA6E1DC2116E0033D0B8 /* MASCompositeConstraint.h */,
+				F09DEA6F1DC2116E0033D0B8 /* MASCompositeConstraint.m */,
+				F09DEA701DC2116E0033D0B8 /* MASConstraint+Private.h */,
+				F09DEA711DC2116E0033D0B8 /* MASConstraint.h */,
+				F09DEA721DC2116E0033D0B8 /* MASConstraint.m */,
+				F09DEA731DC2116E0033D0B8 /* MASConstraintMaker.h */,
+				F09DEA741DC2116E0033D0B8 /* MASConstraintMaker.m */,
+				F09DEA751DC2116E0033D0B8 /* MASLayoutConstraint.h */,
+				F09DEA761DC2116E0033D0B8 /* MASLayoutConstraint.m */,
+				F09DEA771DC2116E0033D0B8 /* Masonry.h */,
+				F09DEA781DC2116E0033D0B8 /* MASUtilities.h */,
+				F09DEA791DC2116E0033D0B8 /* MASViewAttribute.h */,
+				F09DEA7A1DC2116E0033D0B8 /* MASViewAttribute.m */,
+				F09DEA7B1DC2116E0033D0B8 /* MASViewConstraint.h */,
+				F09DEA7C1DC2116E0033D0B8 /* MASViewConstraint.m */,
+				F09DEA7D1DC2116E0033D0B8 /* NSArray+MASAdditions.h */,
+				F09DEA7E1DC2116E0033D0B8 /* NSArray+MASAdditions.m */,
+				F09DEA7F1DC2116E0033D0B8 /* NSArray+MASShorthandAdditions.h */,
+				F09DEA801DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				F09DEA811DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				F09DEA821DC2116E0033D0B8 /* View+MASAdditions.h */,
+				F09DEA831DC2116E0033D0B8 /* View+MASAdditions.m */,
+				F09DEA841DC2116E0033D0B8 /* View+MASShorthandAdditions.h */,
+				F09DEA851DC2116E0033D0B8 /* ViewController+MASAdditions.h */,
+				F09DEA861DC2116E0033D0B8 /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		F09DEA911DC211DA0033D0B8 /* RTHPersonInfor */ = {
+			isa = PBXGroup;
+			children = (
+				F09DEA921DC211EA0033D0B8 /* RTHEditinformationCell.h */,
+				F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */,
+				F09DEA941DC211EA0033D0B8 /* RTHEditinformationController.h */,
+				F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */,
+				F09DEA981DC211EA0033D0B8 /* RTHEditinformationFooterVIew.h */,
+				F09DEA991DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m */,
+			);
+			path = RTHPersonInfor;
+			sourceTree = "<group>";
+		};
 		F0B2E2BC1DB85682006D187F /* RTHPerson */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,23 +701,34 @@
 				9F47AA611DAFFBAD00558743 /* RTHCoursesViewController.m in Sources */,
 				F09D6ED11DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.m in Sources */,
 				F0B2E2D81DB85682006D187F /* RTHPersonCardCell.m in Sources */,
+				F09DEA9A1DC211EA0033D0B8 /* RTHEditinformationCell.m in Sources */,
 				9F47A9C31DAFFAE100558743 /* AppDelegate.m in Sources */,
+				F09DEA881DC2116E0033D0B8 /* MASConstraint.m in Sources */,
+				F09DEA8C1DC2116E0033D0B8 /* MASViewConstraint.m in Sources */,
 				9F47AA701DAFFBAD00558743 /* RTHStudentEvaluateCell.m in Sources */,
 				9F47AA671DAFFBAD00558743 /* RTHQuestionAnswerViewController.m in Sources */,
 				9F47AA5D1DAFFBAD00558743 /* RTHCoursesContentsViewController.m in Sources */,
 				F0B2E2D11DB85682006D187F /* RTHdynamicsTableViewController.m in Sources */,
 				F047C4011DB86C3700672DA8 /* RTHPersonViewController.m in Sources */,
 				9F47AA661DAFFBAD00558743 /* RTHIntroductViewController.m in Sources */,
+				F09DEA8F1DC2116E0033D0B8 /* View+MASAdditions.m in Sources */,
 				9F47AA441DAFFBAD00558743 /* RTHChatCell.m in Sources */,
 				9F47AA581DAFFBAD00558743 /* RTHCircleViewController.m in Sources */,
+				F09DEA891DC2116E0033D0B8 /* MASConstraintMaker.m in Sources */,
 				F0B2E2D61DB85682006D187F /* RTHdynamicsCell.m in Sources */,
 				9F47AA461DAFFBAD00558743 /* RTHChatMessage.m in Sources */,
 				F0B2E2D21DB85682006D187F /* RTHPersonBaseTableViewController.m in Sources */,
+				F09DEA9B1DC211EA0033D0B8 /* RTHEditinformationController.m in Sources */,
+				F09DEA8B1DC2116E0033D0B8 /* MASViewAttribute.m in Sources */,
 				9F47AA561DAFFBAD00558743 /* RTHCircleTitleView.m in Sources */,
+				F09DEA901DC2116E0033D0B8 /* ViewController+MASAdditions.m in Sources */,
 				F0B2E2D51DB85682006D187F /* RTHReplyPageTableViewController.m in Sources */,
 				9F47AA4A1DAFFBAD00558743 /* RTHCircleCycleCell.m in Sources */,
+				F09DEA8A1DC2116E0033D0B8 /* MASLayoutConstraint.m in Sources */,
 				9F47AA761DAFFBAD00558743 /* ViewController.m in Sources */,
 				9F47AA521DAFFBAD00558743 /* RTHCirCleMoreViewController.m in Sources */,
+				F09DEA8E1DC2116E0033D0B8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				F09DEA871DC2116E0033D0B8 /* MASCompositeConstraint.m in Sources */,
 				9F47AA4C1DAFFBAD00558743 /* RTHCircleDynamicViewController.m in Sources */,
 				9F47AA591DAFFBAD00558743 /* RTHMyCircleCell.m in Sources */,
 				9F47AA5F1DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m in Sources */,
@@ -637,12 +739,14 @@
 				9F47AA681DAFFBAD00558743 /* RTHCoursesCell.m in Sources */,
 				9F47AA6E1DAFFBAD00558743 /* RTHIntroductionCell.m in Sources */,
 				9F47AA621DAFFBAD00558743 /* RTHEvaluateViewController.m in Sources */,
+				F09DEA9C1DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m in Sources */,
 				9F47AA4E1DAFFBAD00558743 /* RTHCircleMineHeaderView.m in Sources */,
 				F0B2E2D01DB85682006D187F /* RTHCardPageTableViewController.m in Sources */,
 				9F47AA751DAFFBAD00558743 /* SYSlideSelectedView.m in Sources */,
 				9F47AA501DAFFBAD00558743 /* RTHCircleMineViewController.m in Sources */,
 				9F47AA481DAFFBAD00558743 /* RTHCicleDynamicHeaderView.m in Sources */,
 				9F47AA631DAFFBAD00558743 /* RTHExpertBaseTableViewController.m in Sources */,
+				F09DEA8D1DC2116E0033D0B8 /* NSArray+MASAdditions.m in Sources */,
 				9F47AA411DAFFBAD00558743 /* RTHChatViewController.m in Sources */,
 				9F47AA471DAFFBAD00558743 /* SYExpressionsViewController.m in Sources */,
 				9F47AA721DAFFBAD00558743 /* RTHTitleCell.m in Sources */,
