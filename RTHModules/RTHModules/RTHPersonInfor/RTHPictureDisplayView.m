@@ -14,7 +14,7 @@
 
 @interface RTHPictureDisplayView ()
 @property (nonatomic, assign) RTHPictuerDisplayType type;
-@property (nonatomic, strong) NSArray *images;
+
 @end
 
 @implementation RTHPictureDisplayView
@@ -130,9 +130,9 @@
 - (void)deleteItemAtIndex:(NSInteger)index {
     NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.images];
     [tempArray removeObjectAtIndex:index];
-    [self dispalyImages:tempArray];
+    CGFloat height = [self dispalyImages:tempArray];
     if (self.cancelPhotoAction) {
-        self.cancelPhotoAction(index);
+        self.cancelPhotoAction(index,height);
     }
 }
 

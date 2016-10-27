@@ -36,6 +36,7 @@
     CGFloat height = [self.footer.displayView dispalyImages:images];
     self.footer.sy_height = height + 85;
     self.footer.tipLabel.hidden = images.count > 0;
+    self.tableView.tableFooterView = self.footer;
 }
 
 #pragma mark-UITableViewDataSource
@@ -101,6 +102,12 @@
         __weak typeof(self) weakSelf = self;
         [_footer.displayView setAddPcitureAction:^{
             [weakSelf openAlbum];
+        }];
+        
+        [_footer.displayView setCancelPhotoAction:^(NSInteger index,CGFloat height) {
+            weakSelf.footer.sy_height = height + 85;
+            weakSelf.footer.tipLabel.hidden = weakSelf.footer.displayView.images.count > 0;
+            weakSelf.tableView.tableFooterView = weakSelf.footer;
         }];
     }
     return _footer;

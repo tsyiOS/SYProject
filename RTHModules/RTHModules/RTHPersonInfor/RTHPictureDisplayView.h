@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
 /**
  *  删除照片
  */
-@property (nonatomic, copy) void (^cancelPhotoAction)(NSInteger index);
+@property (nonatomic, copy) void (^cancelPhotoAction)(NSInteger index,CGFloat height);
 /**
  *  最大张数
  */
@@ -57,6 +57,8 @@ typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
  *  @return 高度
  */
 - (CGFloat)dispalyImages:(NSArray *)images;
+
+@property (nonatomic, strong) NSArray *images;
 @end
 
 @interface RTHPictureItem : UIView
