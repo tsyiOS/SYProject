@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 //#import <SYImagePicker/SYImagePickerViewController.h>
-//#import <SYImageManager/SYImageManager.h>
-#import "SYImageManager.h"
+#import <SYImageManager/SYImageManager.h>
+//#import "SYImageManager.h"
 #import "RTHPictureDisplayView.h"
 #import <SYCategory/SYCategory.h>
 
@@ -46,7 +46,9 @@
 
 - (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
     NSLog(@"%@",info);
+    
     [self.display dispalyImages:info[SYSelectedImages]];
+    
 }
 
 - (RTHPictureDisplayView *)display {

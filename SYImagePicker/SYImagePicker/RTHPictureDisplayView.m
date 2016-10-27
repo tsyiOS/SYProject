@@ -31,7 +31,11 @@
 }
 
 - (CGFloat)dispalyImages:(NSArray *)images {
-    _images = images;
+    if (images.count > self.maxCount) {
+        _images = [images subarrayWithRange:NSMakeRange(0, self.maxCount)];
+    }else {
+        _images = images;
+    }
     for (UIView *sub in self.subviews) {
         [sub removeFromSuperview];
     }
