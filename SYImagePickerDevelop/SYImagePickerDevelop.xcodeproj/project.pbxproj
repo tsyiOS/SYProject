@@ -61,6 +61,7 @@
 		F0BCF25F1DC19D2000E6556F /* SYImagePickerDevelop */ = {
 			isa = PBXGroup;
 			children = (
+				F0BCF27A1DC1A2CE00E6556F /* SYImagePicker */,
 				F0BCF2771DC1A0D400E6556F /* RTHPictureDisplayView.h */,
 				F0BCF2781DC1A0D400E6556F /* RTHPictureDisplayView.m */,
 				F0BCF2631DC19D2000E6556F /* AppDelegate.h */,
@@ -82,6 +83,13 @@
 				F0BCF2611DC19D2000E6556F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0BCF27A1DC1A2CE00E6556F /* SYImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SYImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
