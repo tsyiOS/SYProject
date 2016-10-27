@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="RTHMyCircleCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZK-Uk-PLL">
+                        <rect key="frame" x="15" y="18" width="64" height="64"/>
+                        <color key="backgroundColor" red="0.0" green="0.71764705880000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="FtE-aw-khB"/>
+                            <constraint firstAttribute="width" constant="64" id="OIT-Tm-CWf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作交流区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeO-rf-wOY">
+                        <rect key="frame" x="89" y="18" width="80" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日3333" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZD-CR-BIE">
+                        <rect key="frame" x="89" y="41" width="63" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.87058823529411766" green="0.14117647058823529" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圈子新帖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dE2-3U-lJm">
+                        <rect key="frame" x="89" y="65" width="56" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Srk-kQ-aJP">
+                        <rect key="frame" x="0.0" y="99" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="wsO-C2-piW"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-oZ-vg1">
+                        <rect key="frame" x="240" y="25" width="65" height="27"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.14117647059999999" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="HL4-5H-uoh"/>
+                            <constraint firstAttribute="width" constant="65" id="pun-C1-Qip"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="加入">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Srk-kQ-aJP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ell-yG-JCS"/>
+                    <constraint firstItem="QZK-Uk-PLL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G79-M8-cpD"/>
+                    <constraint firstItem="dE2-3U-lJm" firstAttribute="bottom" secondItem="QZK-Uk-PLL" secondAttribute="bottom" id="HTa-aN-eWi"/>
+                    <constraint firstAttribute="trailing" secondItem="bHW-oZ-vg1" secondAttribute="trailing" constant="15" id="HZW-wP-OxZ"/>
+                    <constraint firstItem="QZK-Uk-PLL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MOo-zx-YKW"/>
+                    <constraint firstItem="VeO-rf-wOY" firstAttribute="top" secondItem="QZK-Uk-PLL" secondAttribute="top" id="N83-Sg-2b7"/>
+                    <constraint firstItem="dE2-3U-lJm" firstAttribute="leading" secondItem="VeO-rf-wOY" secondAttribute="leading" id="PBQ-gm-wyE"/>
+                    <constraint firstItem="fZD-CR-BIE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QaV-Y3-QOK"/>
+                    <constraint firstAttribute="bottom" secondItem="Srk-kQ-aJP" secondAttribute="bottom" id="nn1-ie-Dy7"/>
+                    <constraint firstItem="VeO-rf-wOY" firstAttribute="leading" secondItem="QZK-Uk-PLL" secondAttribute="trailing" constant="10" id="quF-gD-lUJ"/>
+                    <constraint firstItem="bHW-oZ-vg1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="r0T-gQ-Opt"/>
+                    <constraint firstItem="fZD-CR-BIE" firstAttribute="leading" secondItem="VeO-rf-wOY" secondAttribute="leading" id="rU6-1x-Lc7"/>
+                    <constraint firstAttribute="trailing" secondItem="Srk-kQ-aJP" secondAttribute="trailing" id="yYJ-e3-VoI"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+    </objects>
+</document>

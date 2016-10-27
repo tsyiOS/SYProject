@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DPd-69-28b">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-Uf-qwe">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门话题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtE-VF-Ob6">
+                            <rect key="frame" x="15" y="9" width="68" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNF-tB-VGu">
+                            <rect key="frame" x="0.0" y="39" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="vdq-FZ-7uq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="1hg-GR-7qC"/>
+                        <constraint firstItem="hNF-tB-VGu" firstAttribute="leading" secondItem="Nom-Uf-qwe" secondAttribute="leading" id="QEN-st-BQe"/>
+                        <constraint firstItem="XtE-VF-Ob6" firstAttribute="leading" secondItem="Nom-Uf-qwe" secondAttribute="leading" constant="15" id="XYB-nX-Fov"/>
+                        <constraint firstItem="XtE-VF-Ob6" firstAttribute="centerY" secondItem="Nom-Uf-qwe" secondAttribute="centerY" id="bR2-um-Cwa"/>
+                        <constraint firstAttribute="bottom" secondItem="hNF-tB-VGu" secondAttribute="bottom" id="g6Y-H4-CDC"/>
+                        <constraint firstAttribute="trailing" secondItem="hNF-tB-VGu" secondAttribute="trailing" id="kbb-cf-bNf"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每日话题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xf4-hi-kCk">
+                    <rect key="frame" x="15" y="58" width="67" height="20"/>
+                    <color key="backgroundColor" red="0.98431372549999996" green="0.58823529409999997" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="73c-TR-OCC"/>
+                        <constraint firstAttribute="width" constant="67" id="H0q-5B-wQO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行业聚焦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paF-fx-ZlI">
+                    <rect key="frame" x="15" y="96" width="67" height="20"/>
+                    <color key="backgroundColor" red="0.0" green="0.71764705880000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="每日话题,说点什么啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sb-C0-Sm6">
+                    <rect key="frame" x="92" y="59" width="213" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="行业聚点说什么呢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6g-Nw-hg5">
+                    <rect key="frame" x="92" y="97" width="213" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="paF-fx-ZlI" firstAttribute="leading" secondItem="Xf4-hi-kCk" secondAttribute="leading" id="0KY-oI-HJP"/>
+                <constraint firstItem="K6g-Nw-hg5" firstAttribute="leading" secondItem="paF-fx-ZlI" secondAttribute="trailing" constant="10" id="1fj-iF-0t9"/>
+                <constraint firstItem="Xf4-hi-kCk" firstAttribute="top" secondItem="Nom-Uf-qwe" secondAttribute="bottom" constant="18" id="4ZQ-Ab-opN"/>
+                <constraint firstItem="paF-fx-ZlI" firstAttribute="height" secondItem="Xf4-hi-kCk" secondAttribute="height" id="Egs-5s-qHe"/>
+                <constraint firstItem="Nom-Uf-qwe" firstAttribute="top" secondItem="DPd-69-28b" secondAttribute="top" id="P4y-5j-qnl"/>
+                <constraint firstItem="Xf4-hi-kCk" firstAttribute="leading" secondItem="DPd-69-28b" secondAttribute="leading" constant="15" id="Ylt-mH-DyW"/>
+                <constraint firstAttribute="trailing" secondItem="7Sb-C0-Sm6" secondAttribute="trailing" constant="15" id="c1Q-0j-yKo"/>
+                <constraint firstItem="7Sb-C0-Sm6" firstAttribute="leading" secondItem="Xf4-hi-kCk" secondAttribute="trailing" constant="10" id="dhF-Mv-G0Z"/>
+                <constraint firstItem="Nom-Uf-qwe" firstAttribute="leading" secondItem="DPd-69-28b" secondAttribute="leading" id="gVQ-e6-tSl"/>
+                <constraint firstItem="7Sb-C0-Sm6" firstAttribute="centerY" secondItem="Xf4-hi-kCk" secondAttribute="centerY" id="r79-1W-6bB"/>
+                <constraint firstItem="paF-fx-ZlI" firstAttribute="top" secondItem="Xf4-hi-kCk" secondAttribute="bottom" constant="18" id="rAg-3Z-DUO"/>
+                <constraint firstAttribute="trailing" secondItem="Nom-Uf-qwe" secondAttribute="trailing" id="rev-xB-5NQ"/>
+                <constraint firstItem="K6g-Nw-hg5" firstAttribute="centerY" secondItem="paF-fx-ZlI" secondAttribute="centerY" id="vP1-1L-2xW"/>
+                <constraint firstItem="paF-fx-ZlI" firstAttribute="width" secondItem="Xf4-hi-kCk" secondAttribute="width" id="vg9-S7-i2o"/>
+                <constraint firstAttribute="trailing" secondItem="K6g-Nw-hg5" secondAttribute="trailing" constant="15" id="zri-9G-4Jy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="866" y="347.5"/>
+        </view>
+    </objects>
+</document>

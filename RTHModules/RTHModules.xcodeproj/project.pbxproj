@@ -1,0 +1,823 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F47A9C01DAFFAE100558743 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9BF1DAFFAE100558743 /* main.m */; };
+		9F47A9C31DAFFAE100558743 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9C21DAFFAE100558743 /* AppDelegate.m */; };
+		9F47A9CC1DAFFAE100558743 /* RTHModules.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9CA1DAFFAE100558743 /* RTHModules.xcdatamodeld */; };
+		9F47A9D11DAFFAE100558743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9CF1DAFFAE100558743 /* LaunchScreen.storyboard */; };
+		9F47AA3F1DAFFBAD00558743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9D91DAFFBAD00558743 /* Assets.xcassets */; };
+		9F47AA401DAFFBAD00558743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9DA1DAFFBAD00558743 /* Main.storyboard */; };
+		9F47AA411DAFFBAD00558743 /* RTHChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9DE1DAFFBAD00558743 /* RTHChatViewController.m */; };
+		9F47AA421DAFFBAD00558743 /* RTHChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9DF1DAFFBAD00558743 /* RTHChatViewController.xib */; };
+		9F47AA431DAFFBAD00558743 /* Expressions.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9E01DAFFBAD00558743 /* Expressions.bundle */; };
+		9F47AA441DAFFBAD00558743 /* RTHChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9E31DAFFBAD00558743 /* RTHChatCell.m */; };
+		9F47AA451DAFFBAD00558743 /* RTHChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9E41DAFFBAD00558743 /* RTHChatCell.xib */; };
+		9F47AA461DAFFBAD00558743 /* RTHChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9E61DAFFBAD00558743 /* RTHChatMessage.m */; };
+		9F47AA471DAFFBAD00558743 /* SYExpressionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9E81DAFFBAD00558743 /* SYExpressionsViewController.m */; };
+		9F47AA481DAFFBAD00558743 /* RTHCicleDynamicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9EC1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.m */; };
+		9F47AA491DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9ED1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib */; };
+		9F47AA4A1DAFFBAD00558743 /* RTHCircleCycleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9EF1DAFFBAD00558743 /* RTHCircleCycleCell.m */; };
+		9F47AA4B1DAFFBAD00558743 /* RTHCircleCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9F01DAFFBAD00558743 /* RTHCircleCycleCell.xib */; };
+		9F47AA4C1DAFFBAD00558743 /* RTHCircleDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9F21DAFFBAD00558743 /* RTHCircleDynamicViewController.m */; };
+		9F47AA4D1DAFFBAD00558743 /* RTHCircleDynamicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9F31DAFFBAD00558743 /* RTHCircleDynamicViewController.xib */; };
+		9F47AA4E1DAFFBAD00558743 /* RTHCircleMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9F51DAFFBAD00558743 /* RTHCircleMineHeaderView.m */; };
+		9F47AA4F1DAFFBAD00558743 /* RTHCircleMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9F61DAFFBAD00558743 /* RTHCircleMineHeaderView.xib */; };
+		9F47AA501DAFFBAD00558743 /* RTHCircleMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9F81DAFFBAD00558743 /* RTHCircleMineViewController.m */; };
+		9F47AA511DAFFBAD00558743 /* RTHCircleMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9F91DAFFBAD00558743 /* RTHCircleMineViewController.xib */; };
+		9F47AA521DAFFBAD00558743 /* RTHCirCleMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9FB1DAFFBAD00558743 /* RTHCirCleMoreViewController.m */; };
+		9F47AA531DAFFBAD00558743 /* RTHCirCleMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9FC1DAFFBAD00558743 /* RTHCirCleMoreViewController.xib */; };
+		9F47AA541DAFFBAD00558743 /* RTHCircleStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47A9FE1DAFFBAD00558743 /* RTHCircleStatusCell.m */; };
+		9F47AA551DAFFBAD00558743 /* RTHCircleStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47A9FF1DAFFBAD00558743 /* RTHCircleStatusCell.xib */; };
+		9F47AA561DAFFBAD00558743 /* RTHCircleTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA011DAFFBAD00558743 /* RTHCircleTitleView.m */; };
+		9F47AA571DAFFBAD00558743 /* RTHCircleTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA021DAFFBAD00558743 /* RTHCircleTitleView.xib */; };
+		9F47AA581DAFFBAD00558743 /* RTHCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA041DAFFBAD00558743 /* RTHCircleViewController.m */; };
+		9F47AA591DAFFBAD00558743 /* RTHMyCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA061DAFFBAD00558743 /* RTHMyCircleCell.m */; };
+		9F47AA5A1DAFFBAD00558743 /* RTHMyCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA071DAFFBAD00558743 /* RTHMyCircleCell.xib */; };
+		9F47AA5B1DAFFBAD00558743 /* RTHCoursesCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA0B1DAFFBAD00558743 /* RTHCoursesCheckViewController.m */; };
+		9F47AA5C1DAFFBAD00558743 /* RTHCoursesCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA0C1DAFFBAD00558743 /* RTHCoursesCheckViewController.xib */; };
+		9F47AA5D1DAFFBAD00558743 /* RTHCoursesContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA0E1DAFFBAD00558743 /* RTHCoursesContentsViewController.m */; };
+		9F47AA5E1DAFFBAD00558743 /* RTHCoursesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA101DAFFBAD00558743 /* RTHCoursesDetailViewController.m */; };
+		9F47AA5F1DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA121DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m */; };
+		9F47AA601DAFFBAD00558743 /* RTHCoursesBottomBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA171DAFFBAD00558743 /* RTHCoursesBottomBarView.m */; };
+		9F47AA611DAFFBAD00558743 /* RTHCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA191DAFFBAD00558743 /* RTHCoursesViewController.m */; };
+		9F47AA621DAFFBAD00558743 /* RTHEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA1B1DAFFBAD00558743 /* RTHEvaluateViewController.m */; };
+		9F47AA631DAFFBAD00558743 /* RTHExpertBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA1D1DAFFBAD00558743 /* RTHExpertBaseTableViewController.m */; };
+		9F47AA641DAFFBAD00558743 /* RTHExpertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA1F1DAFFBAD00558743 /* RTHExpertViewController.m */; };
+		9F47AA651DAFFBAD00558743 /* RTHExpertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA201DAFFBAD00558743 /* RTHExpertViewController.xib */; };
+		9F47AA661DAFFBAD00558743 /* RTHIntroductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA221DAFFBAD00558743 /* RTHIntroductViewController.m */; };
+		9F47AA671DAFFBAD00558743 /* RTHQuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA241DAFFBAD00558743 /* RTHQuestionAnswerViewController.m */; };
+		9F47AA681DAFFBAD00558743 /* RTHCoursesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA271DAFFBAD00558743 /* RTHCoursesCell.m */; };
+		9F47AA691DAFFBAD00558743 /* RTHCoursesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA281DAFFBAD00558743 /* RTHCoursesCell.xib */; };
+		9F47AA6A1DAFFBAD00558743 /* RTHExpertTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA2A1DAFFBAD00558743 /* RTHExpertTagsView.m */; };
+		9F47AA6B1DAFFBAD00558743 /* RTHFriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA2C1DAFFBAD00558743 /* RTHFriendCircleCell.m */; };
+		9F47AA6C1DAFFBAD00558743 /* RTHFriendCircleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA2D1DAFFBAD00558743 /* RTHFriendCircleCell.xib */; };
+		9F47AA6D1DAFFBAD00558743 /* RTHImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA2F1DAFFBAD00558743 /* RTHImageContentView.m */; };
+		9F47AA6E1DAFFBAD00558743 /* RTHIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA311DAFFBAD00558743 /* RTHIntroductionCell.m */; };
+		9F47AA6F1DAFFBAD00558743 /* RTHIntroductionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA321DAFFBAD00558743 /* RTHIntroductionCell.xib */; };
+		9F47AA701DAFFBAD00558743 /* RTHStudentEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA341DAFFBAD00558743 /* RTHStudentEvaluateCell.m */; };
+		9F47AA711DAFFBAD00558743 /* RTHStudentEvaluateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA351DAFFBAD00558743 /* RTHStudentEvaluateCell.xib */; };
+		9F47AA721DAFFBAD00558743 /* RTHTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA371DAFFBAD00558743 /* RTHTitleCell.m */; };
+		9F47AA731DAFFBAD00558743 /* RTHTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA381DAFFBAD00558743 /* RTHTitleCell.xib */; };
+		9F47AA751DAFFBAD00558743 /* SYSlideSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA3C1DAFFBAD00558743 /* SYSlideSelectedView.m */; };
+		9F47AA761DAFFBAD00558743 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA3E1DAFFBAD00558743 /* ViewController.m */; };
+		F047C3FE1DB86BD900672DA8 /* RTHPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047C3FC1DB86BD900672DA8 /* RTHPersonViewController.xib */; };
+		F047C4011DB86C3700672DA8 /* RTHPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */; };
+		F04BF6C01DB8A115009F8BED /* SYCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04BF6BF1DB8A115009F8BED /* SYCategory.framework */; };
+		F09D6ECA1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D6EC81DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m */; };
+		F09D6ECB1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D6EC91DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib */; };
+		F09D6ECD1DB0B4AD00C4F4AE /* SYRefreshSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09D6ECC1DB0B4AD00C4F4AE /* SYRefreshSource.bundle */; };
+		F09D6ED11DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D6ECF1DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.m */; };
+		F09D6ED21DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D6ED01DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib */; };
+		F09D6ED61DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D6ED41DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m */; };
+		F09D6ED71DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D6ED51DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib */; };
+		F0B2E2D01DB85682006D187F /* RTHCardPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */; };
+		F0B2E2D11DB85682006D187F /* RTHdynamicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C11DB85682006D187F /* RTHdynamicsTableViewController.m */; };
+		F0B2E2D21DB85682006D187F /* RTHPersonBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C31DB85682006D187F /* RTHPersonBaseTableViewController.m */; };
+		F0B2E2D51DB85682006D187F /* RTHReplyPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C81DB85682006D187F /* RTHReplyPageTableViewController.m */; };
+		F0B2E2D61DB85682006D187F /* RTHdynamicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2CB1DB85682006D187F /* RTHdynamicsCell.m */; };
+		F0B2E2D71DB85682006D187F /* RTHdynamicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B2E2CC1DB85682006D187F /* RTHdynamicsCell.xib */; };
+		F0B2E2D81DB85682006D187F /* RTHPersonCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2CE1DB85682006D187F /* RTHPersonCardCell.m */; };
+		F0B2E2D91DB85682006D187F /* RTHPersonCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B2E2CF1DB85682006D187F /* RTHPersonCardCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9F47A9BB1DAFFAE100558743 /* RTHModules.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTHModules.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F47A9BF1DAFFAE100558743 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F47A9C11DAFFAE100558743 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F47A9C21DAFFAE100558743 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F47A9CB1DAFFAE100558743 /* RTHModules.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RTHModules.xcdatamodel; sourceTree = "<group>"; };
+		9F47A9D01DAFFAE100558743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F47A9D21DAFFAE100558743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F47A9D81DAFFAF300558743 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9F47A9D91DAFFBAD00558743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F47A9DA1DAFFBAD00558743 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9F47A9DD1DAFFBAD00558743 /* RTHChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHChatViewController.h; sourceTree = "<group>"; };
+		9F47A9DE1DAFFBAD00558743 /* RTHChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHChatViewController.m; sourceTree = "<group>"; };
+		9F47A9DF1DAFFBAD00558743 /* RTHChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHChatViewController.xib; sourceTree = "<group>"; };
+		9F47A9E01DAFFBAD00558743 /* Expressions.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Expressions.bundle; sourceTree = "<group>"; };
+		9F47A9E21DAFFBAD00558743 /* RTHChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHChatCell.h; sourceTree = "<group>"; };
+		9F47A9E31DAFFBAD00558743 /* RTHChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHChatCell.m; sourceTree = "<group>"; };
+		9F47A9E41DAFFBAD00558743 /* RTHChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHChatCell.xib; sourceTree = "<group>"; };
+		9F47A9E51DAFFBAD00558743 /* RTHChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHChatMessage.h; sourceTree = "<group>"; };
+		9F47A9E61DAFFBAD00558743 /* RTHChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHChatMessage.m; sourceTree = "<group>"; };
+		9F47A9E71DAFFBAD00558743 /* SYExpressionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYExpressionsViewController.h; sourceTree = "<group>"; };
+		9F47A9E81DAFFBAD00558743 /* SYExpressionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYExpressionsViewController.m; sourceTree = "<group>"; };
+		9F47A9EB1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCicleDynamicHeaderView.h; sourceTree = "<group>"; };
+		9F47A9EC1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCicleDynamicHeaderView.m; sourceTree = "<group>"; };
+		9F47A9ED1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCicleDynamicHeaderView.xib; sourceTree = "<group>"; };
+		9F47A9EE1DAFFBAD00558743 /* RTHCircleCycleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleCycleCell.h; sourceTree = "<group>"; };
+		9F47A9EF1DAFFBAD00558743 /* RTHCircleCycleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleCycleCell.m; sourceTree = "<group>"; };
+		9F47A9F01DAFFBAD00558743 /* RTHCircleCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCircleCycleCell.xib; sourceTree = "<group>"; };
+		9F47A9F11DAFFBAD00558743 /* RTHCircleDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleDynamicViewController.h; sourceTree = "<group>"; };
+		9F47A9F21DAFFBAD00558743 /* RTHCircleDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleDynamicViewController.m; sourceTree = "<group>"; };
+		9F47A9F31DAFFBAD00558743 /* RTHCircleDynamicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCircleDynamicViewController.xib; sourceTree = "<group>"; };
+		9F47A9F41DAFFBAD00558743 /* RTHCircleMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleMineHeaderView.h; sourceTree = "<group>"; };
+		9F47A9F51DAFFBAD00558743 /* RTHCircleMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleMineHeaderView.m; sourceTree = "<group>"; };
+		9F47A9F61DAFFBAD00558743 /* RTHCircleMineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCircleMineHeaderView.xib; sourceTree = "<group>"; };
+		9F47A9F71DAFFBAD00558743 /* RTHCircleMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleMineViewController.h; sourceTree = "<group>"; };
+		9F47A9F81DAFFBAD00558743 /* RTHCircleMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleMineViewController.m; sourceTree = "<group>"; };
+		9F47A9F91DAFFBAD00558743 /* RTHCircleMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCircleMineViewController.xib; sourceTree = "<group>"; };
+		9F47A9FA1DAFFBAD00558743 /* RTHCirCleMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCirCleMoreViewController.h; sourceTree = "<group>"; };
+		9F47A9FB1DAFFBAD00558743 /* RTHCirCleMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCirCleMoreViewController.m; sourceTree = "<group>"; };
+		9F47A9FC1DAFFBAD00558743 /* RTHCirCleMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCirCleMoreViewController.xib; sourceTree = "<group>"; };
+		9F47A9FD1DAFFBAD00558743 /* RTHCircleStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleStatusCell.h; sourceTree = "<group>"; };
+		9F47A9FE1DAFFBAD00558743 /* RTHCircleStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleStatusCell.m; sourceTree = "<group>"; };
+		9F47A9FF1DAFFBAD00558743 /* RTHCircleStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCircleStatusCell.xib; sourceTree = "<group>"; };
+		9F47AA001DAFFBAD00558743 /* RTHCircleTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleTitleView.h; sourceTree = "<group>"; };
+		9F47AA011DAFFBAD00558743 /* RTHCircleTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleTitleView.m; sourceTree = "<group>"; };
+		9F47AA021DAFFBAD00558743 /* RTHCircleTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCircleTitleView.xib; sourceTree = "<group>"; };
+		9F47AA031DAFFBAD00558743 /* RTHCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCircleViewController.h; sourceTree = "<group>"; };
+		9F47AA041DAFFBAD00558743 /* RTHCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCircleViewController.m; sourceTree = "<group>"; };
+		9F47AA051DAFFBAD00558743 /* RTHMyCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHMyCircleCell.h; sourceTree = "<group>"; };
+		9F47AA061DAFFBAD00558743 /* RTHMyCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHMyCircleCell.m; sourceTree = "<group>"; };
+		9F47AA071DAFFBAD00558743 /* RTHMyCircleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHMyCircleCell.xib; sourceTree = "<group>"; };
+		9F47AA0A1DAFFBAD00558743 /* RTHCoursesCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesCheckViewController.h; sourceTree = "<group>"; };
+		9F47AA0B1DAFFBAD00558743 /* RTHCoursesCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesCheckViewController.m; sourceTree = "<group>"; };
+		9F47AA0C1DAFFBAD00558743 /* RTHCoursesCheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCoursesCheckViewController.xib; sourceTree = "<group>"; };
+		9F47AA0D1DAFFBAD00558743 /* RTHCoursesContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesContentsViewController.h; sourceTree = "<group>"; };
+		9F47AA0E1DAFFBAD00558743 /* RTHCoursesContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesContentsViewController.m; sourceTree = "<group>"; };
+		9F47AA0F1DAFFBAD00558743 /* RTHCoursesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesDetailViewController.h; sourceTree = "<group>"; };
+		9F47AA101DAFFBAD00558743 /* RTHCoursesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesDetailViewController.m; sourceTree = "<group>"; };
+		9F47AA111DAFFBAD00558743 /* RTHCoursesEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesEvaluateViewController.h; sourceTree = "<group>"; };
+		9F47AA121DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesEvaluateViewController.m; sourceTree = "<group>"; };
+		9F47AA161DAFFBAD00558743 /* RTHCoursesBottomBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesBottomBarView.h; sourceTree = "<group>"; };
+		9F47AA171DAFFBAD00558743 /* RTHCoursesBottomBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesBottomBarView.m; sourceTree = "<group>"; };
+		9F47AA181DAFFBAD00558743 /* RTHCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesViewController.h; sourceTree = "<group>"; };
+		9F47AA191DAFFBAD00558743 /* RTHCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesViewController.m; sourceTree = "<group>"; };
+		9F47AA1A1DAFFBAD00558743 /* RTHEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEvaluateViewController.h; sourceTree = "<group>"; };
+		9F47AA1B1DAFFBAD00558743 /* RTHEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEvaluateViewController.m; sourceTree = "<group>"; };
+		9F47AA1C1DAFFBAD00558743 /* RTHExpertBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHExpertBaseTableViewController.h; sourceTree = "<group>"; };
+		9F47AA1D1DAFFBAD00558743 /* RTHExpertBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHExpertBaseTableViewController.m; sourceTree = "<group>"; };
+		9F47AA1E1DAFFBAD00558743 /* RTHExpertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHExpertViewController.h; sourceTree = "<group>"; };
+		9F47AA1F1DAFFBAD00558743 /* RTHExpertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHExpertViewController.m; sourceTree = "<group>"; };
+		9F47AA201DAFFBAD00558743 /* RTHExpertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHExpertViewController.xib; sourceTree = "<group>"; };
+		9F47AA211DAFFBAD00558743 /* RTHIntroductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHIntroductViewController.h; sourceTree = "<group>"; };
+		9F47AA221DAFFBAD00558743 /* RTHIntroductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHIntroductViewController.m; sourceTree = "<group>"; };
+		9F47AA231DAFFBAD00558743 /* RTHQuestionAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHQuestionAnswerViewController.h; sourceTree = "<group>"; };
+		9F47AA241DAFFBAD00558743 /* RTHQuestionAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHQuestionAnswerViewController.m; sourceTree = "<group>"; };
+		9F47AA261DAFFBAD00558743 /* RTHCoursesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesCell.h; sourceTree = "<group>"; };
+		9F47AA271DAFFBAD00558743 /* RTHCoursesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesCell.m; sourceTree = "<group>"; };
+		9F47AA281DAFFBAD00558743 /* RTHCoursesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCoursesCell.xib; sourceTree = "<group>"; };
+		9F47AA291DAFFBAD00558743 /* RTHExpertTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHExpertTagsView.h; sourceTree = "<group>"; };
+		9F47AA2A1DAFFBAD00558743 /* RTHExpertTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHExpertTagsView.m; sourceTree = "<group>"; };
+		9F47AA2B1DAFFBAD00558743 /* RTHFriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHFriendCircleCell.h; sourceTree = "<group>"; };
+		9F47AA2C1DAFFBAD00558743 /* RTHFriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHFriendCircleCell.m; sourceTree = "<group>"; };
+		9F47AA2D1DAFFBAD00558743 /* RTHFriendCircleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHFriendCircleCell.xib; sourceTree = "<group>"; };
+		9F47AA2E1DAFFBAD00558743 /* RTHImageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHImageContentView.h; sourceTree = "<group>"; };
+		9F47AA2F1DAFFBAD00558743 /* RTHImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHImageContentView.m; sourceTree = "<group>"; };
+		9F47AA301DAFFBAD00558743 /* RTHIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHIntroductionCell.h; sourceTree = "<group>"; };
+		9F47AA311DAFFBAD00558743 /* RTHIntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHIntroductionCell.m; sourceTree = "<group>"; };
+		9F47AA321DAFFBAD00558743 /* RTHIntroductionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHIntroductionCell.xib; sourceTree = "<group>"; };
+		9F47AA331DAFFBAD00558743 /* RTHStudentEvaluateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHStudentEvaluateCell.h; sourceTree = "<group>"; };
+		9F47AA341DAFFBAD00558743 /* RTHStudentEvaluateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHStudentEvaluateCell.m; sourceTree = "<group>"; };
+		9F47AA351DAFFBAD00558743 /* RTHStudentEvaluateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHStudentEvaluateCell.xib; sourceTree = "<group>"; };
+		9F47AA361DAFFBAD00558743 /* RTHTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHTitleCell.h; sourceTree = "<group>"; };
+		9F47AA371DAFFBAD00558743 /* RTHTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHTitleCell.m; sourceTree = "<group>"; };
+		9F47AA381DAFFBAD00558743 /* RTHTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHTitleCell.xib; sourceTree = "<group>"; };
+		9F47AA3B1DAFFBAD00558743 /* SYSlideSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSlideSelectedView.h; sourceTree = "<group>"; };
+		9F47AA3C1DAFFBAD00558743 /* SYSlideSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSlideSelectedView.m; sourceTree = "<group>"; };
+		9F47AA3D1DAFFBAD00558743 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9F47AA3E1DAFFBAD00558743 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F047C3FC1DB86BD900672DA8 /* RTHPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHPersonViewController.xib; sourceTree = "<group>"; };
+		F047C3FF1DB86C3700672DA8 /* RTHPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPersonViewController.h; sourceTree = "<group>"; };
+		F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPersonViewController.m; sourceTree = "<group>"; };
+		F04BF6BF1DB8A115009F8BED /* SYCategory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SYCategory.framework; sourceTree = "<group>"; };
+		F09D6EC71DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesDownLoadViewController.h; sourceTree = "<group>"; };
+		F09D6EC81DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesDownLoadViewController.m; sourceTree = "<group>"; };
+		F09D6EC91DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCoursesDownLoadViewController.xib; sourceTree = "<group>"; };
+		F09D6ECC1DB0B4AD00C4F4AE /* SYRefreshSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYRefreshSource.bundle; sourceTree = "<group>"; };
+		F09D6ECE1DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTHCourseDownLoadTitleCell.h; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadTitleCell.h; sourceTree = SOURCE_ROOT; };
+		F09D6ECF1DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTHCourseDownLoadTitleCell.m; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadTitleCell.m; sourceTree = SOURCE_ROOT; };
+		F09D6ED01DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RTHCourseDownLoadTitleCell.xib; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadTitleCell.xib; sourceTree = SOURCE_ROOT; };
+		F09D6ED31DB0B66C00C4F4AE /* RTHCourseDownLoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTHCourseDownLoadCell.h; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadCell.h; sourceTree = SOURCE_ROOT; };
+		F09D6ED41DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTHCourseDownLoadCell.m; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadCell.m; sourceTree = SOURCE_ROOT; };
+		F09D6ED51DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RTHCourseDownLoadCell.xib; path = RTHModules/RTHCourses/Controllers/RTHCourseDownLoadCell.xib; sourceTree = SOURCE_ROOT; };
+		F0B2E2BE1DB85682006D187F /* RTHCardPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCardPageTableViewController.h; sourceTree = "<group>"; };
+		F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCardPageTableViewController.m; sourceTree = "<group>"; };
+		F0B2E2C01DB85682006D187F /* RTHdynamicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHdynamicsTableViewController.h; sourceTree = "<group>"; };
+		F0B2E2C11DB85682006D187F /* RTHdynamicsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHdynamicsTableViewController.m; sourceTree = "<group>"; };
+		F0B2E2C21DB85682006D187F /* RTHPersonBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPersonBaseTableViewController.h; sourceTree = "<group>"; };
+		F0B2E2C31DB85682006D187F /* RTHPersonBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPersonBaseTableViewController.m; sourceTree = "<group>"; };
+		F0B2E2C71DB85682006D187F /* RTHReplyPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHReplyPageTableViewController.h; sourceTree = "<group>"; };
+		F0B2E2C81DB85682006D187F /* RTHReplyPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHReplyPageTableViewController.m; sourceTree = "<group>"; };
+		F0B2E2CA1DB85682006D187F /* RTHdynamicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHdynamicsCell.h; sourceTree = "<group>"; };
+		F0B2E2CB1DB85682006D187F /* RTHdynamicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHdynamicsCell.m; sourceTree = "<group>"; };
+		F0B2E2CC1DB85682006D187F /* RTHdynamicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHdynamicsCell.xib; sourceTree = "<group>"; };
+		F0B2E2CD1DB85682006D187F /* RTHPersonCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPersonCardCell.h; sourceTree = "<group>"; };
+		F0B2E2CE1DB85682006D187F /* RTHPersonCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPersonCardCell.m; sourceTree = "<group>"; };
+		F0B2E2CF1DB85682006D187F /* RTHPersonCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHPersonCardCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F47A9B81DAFFAE100558743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04BF6C01DB8A115009F8BED /* SYCategory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F47A9B21DAFFAE100558743 = {
+			isa = PBXGroup;
+			children = (
+				9F47A9BD1DAFFAE100558743 /* RTHModules */,
+				9F47A9BC1DAFFAE100558743 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F47A9BC1DAFFAE100558743 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9BB1DAFFAE100558743 /* RTHModules.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F47A9BD1DAFFAE100558743 /* RTHModules */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2E2BC1DB85682006D187F /* RTHPerson */,
+				9F47A9DB1DAFFBAD00558743 /* RTHChat */,
+				9F47A9E91DAFFBAD00558743 /* RTHCircle */,
+				9F47AA081DAFFBAD00558743 /* RTHCourses */,
+				9F47AA141DAFFBAD00558743 /* RTHExpect */,
+				9F47AA391DAFFBAD00558743 /* SYSlideSelect */,
+				9F47A9C11DAFFAE100558743 /* AppDelegate.h */,
+				9F47A9C21DAFFAE100558743 /* AppDelegate.m */,
+				9F47A9D91DAFFBAD00558743 /* Assets.xcassets */,
+				9F47A9DA1DAFFBAD00558743 /* Main.storyboard */,
+				9F47AA3D1DAFFBAD00558743 /* ViewController.h */,
+				9F47AA3E1DAFFBAD00558743 /* ViewController.m */,
+				9F47A9CF1DAFFAE100558743 /* LaunchScreen.storyboard */,
+				9F47A9D21DAFFAE100558743 /* Info.plist */,
+				9F47A9CA1DAFFAE100558743 /* RTHModules.xcdatamodeld */,
+				9F47A9BE1DAFFAE100558743 /* Supporting Files */,
+			);
+			path = RTHModules;
+			sourceTree = "<group>";
+		};
+		9F47A9BE1DAFFAE100558743 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9BF1DAFFAE100558743 /* main.m */,
+				9F47A9D81DAFFAF300558743 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F47A9DB1DAFFBAD00558743 /* RTHChat */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9DC1DAFFBAD00558743 /* Controllers */,
+				9F47A9E01DAFFBAD00558743 /* Expressions.bundle */,
+				9F47A9E11DAFFBAD00558743 /* Views */,
+			);
+			path = RTHChat;
+			sourceTree = "<group>";
+		};
+		9F47A9DC1DAFFBAD00558743 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9DD1DAFFBAD00558743 /* RTHChatViewController.h */,
+				9F47A9DE1DAFFBAD00558743 /* RTHChatViewController.m */,
+				9F47A9DF1DAFFBAD00558743 /* RTHChatViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F47A9E11DAFFBAD00558743 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9E21DAFFBAD00558743 /* RTHChatCell.h */,
+				9F47A9E31DAFFBAD00558743 /* RTHChatCell.m */,
+				9F47A9E41DAFFBAD00558743 /* RTHChatCell.xib */,
+				9F47A9E51DAFFBAD00558743 /* RTHChatMessage.h */,
+				9F47A9E61DAFFBAD00558743 /* RTHChatMessage.m */,
+				9F47A9E71DAFFBAD00558743 /* SYExpressionsViewController.h */,
+				9F47A9E81DAFFBAD00558743 /* SYExpressionsViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F47A9E91DAFFBAD00558743 /* RTHCircle */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9EA1DAFFBAD00558743 /* Controllers */,
+			);
+			path = RTHCircle;
+			sourceTree = "<group>";
+		};
+		9F47A9EA1DAFFBAD00558743 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F47A9EB1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.h */,
+				9F47A9EC1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.m */,
+				9F47A9ED1DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib */,
+				9F47A9EE1DAFFBAD00558743 /* RTHCircleCycleCell.h */,
+				9F47A9EF1DAFFBAD00558743 /* RTHCircleCycleCell.m */,
+				9F47A9F01DAFFBAD00558743 /* RTHCircleCycleCell.xib */,
+				9F47A9F11DAFFBAD00558743 /* RTHCircleDynamicViewController.h */,
+				9F47A9F21DAFFBAD00558743 /* RTHCircleDynamicViewController.m */,
+				9F47A9F31DAFFBAD00558743 /* RTHCircleDynamicViewController.xib */,
+				9F47A9F41DAFFBAD00558743 /* RTHCircleMineHeaderView.h */,
+				9F47A9F51DAFFBAD00558743 /* RTHCircleMineHeaderView.m */,
+				9F47A9F61DAFFBAD00558743 /* RTHCircleMineHeaderView.xib */,
+				9F47A9F71DAFFBAD00558743 /* RTHCircleMineViewController.h */,
+				9F47A9F81DAFFBAD00558743 /* RTHCircleMineViewController.m */,
+				9F47A9F91DAFFBAD00558743 /* RTHCircleMineViewController.xib */,
+				9F47A9FA1DAFFBAD00558743 /* RTHCirCleMoreViewController.h */,
+				9F47A9FB1DAFFBAD00558743 /* RTHCirCleMoreViewController.m */,
+				9F47A9FC1DAFFBAD00558743 /* RTHCirCleMoreViewController.xib */,
+				9F47A9FD1DAFFBAD00558743 /* RTHCircleStatusCell.h */,
+				9F47A9FE1DAFFBAD00558743 /* RTHCircleStatusCell.m */,
+				9F47A9FF1DAFFBAD00558743 /* RTHCircleStatusCell.xib */,
+				9F47AA001DAFFBAD00558743 /* RTHCircleTitleView.h */,
+				9F47AA011DAFFBAD00558743 /* RTHCircleTitleView.m */,
+				9F47AA021DAFFBAD00558743 /* RTHCircleTitleView.xib */,
+				9F47AA031DAFFBAD00558743 /* RTHCircleViewController.h */,
+				9F47AA041DAFFBAD00558743 /* RTHCircleViewController.m */,
+				9F47AA051DAFFBAD00558743 /* RTHMyCircleCell.h */,
+				9F47AA061DAFFBAD00558743 /* RTHMyCircleCell.m */,
+				9F47AA071DAFFBAD00558743 /* RTHMyCircleCell.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F47AA081DAFFBAD00558743 /* RTHCourses */ = {
+			isa = PBXGroup;
+			children = (
+				9F47AA091DAFFBAD00558743 /* Controllers */,
+				9F47AA131DAFFBAD00558743 /* Views */,
+			);
+			path = RTHCourses;
+			sourceTree = "<group>";
+		};
+		9F47AA091DAFFBAD00558743 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F47AA0A1DAFFBAD00558743 /* RTHCoursesCheckViewController.h */,
+				9F47AA0B1DAFFBAD00558743 /* RTHCoursesCheckViewController.m */,
+				9F47AA0C1DAFFBAD00558743 /* RTHCoursesCheckViewController.xib */,
+				9F47AA0D1DAFFBAD00558743 /* RTHCoursesContentsViewController.h */,
+				9F47AA0E1DAFFBAD00558743 /* RTHCoursesContentsViewController.m */,
+				9F47AA0F1DAFFBAD00558743 /* RTHCoursesDetailViewController.h */,
+				9F47AA101DAFFBAD00558743 /* RTHCoursesDetailViewController.m */,
+				9F47AA111DAFFBAD00558743 /* RTHCoursesEvaluateViewController.h */,
+				9F47AA121DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m */,
+				F09D6EC71DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.h */,
+				F09D6EC81DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m */,
+				F09D6EC91DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F47AA131DAFFBAD00558743 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F09D6ECE1DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.h */,
+				F09D6ECF1DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.m */,
+				F09D6ED01DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib */,
+				F09D6ED31DB0B66C00C4F4AE /* RTHCourseDownLoadCell.h */,
+				F09D6ED41DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m */,
+				F09D6ED51DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F47AA141DAFFBAD00558743 /* RTHExpect */ = {
+			isa = PBXGroup;
+			children = (
+				9F47AA151DAFFBAD00558743 /* Controllers */,
+				9F47AA251DAFFBAD00558743 /* Views */,
+			);
+			path = RTHExpect;
+			sourceTree = "<group>";
+		};
+		9F47AA151DAFFBAD00558743 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F47AA161DAFFBAD00558743 /* RTHCoursesBottomBarView.h */,
+				9F47AA171DAFFBAD00558743 /* RTHCoursesBottomBarView.m */,
+				9F47AA181DAFFBAD00558743 /* RTHCoursesViewController.h */,
+				9F47AA191DAFFBAD00558743 /* RTHCoursesViewController.m */,
+				9F47AA1A1DAFFBAD00558743 /* RTHEvaluateViewController.h */,
+				9F47AA1B1DAFFBAD00558743 /* RTHEvaluateViewController.m */,
+				9F47AA1C1DAFFBAD00558743 /* RTHExpertBaseTableViewController.h */,
+				9F47AA1D1DAFFBAD00558743 /* RTHExpertBaseTableViewController.m */,
+				9F47AA1E1DAFFBAD00558743 /* RTHExpertViewController.h */,
+				9F47AA1F1DAFFBAD00558743 /* RTHExpertViewController.m */,
+				9F47AA201DAFFBAD00558743 /* RTHExpertViewController.xib */,
+				9F47AA211DAFFBAD00558743 /* RTHIntroductViewController.h */,
+				9F47AA221DAFFBAD00558743 /* RTHIntroductViewController.m */,
+				9F47AA231DAFFBAD00558743 /* RTHQuestionAnswerViewController.h */,
+				9F47AA241DAFFBAD00558743 /* RTHQuestionAnswerViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F47AA251DAFFBAD00558743 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F47AA261DAFFBAD00558743 /* RTHCoursesCell.h */,
+				9F47AA271DAFFBAD00558743 /* RTHCoursesCell.m */,
+				9F47AA281DAFFBAD00558743 /* RTHCoursesCell.xib */,
+				9F47AA291DAFFBAD00558743 /* RTHExpertTagsView.h */,
+				9F47AA2A1DAFFBAD00558743 /* RTHExpertTagsView.m */,
+				9F47AA2B1DAFFBAD00558743 /* RTHFriendCircleCell.h */,
+				9F47AA2C1DAFFBAD00558743 /* RTHFriendCircleCell.m */,
+				9F47AA2D1DAFFBAD00558743 /* RTHFriendCircleCell.xib */,
+				9F47AA2E1DAFFBAD00558743 /* RTHImageContentView.h */,
+				9F47AA2F1DAFFBAD00558743 /* RTHImageContentView.m */,
+				9F47AA301DAFFBAD00558743 /* RTHIntroductionCell.h */,
+				9F47AA311DAFFBAD00558743 /* RTHIntroductionCell.m */,
+				9F47AA321DAFFBAD00558743 /* RTHIntroductionCell.xib */,
+				9F47AA331DAFFBAD00558743 /* RTHStudentEvaluateCell.h */,
+				9F47AA341DAFFBAD00558743 /* RTHStudentEvaluateCell.m */,
+				9F47AA351DAFFBAD00558743 /* RTHStudentEvaluateCell.xib */,
+				9F47AA361DAFFBAD00558743 /* RTHTitleCell.h */,
+				9F47AA371DAFFBAD00558743 /* RTHTitleCell.m */,
+				9F47AA381DAFFBAD00558743 /* RTHTitleCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F47AA391DAFFBAD00558743 /* SYSlideSelect */ = {
+			isa = PBXGroup;
+			children = (
+				F04BF6BF1DB8A115009F8BED /* SYCategory.framework */,
+				F09D6ECC1DB0B4AD00C4F4AE /* SYRefreshSource.bundle */,
+				9F47AA3B1DAFFBAD00558743 /* SYSlideSelectedView.h */,
+				9F47AA3C1DAFFBAD00558743 /* SYSlideSelectedView.m */,
+			);
+			path = SYSlideSelect;
+			sourceTree = "<group>";
+		};
+		F0B2E2BC1DB85682006D187F /* RTHPerson */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2E2BD1DB85682006D187F /* Controllers */,
+				F0B2E2C91DB85682006D187F /* Views */,
+			);
+			path = RTHPerson;
+			sourceTree = "<group>";
+		};
+		F0B2E2BD1DB85682006D187F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2E2BE1DB85682006D187F /* RTHCardPageTableViewController.h */,
+				F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */,
+				F0B2E2C01DB85682006D187F /* RTHdynamicsTableViewController.h */,
+				F0B2E2C11DB85682006D187F /* RTHdynamicsTableViewController.m */,
+				F0B2E2C21DB85682006D187F /* RTHPersonBaseTableViewController.h */,
+				F0B2E2C31DB85682006D187F /* RTHPersonBaseTableViewController.m */,
+				F0B2E2C71DB85682006D187F /* RTHReplyPageTableViewController.h */,
+				F0B2E2C81DB85682006D187F /* RTHReplyPageTableViewController.m */,
+				F047C3FF1DB86C3700672DA8 /* RTHPersonViewController.h */,
+				F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */,
+				F047C3FC1DB86BD900672DA8 /* RTHPersonViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0B2E2C91DB85682006D187F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2E2CA1DB85682006D187F /* RTHdynamicsCell.h */,
+				F0B2E2CB1DB85682006D187F /* RTHdynamicsCell.m */,
+				F0B2E2CC1DB85682006D187F /* RTHdynamicsCell.xib */,
+				F0B2E2CD1DB85682006D187F /* RTHPersonCardCell.h */,
+				F0B2E2CE1DB85682006D187F /* RTHPersonCardCell.m */,
+				F0B2E2CF1DB85682006D187F /* RTHPersonCardCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F47A9BA1DAFFAE100558743 /* RTHModules */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F47A9D51DAFFAE100558743 /* Build configuration list for PBXNativeTarget "RTHModules" */;
+			buildPhases = (
+				9F47A9B71DAFFAE100558743 /* Sources */,
+				9F47A9B81DAFFAE100558743 /* Frameworks */,
+				9F47A9B91DAFFAE100558743 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RTHModules;
+			productName = RTHModules;
+			productReference = 9F47A9BB1DAFFAE100558743 /* RTHModules.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F47A9B31DAFFAE100558743 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RTH;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "唐绍禹";
+				TargetAttributes = {
+					9F47A9BA1DAFFAE100558743 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5Z3XUN2VRQ;
+					};
+				};
+			};
+			buildConfigurationList = 9F47A9B61DAFFAE100558743 /* Build configuration list for PBXProject "RTHModules" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F47A9B21DAFFAE100558743;
+			productRefGroup = 9F47A9BC1DAFFAE100558743 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F47A9BA1DAFFAE100558743 /* RTHModules */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F47A9B91DAFFAE100558743 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F47AA571DAFFBAD00558743 /* RTHCircleTitleView.xib in Resources */,
+				9F47AA691DAFFBAD00558743 /* RTHCoursesCell.xib in Resources */,
+				F09D6ECD1DB0B4AD00C4F4AE /* SYRefreshSource.bundle in Resources */,
+				9F47AA651DAFFBAD00558743 /* RTHExpertViewController.xib in Resources */,
+				9F47AA551DAFFBAD00558743 /* RTHCircleStatusCell.xib in Resources */,
+				F09D6ED71DB0B66C00C4F4AE /* RTHCourseDownLoadCell.xib in Resources */,
+				9F47AA6F1DAFFBAD00558743 /* RTHIntroductionCell.xib in Resources */,
+				9F47AA431DAFFBAD00558743 /* Expressions.bundle in Resources */,
+				9F47AA5C1DAFFBAD00558743 /* RTHCoursesCheckViewController.xib in Resources */,
+				9F47AA401DAFFBAD00558743 /* Main.storyboard in Resources */,
+				F0B2E2D71DB85682006D187F /* RTHdynamicsCell.xib in Resources */,
+				9F47AA3F1DAFFBAD00558743 /* Assets.xcassets in Resources */,
+				9F47AA491DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib in Resources */,
+				F09D6ED21DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib in Resources */,
+				F0B2E2D91DB85682006D187F /* RTHPersonCardCell.xib in Resources */,
+				9F47A9D11DAFFAE100558743 /* LaunchScreen.storyboard in Resources */,
+				9F47AA4D1DAFFBAD00558743 /* RTHCircleDynamicViewController.xib in Resources */,
+				9F47AA451DAFFBAD00558743 /* RTHChatCell.xib in Resources */,
+				9F47AA5A1DAFFBAD00558743 /* RTHMyCircleCell.xib in Resources */,
+				9F47AA421DAFFBAD00558743 /* RTHChatViewController.xib in Resources */,
+				9F47AA4B1DAFFBAD00558743 /* RTHCircleCycleCell.xib in Resources */,
+				9F47AA511DAFFBAD00558743 /* RTHCircleMineViewController.xib in Resources */,
+				9F47AA731DAFFBAD00558743 /* RTHTitleCell.xib in Resources */,
+				9F47AA531DAFFBAD00558743 /* RTHCirCleMoreViewController.xib in Resources */,
+				F047C3FE1DB86BD900672DA8 /* RTHPersonViewController.xib in Resources */,
+				9F47AA6C1DAFFBAD00558743 /* RTHFriendCircleCell.xib in Resources */,
+				F09D6ECB1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib in Resources */,
+				9F47AA711DAFFBAD00558743 /* RTHStudentEvaluateCell.xib in Resources */,
+				9F47AA4F1DAFFBAD00558743 /* RTHCircleMineHeaderView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F47A9B71DAFFAE100558743 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F47AA6B1DAFFBAD00558743 /* RTHFriendCircleCell.m in Sources */,
+				F09D6ED61DB0B66C00C4F4AE /* RTHCourseDownLoadCell.m in Sources */,
+				9F47AA541DAFFBAD00558743 /* RTHCircleStatusCell.m in Sources */,
+				9F47AA601DAFFBAD00558743 /* RTHCoursesBottomBarView.m in Sources */,
+				9F47AA6A1DAFFBAD00558743 /* RTHExpertTagsView.m in Sources */,
+				9F47AA5B1DAFFBAD00558743 /* RTHCoursesCheckViewController.m in Sources */,
+				9F47AA641DAFFBAD00558743 /* RTHExpertViewController.m in Sources */,
+				9F47AA5E1DAFFBAD00558743 /* RTHCoursesDetailViewController.m in Sources */,
+				9F47AA611DAFFBAD00558743 /* RTHCoursesViewController.m in Sources */,
+				F09D6ED11DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.m in Sources */,
+				F0B2E2D81DB85682006D187F /* RTHPersonCardCell.m in Sources */,
+				9F47A9C31DAFFAE100558743 /* AppDelegate.m in Sources */,
+				9F47AA701DAFFBAD00558743 /* RTHStudentEvaluateCell.m in Sources */,
+				9F47AA671DAFFBAD00558743 /* RTHQuestionAnswerViewController.m in Sources */,
+				9F47AA5D1DAFFBAD00558743 /* RTHCoursesContentsViewController.m in Sources */,
+				F0B2E2D11DB85682006D187F /* RTHdynamicsTableViewController.m in Sources */,
+				F047C4011DB86C3700672DA8 /* RTHPersonViewController.m in Sources */,
+				9F47AA661DAFFBAD00558743 /* RTHIntroductViewController.m in Sources */,
+				9F47AA441DAFFBAD00558743 /* RTHChatCell.m in Sources */,
+				9F47AA581DAFFBAD00558743 /* RTHCircleViewController.m in Sources */,
+				F0B2E2D61DB85682006D187F /* RTHdynamicsCell.m in Sources */,
+				9F47AA461DAFFBAD00558743 /* RTHChatMessage.m in Sources */,
+				F0B2E2D21DB85682006D187F /* RTHPersonBaseTableViewController.m in Sources */,
+				9F47AA561DAFFBAD00558743 /* RTHCircleTitleView.m in Sources */,
+				F0B2E2D51DB85682006D187F /* RTHReplyPageTableViewController.m in Sources */,
+				9F47AA4A1DAFFBAD00558743 /* RTHCircleCycleCell.m in Sources */,
+				9F47AA761DAFFBAD00558743 /* ViewController.m in Sources */,
+				9F47AA521DAFFBAD00558743 /* RTHCirCleMoreViewController.m in Sources */,
+				9F47AA4C1DAFFBAD00558743 /* RTHCircleDynamicViewController.m in Sources */,
+				9F47AA591DAFFBAD00558743 /* RTHMyCircleCell.m in Sources */,
+				9F47AA5F1DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m in Sources */,
+				9F47A9CC1DAFFAE100558743 /* RTHModules.xcdatamodeld in Sources */,
+				F09D6ECA1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m in Sources */,
+				9F47A9C01DAFFAE100558743 /* main.m in Sources */,
+				9F47AA6D1DAFFBAD00558743 /* RTHImageContentView.m in Sources */,
+				9F47AA681DAFFBAD00558743 /* RTHCoursesCell.m in Sources */,
+				9F47AA6E1DAFFBAD00558743 /* RTHIntroductionCell.m in Sources */,
+				9F47AA621DAFFBAD00558743 /* RTHEvaluateViewController.m in Sources */,
+				9F47AA4E1DAFFBAD00558743 /* RTHCircleMineHeaderView.m in Sources */,
+				F0B2E2D01DB85682006D187F /* RTHCardPageTableViewController.m in Sources */,
+				9F47AA751DAFFBAD00558743 /* SYSlideSelectedView.m in Sources */,
+				9F47AA501DAFFBAD00558743 /* RTHCircleMineViewController.m in Sources */,
+				9F47AA481DAFFBAD00558743 /* RTHCicleDynamicHeaderView.m in Sources */,
+				9F47AA631DAFFBAD00558743 /* RTHExpertBaseTableViewController.m in Sources */,
+				9F47AA411DAFFBAD00558743 /* RTHChatViewController.m in Sources */,
+				9F47AA471DAFFBAD00558743 /* SYExpressionsViewController.m in Sources */,
+				9F47AA721DAFFBAD00558743 /* RTHTitleCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9F47A9CF1DAFFAE100558743 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F47A9D01DAFFAE100558743 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F47A9D31DAFFAE100558743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9F47A9D41DAFFAE100558743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F47A9D61DAFFAE100558743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RTHModules/SYSlideSelect",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RTHModules/PrefixHeader.pch;
+				INFOPLIST_FILE = RTHModules/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = Eisen.RTHModules;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F47A9D71DAFFAE100558743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RTHModules/SYSlideSelect",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RTHModules/PrefixHeader.pch;
+				INFOPLIST_FILE = RTHModules/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = Eisen.RTHModules;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F47A9B61DAFFAE100558743 /* Build configuration list for PBXProject "RTHModules" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F47A9D31DAFFAE100558743 /* Debug */,
+				9F47A9D41DAFFAE100558743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F47A9D51DAFFAE100558743 /* Build configuration list for PBXNativeTarget "RTHModules" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F47A9D61DAFFAE100558743 /* Debug */,
+				9F47A9D71DAFFAE100558743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9F47A9CA1DAFFAE100558743 /* RTHModules.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9F47A9CB1DAFFAE100558743 /* RTHModules.xcdatamodel */,
+			);
+			currentVersion = 9F47A9CB1DAFFAE100558743 /* RTHModules.xcdatamodel */;
+			path = RTHModules.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9F47A9B31DAFFAE100558743 /* Project object */;
+}

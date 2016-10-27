@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="192" id="KGk-i7-Jjw" customClass="RTHIntroductionCell">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="192"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="318" height="191.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="课程介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iY-qu-fcV">
+                        <rect key="frame" x="127" y="12" width="64" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d8K-7y-Trn">
+                        <rect key="frame" x="117" y="40" width="85" height="1"/>
+                        <color key="backgroundColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="7NZ-qM-say"/>
+                            <constraint firstAttribute="height" constant="1" id="C79-gM-EZe"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-iN-ikE">
+                        <rect key="frame" x="129" y="146.5" width="60" height="30"/>
+                        <state key="normal" title="查看更多">
+                            <color key="titleColor" red="0.87058823529411766" green="0.14117647058823529" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nS-LN-oCC">
+                        <rect key="frame" x="20" y="59" width="278" height="69.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-bo-GaQ">
+                        <rect key="frame" x="0.0" y="191" width="318" height="0.5"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="f1C-Zq-wcX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="fdZ-iN-ikE" secondAttribute="bottom" constant="15" id="0eV-Nh-9K0"/>
+                    <constraint firstItem="fdZ-iN-ikE" firstAttribute="top" secondItem="3nS-LN-oCC" secondAttribute="bottom" constant="18" id="1DE-kW-22l"/>
+                    <constraint firstAttribute="trailing" secondItem="3nS-LN-oCC" secondAttribute="trailing" constant="20" id="3T2-tU-TPr"/>
+                    <constraint firstAttribute="trailing" secondItem="OdT-bo-GaQ" secondAttribute="trailing" id="7Iu-Xy-dAT"/>
+                    <constraint firstItem="6iY-qu-fcV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ABN-vh-8H0"/>
+                    <constraint firstItem="6iY-qu-fcV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="FJu-JC-mv7"/>
+                    <constraint firstItem="3nS-LN-oCC" firstAttribute="top" secondItem="d8K-7y-Trn" secondAttribute="bottom" constant="18" id="IAq-Js-L8Y"/>
+                    <constraint firstItem="d8K-7y-Trn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="KZa-ft-J34"/>
+                    <constraint firstItem="fdZ-iN-ikE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Uuy-zi-20K"/>
+                    <constraint firstItem="3nS-LN-oCC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="YEV-Zz-3IA"/>
+                    <constraint firstItem="d8K-7y-Trn" firstAttribute="top" secondItem="6iY-qu-fcV" secondAttribute="bottom" constant="8" id="peo-LM-xtp"/>
+                    <constraint firstAttribute="bottom" secondItem="OdT-bo-GaQ" secondAttribute="bottom" id="qyi-8j-IZI"/>
+                    <constraint firstItem="OdT-bo-GaQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wPW-kG-iOB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="moreDataBtn" destination="fdZ-iN-ikE" id="Lo8-c5-7Mp"/>
+                <outlet property="topTitleLabel" destination="6iY-qu-fcV" id="M8t-rA-wId"/>
+            </connections>
+            <point key="canvasLocation" x="244" y="204"/>
+        </tableViewCell>
+    </objects>
+</document>
