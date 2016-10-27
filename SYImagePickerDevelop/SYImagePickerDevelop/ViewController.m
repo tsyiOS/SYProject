@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RTHPictureDisplayView.h"
+#import "SYImageManager.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) RTHPictureDisplayView *display;
