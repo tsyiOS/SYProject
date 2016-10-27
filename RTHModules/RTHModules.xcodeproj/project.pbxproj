@@ -88,7 +88,6 @@
 		F09DEA901DC2116E0033D0B8 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA861DC2116E0033D0B8 /* ViewController+MASAdditions.m */; };
 		F09DEA9A1DC211EA0033D0B8 /* RTHEditinformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */; };
 		F09DEA9B1DC211EA0033D0B8 /* RTHEditinformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */; };
-		F09DEA9C1DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = F09DEA991DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m */; };
 		F0B2E2D01DB85682006D187F /* RTHCardPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */; };
 		F0B2E2D11DB85682006D187F /* RTHdynamicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C11DB85682006D187F /* RTHdynamicsTableViewController.m */; };
 		F0B2E2D21DB85682006D187F /* RTHPersonBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2E2C31DB85682006D187F /* RTHPersonBaseTableViewController.m */; };
@@ -240,8 +239,6 @@
 		F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditinformationCell.m; sourceTree = "<group>"; };
 		F09DEA941DC211EA0033D0B8 /* RTHEditinformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEditinformationController.h; sourceTree = "<group>"; };
 		F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditinformationController.m; sourceTree = "<group>"; };
-		F09DEA981DC211EA0033D0B8 /* RTHEditinformationFooterVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEditinformationFooterVIew.h; sourceTree = "<group>"; };
-		F09DEA991DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditinformationFooterVIew.m; sourceTree = "<group>"; };
 		F0B2E2BE1DB85682006D187F /* RTHCardPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCardPageTableViewController.h; sourceTree = "<group>"; };
 		F0B2E2BF1DB85682006D187F /* RTHCardPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCardPageTableViewController.m; sourceTree = "<group>"; };
 		F0B2E2C01DB85682006D187F /* RTHdynamicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHdynamicsTableViewController.h; sourceTree = "<group>"; };
@@ -546,8 +543,6 @@
 				F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */,
 				F09DEA941DC211EA0033D0B8 /* RTHEditinformationController.h */,
 				F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */,
-				F09DEA981DC211EA0033D0B8 /* RTHEditinformationFooterVIew.h */,
-				F09DEA991DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m */,
 			);
 			path = RTHPersonInfor;
 			sourceTree = "<group>";
@@ -739,7 +734,6 @@
 				9F47AA681DAFFBAD00558743 /* RTHCoursesCell.m in Sources */,
 				9F47AA6E1DAFFBAD00558743 /* RTHIntroductionCell.m in Sources */,
 				9F47AA621DAFFBAD00558743 /* RTHEvaluateViewController.m in Sources */,
-				F09DEA9C1DC211EA0033D0B8 /* RTHEditinformationFooterVIew.m in Sources */,
 				9F47AA4E1DAFFBAD00558743 /* RTHCircleMineHeaderView.m in Sources */,
 				F0B2E2D01DB85682006D187F /* RTHCardPageTableViewController.m in Sources */,
 				9F47AA751DAFFBAD00558743 /* SYSlideSelectedView.m in Sources */,
