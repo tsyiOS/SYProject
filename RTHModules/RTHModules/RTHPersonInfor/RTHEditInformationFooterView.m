@@ -10,8 +10,33 @@
 
 @implementation RTHEditInformationFooterView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self addSubview:self.displayView];
+}
+
+- (IBAction)agreeAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+- (IBAction)optionalAction {
+    
+}
+
+- (IBAction)commit {
+    
+}
+
 + (instancetype)viewFromNib {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:self options:nil].lastObject;
+}
+
+- (RTHPictureDisplayView *)displayView {
+    if (_displayView == nil) {
+        _displayView = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 0) andType:RTHPictuerDisplayTypeEdit];
+//        _displayView.backgroundColor = [UIColor redColor];
+    }
+    return _displayView;
 }
 
 @end

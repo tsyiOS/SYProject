@@ -66,6 +66,9 @@
 		9F47AA731DAFFBAD00558743 /* RTHTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F47AA381DAFFBAD00558743 /* RTHTitleCell.xib */; };
 		9F47AA751DAFFBAD00558743 /* SYSlideSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA3C1DAFFBAD00558743 /* SYSlideSelectedView.m */; };
 		9F47AA761DAFFBAD00558743 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F47AA3E1DAFFBAD00558743 /* ViewController.m */; };
+		9FCF38861DC23D00003C196E /* RTHPictureDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF38851DC23D00003C196E /* RTHPictureDisplayView.m */; };
+		9FCF38881DC23FCB003C196E /* SYImageManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCF38871DC23FCB003C196E /* SYImageManager.framework */; };
+		9FCF388C1DC241DF003C196E /* SYImagePickerSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF388B1DC241DF003C196E /* SYImagePickerSource.bundle */; };
 		F047C3FE1DB86BD900672DA8 /* RTHPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047C3FC1DB86BD900672DA8 /* RTHPersonViewController.xib */; };
 		F047C4011DB86C3700672DA8 /* RTHPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */; };
 		F04BF6C01DB8A115009F8BED /* SYCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04BF6BF1DB8A115009F8BED /* SYCategory.framework */; };
@@ -198,6 +201,10 @@
 		9F47AA3C1DAFFBAD00558743 /* SYSlideSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSlideSelectedView.m; sourceTree = "<group>"; };
 		9F47AA3D1DAFFBAD00558743 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9F47AA3E1DAFFBAD00558743 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FCF38841DC23D00003C196E /* RTHPictureDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPictureDisplayView.h; sourceTree = "<group>"; };
+		9FCF38851DC23D00003C196E /* RTHPictureDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPictureDisplayView.m; sourceTree = "<group>"; };
+		9FCF38871DC23FCB003C196E /* SYImageManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SYImageManager.framework; sourceTree = "<group>"; };
+		9FCF388B1DC241DF003C196E /* SYImagePickerSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYImagePickerSource.bundle; sourceTree = "<group>"; };
 		F047C3FC1DB86BD900672DA8 /* RTHPersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHPersonViewController.xib; sourceTree = "<group>"; };
 		F047C3FF1DB86C3700672DA8 /* RTHPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPersonViewController.h; sourceTree = "<group>"; };
 		F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPersonViewController.m; sourceTree = "<group>"; };
@@ -265,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCF38881DC23FCB003C196E /* SYImageManager.framework in Frameworks */,
 				F04BF6C01DB8A115009F8BED /* SYCategory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +313,8 @@
 				9F47A9DA1DAFFBAD00558743 /* Main.storyboard */,
 				9F47AA3D1DAFFBAD00558743 /* ViewController.h */,
 				9F47AA3E1DAFFBAD00558743 /* ViewController.m */,
+				9FCF388B1DC241DF003C196E /* SYImagePickerSource.bundle */,
+				9FCF38871DC23FCB003C196E /* SYImageManager.framework */,
 				9F47A9CF1DAFFAE100558743 /* LaunchScreen.storyboard */,
 				9F47A9D21DAFFAE100558743 /* Info.plist */,
 				9F47A9CA1DAFFAE100558743 /* RTHModules.xcdatamodeld */,
@@ -544,6 +554,8 @@
 		F09DEA911DC211DA0033D0B8 /* RTHPersonInfor */ = {
 			isa = PBXGroup;
 			children = (
+				9FCF38841DC23D00003C196E /* RTHPictureDisplayView.h */,
+				9FCF38851DC23D00003C196E /* RTHPictureDisplayView.m */,
 				F09DEA921DC211EA0033D0B8 /* RTHEditinformationCell.h */,
 				F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */,
 				F09DEA941DC211EA0033D0B8 /* RTHEditinformationController.h */,
@@ -669,6 +681,7 @@
 				F07C06621DC220DE00B841CF /* RTHEditInformationFooterView.xib in Resources */,
 				9F47AA491DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib in Resources */,
 				F09D6ED21DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib in Resources */,
+				9FCF388C1DC241DF003C196E /* SYImagePickerSource.bundle in Resources */,
 				F0B2E2D91DB85682006D187F /* RTHPersonCardCell.xib in Resources */,
 				9F47A9D11DAFFAE100558743 /* LaunchScreen.storyboard in Resources */,
 				9F47AA4D1DAFFBAD00558743 /* RTHCircleDynamicViewController.xib in Resources */,
@@ -717,6 +730,7 @@
 				9F47AA661DAFFBAD00558743 /* RTHIntroductViewController.m in Sources */,
 				F09DEA8F1DC2116E0033D0B8 /* View+MASAdditions.m in Sources */,
 				9F47AA441DAFFBAD00558743 /* RTHChatCell.m in Sources */,
+				9FCF38861DC23D00003C196E /* RTHPictureDisplayView.m in Sources */,
 				9F47AA581DAFFBAD00558743 /* RTHCircleViewController.m in Sources */,
 				F09DEA891DC2116E0033D0B8 /* MASConstraintMaker.m in Sources */,
 				F0B2E2D61DB85682006D187F /* RTHdynamicsCell.m in Sources */,
@@ -861,6 +875,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RTHModules/SYSlideSelect",
+					"$(PROJECT_DIR)/RTHModules",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RTHModules/PrefixHeader.pch;
@@ -880,6 +895,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RTHModules/SYSlideSelect",
+					"$(PROJECT_DIR)/RTHModules",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RTHModules/PrefixHeader.pch;

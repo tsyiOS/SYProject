@@ -9,8 +9,9 @@
 #import "RTHEditinformationController.h"
 #import "RTHEditinformationCell.h"
 #import "RTHEditInformationFooterView.h"
+#import <SYImageManager/SYImageManager.h>
 
-@interface RTHEditinformationController ()<UITableViewDelegate,UITableViewDataSource>
+@interface RTHEditinformationController ()<UITableViewDelegate,UITableViewDataSource,SYImagePickerDelegate>
 @property (nonatomic ,strong)NSArray *titleArray;
 @property (nonatomic ,strong)NSArray *detitieArray;
 @property (nonatomic, strong) RTHEditInformationFooterView *footer;
@@ -20,9 +21,21 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[RTHEditinformationCell class] forCellReuseIdentifier:@"RTHEditinformation"];
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self. tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.tableFooterView = self.footer;
+}
+
+- (void)openAlbum {
+    [SYImageManager shareImageManager].delegate = self;
+    [[SYImageManager shareImageManager] sy_OpenImagePicker];
+}
+
+- (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
+    NSArray *images = info[SYSelectedImages];
+    CGFloat height = [self.footer.displayView dispalyImages:images];
+    self.footer.sy_height = height + 85;
+    self.footer.tipLabel.hidden = images.count > 0;
 }
 
 #pragma mark-UITableViewDataSource
@@ -85,6 +98,10 @@
 - (RTHEditInformationFooterView *)footer {
     if (_footer == nil) {
         _footer = [RTHEditInformationFooterView viewFromNib];
+        __weak typeof(self) weakSelf = self;
+        [_footer.displayView setAddPcitureAction:^{
+            [weakSelf openAlbum];
+        }];
     }
     return _footer;
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,20 +8,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="5ym-zA-pnB" customClass="RTHEditInformationFooterView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传您的照片和简历" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBu-sE-RvX">
-                    <rect key="frame" x="95" y="70" width="130" height="16"/>
+                    <rect key="frame" x="95" y="80" width="130" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yP-Vs-asO">
-                    <rect key="frame" x="95" y="101" width="60" height="20"/>
+                    <rect key="frame" x="95" y="110" width="60" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="MJn-40-YoP"/>
-                        <constraint firstAttribute="height" constant="20" id="iYR-yg-1jE"/>
+                        <constraint firstAttribute="width" constant="60" id="Lf7-P3-fWN"/>
+                        <constraint firstAttribute="height" constant="20" id="axt-g8-lBs"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -29,43 +29,58 @@
                     <state key="normal" title="同意" image="weigouxuan">
                         <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <state key="selected" image="gouxuan"/>
+                    <connections>
+                        <action selector="agreeAction:" destination="5ym-zA-pnB" eventType="touchUpInside" id="JmX-Ll-UCv"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uo-ym-6bI">
-                    <rect key="frame" x="155" y="97" width="84" height="29"/>
+                    <rect key="frame" x="155" y="106" width="84" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="《儒思协议》">
                         <color key="titleColor" red="0.023529411764705882" green="0.20000000000000001" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="optionalAction" destination="5ym-zA-pnB" eventType="touchUpInside" id="VHj-tk-Puv"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC1-tM-AgM">
-                    <rect key="frame" x="85" y="146" width="150" height="40"/>
+                    <rect key="frame" x="85" y="155" width="150" height="40"/>
                     <color key="backgroundColor" red="0.87058823529999996" green="0.14117647059999999" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="Hin-DN-moo"/>
-                        <constraint firstAttribute="height" constant="40" id="PpU-n7-Io4"/>
+                        <constraint firstAttribute="height" constant="40" id="7lI-WL-EB1"/>
+                        <constraint firstAttribute="width" constant="150" id="pKL-V9-UxC"/>
                     </constraints>
                     <state key="normal" title="提交">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="commit" destination="5ym-zA-pnB" eventType="touchUpInside" id="pWP-f9-6tw"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="8yP-Vs-asO" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" constant="-35" id="2o5-46-DS0"/>
-                <constraint firstItem="VC1-tM-AgM" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" id="CLN-hW-UMS"/>
-                <constraint firstItem="VC1-tM-AgM" firstAttribute="top" secondItem="6Uo-ym-6bI" secondAttribute="bottom" constant="20" id="PIR-wQ-jKe"/>
-                <constraint firstItem="oBu-sE-RvX" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" id="Pjq-oR-q36"/>
-                <constraint firstItem="oBu-sE-RvX" firstAttribute="top" secondItem="5ym-zA-pnB" secondAttribute="top" constant="70" id="ZVL-WH-CtX"/>
-                <constraint firstItem="6Uo-ym-6bI" firstAttribute="leading" secondItem="8yP-Vs-asO" secondAttribute="trailing" id="cvD-64-DzN"/>
-                <constraint firstItem="8yP-Vs-asO" firstAttribute="top" secondItem="oBu-sE-RvX" secondAttribute="bottom" constant="15" id="pHR-eQ-pmj"/>
-                <constraint firstItem="6Uo-ym-6bI" firstAttribute="centerY" secondItem="8yP-Vs-asO" secondAttribute="centerY" id="wDQ-cp-Zi5"/>
+                <constraint firstItem="6Uo-ym-6bI" firstAttribute="top" secondItem="oBu-sE-RvX" secondAttribute="bottom" constant="10" id="3Ux-r1-Ugs"/>
+                <constraint firstItem="6Uo-ym-6bI" firstAttribute="centerY" secondItem="8yP-Vs-asO" secondAttribute="centerY" id="CYf-WI-hCF"/>
+                <constraint firstItem="6Uo-ym-6bI" firstAttribute="leading" secondItem="8yP-Vs-asO" secondAttribute="trailing" id="N57-31-iJo"/>
+                <constraint firstItem="oBu-sE-RvX" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" id="bYl-DS-kNo"/>
+                <constraint firstItem="VC1-tM-AgM" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" id="eNk-GZ-rNg"/>
+                <constraint firstItem="VC1-tM-AgM" firstAttribute="top" secondItem="8yP-Vs-asO" secondAttribute="bottom" constant="25" id="hcd-kZ-rcD"/>
+                <constraint firstAttribute="bottom" secondItem="VC1-tM-AgM" secondAttribute="bottom" constant="5" id="ioU-4M-xwb"/>
+                <constraint firstItem="8yP-Vs-asO" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" constant="-35" id="py4-AL-v8E"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="agreeBtn" destination="8yP-Vs-asO" id="7Og-ob-vNt"/>
+                <outlet property="tipLabel" destination="oBu-sE-RvX" id="nCy-UV-Rm6"/>
+            </connections>
             <point key="canvasLocation" x="445.5" y="100.5"/>
         </view>
     </objects>
     <resources>
+        <image name="gouxuan" width="12" height="12"/>
         <image name="weigouxuan" width="12" height="12"/>
     </resources>
 </document>

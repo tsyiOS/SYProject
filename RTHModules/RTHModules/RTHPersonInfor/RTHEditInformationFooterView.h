@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RTHPictureDisplayView.h"
 
 @interface RTHEditInformationFooterView : UIView
+@property (nonatomic, strong) RTHPictureDisplayView *displayView;
+@property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 + (instancetype)viewFromNib;
 @end
