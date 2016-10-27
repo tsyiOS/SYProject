@@ -8,12 +8,12 @@
 
 #import "RTHEditinformationController.h"
 #import "RTHEditinformationCell.h"
-#import "RTHEditinformationFooterVIew.h"
+#import "RTHEditInformationFooterView.h"
 
 @interface RTHEditinformationController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong)NSArray *titleArray;
 @property (nonatomic ,strong)NSArray *detitieArray;
-@property (nonatomic, strong) RTHEditinformationFooterVIew *footer;
+@property (nonatomic, strong) RTHEditInformationFooterView *footer;
 @end
 @implementation RTHEditinformationController
 - (void)viewDidLoad {
@@ -82,10 +82,9 @@
     return _detitieArray;
 }
 
-- (RTHEditinformationFooterVIew *)footer {
+- (RTHEditInformationFooterView *)footer {
     if (_footer == nil) {
-        _footer = [[RTHEditinformationFooterVIew alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 200)];
-        _footer.backgroundColor = [UIColor purpleColor];
+        _footer = [RTHEditInformationFooterView viewFromNib];
     }
     return _footer;
 }

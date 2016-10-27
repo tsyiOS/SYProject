@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5ym-zA-pnB" customClass="RTHEditInformationFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传您的照片和简历" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBu-sE-RvX">
+                    <rect key="frame" x="95" y="70" width="130" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yP-Vs-asO">
+                    <rect key="frame" x="95" y="101" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="MJn-40-YoP"/>
+                        <constraint firstAttribute="height" constant="20" id="iYR-yg-1jE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="同意" image="weigouxuan">
+                        <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uo-ym-6bI">
+                    <rect key="frame" x="155" y="97" width="84" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="《儒思协议》">
+                        <color key="titleColor" red="0.023529411764705882" green="0.20000000000000001" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC1-tM-AgM">
+                    <rect key="frame" x="85" y="146" width="150" height="40"/>
+                    <color key="backgroundColor" red="0.87058823529999996" green="0.14117647059999999" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Hin-DN-moo"/>
+                        <constraint firstAttribute="height" constant="40" id="PpU-n7-Io4"/>
+                    </constraints>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="8yP-Vs-asO" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" constant="-35" id="2o5-46-DS0"/>
+                <constraint firstItem="VC1-tM-AgM" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" id="CLN-hW-UMS"/>
+                <constraint firstItem="VC1-tM-AgM" firstAttribute="top" secondItem="6Uo-ym-6bI" secondAttribute="bottom" constant="20" id="PIR-wQ-jKe"/>
+                <constraint firstItem="oBu-sE-RvX" firstAttribute="centerX" secondItem="5ym-zA-pnB" secondAttribute="centerX" id="Pjq-oR-q36"/>
+                <constraint firstItem="oBu-sE-RvX" firstAttribute="top" secondItem="5ym-zA-pnB" secondAttribute="top" constant="70" id="ZVL-WH-CtX"/>
+                <constraint firstItem="6Uo-ym-6bI" firstAttribute="leading" secondItem="8yP-Vs-asO" secondAttribute="trailing" id="cvD-64-DzN"/>
+                <constraint firstItem="8yP-Vs-asO" firstAttribute="top" secondItem="oBu-sE-RvX" secondAttribute="bottom" constant="15" id="pHR-eQ-pmj"/>
+                <constraint firstItem="6Uo-ym-6bI" firstAttribute="centerY" secondItem="8yP-Vs-asO" secondAttribute="centerY" id="wDQ-cp-Zi5"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="445.5" y="100.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="weigouxuan" width="12" height="12"/>
+    </resources>
+</document>

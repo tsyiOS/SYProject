@@ -69,6 +69,8 @@
 		F047C3FE1DB86BD900672DA8 /* RTHPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F047C3FC1DB86BD900672DA8 /* RTHPersonViewController.xib */; };
 		F047C4011DB86C3700672DA8 /* RTHPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */; };
 		F04BF6C01DB8A115009F8BED /* SYCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04BF6BF1DB8A115009F8BED /* SYCategory.framework */; };
+		F07C06601DC220B900B841CF /* RTHEditInformationFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F07C065F1DC220B900B841CF /* RTHEditInformationFooterView.m */; };
+		F07C06621DC220DE00B841CF /* RTHEditInformationFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F07C06611DC220DE00B841CF /* RTHEditInformationFooterView.xib */; };
 		F09D6ECA1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09D6EC81DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m */; };
 		F09D6ECB1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D6EC91DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib */; };
 		F09D6ECD1DB0B4AD00C4F4AE /* SYRefreshSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F09D6ECC1DB0B4AD00C4F4AE /* SYRefreshSource.bundle */; };
@@ -200,6 +202,9 @@
 		F047C3FF1DB86C3700672DA8 /* RTHPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHPersonViewController.h; sourceTree = "<group>"; };
 		F047C4001DB86C3700672DA8 /* RTHPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHPersonViewController.m; sourceTree = "<group>"; };
 		F04BF6BF1DB8A115009F8BED /* SYCategory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SYCategory.framework; sourceTree = "<group>"; };
+		F07C065E1DC220B900B841CF /* RTHEditInformationFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHEditInformationFooterView.h; sourceTree = "<group>"; };
+		F07C065F1DC220B900B841CF /* RTHEditInformationFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHEditInformationFooterView.m; sourceTree = "<group>"; };
+		F07C06611DC220DE00B841CF /* RTHEditInformationFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHEditInformationFooterView.xib; sourceTree = "<group>"; };
 		F09D6EC71DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHCoursesDownLoadViewController.h; sourceTree = "<group>"; };
 		F09D6EC81DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTHCoursesDownLoadViewController.m; sourceTree = "<group>"; };
 		F09D6EC91DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTHCoursesDownLoadViewController.xib; sourceTree = "<group>"; };
@@ -543,6 +548,9 @@
 				F09DEA931DC211EA0033D0B8 /* RTHEditinformationCell.m */,
 				F09DEA941DC211EA0033D0B8 /* RTHEditinformationController.h */,
 				F09DEA951DC211EA0033D0B8 /* RTHEditinformationController.m */,
+				F07C065E1DC220B900B841CF /* RTHEditInformationFooterView.h */,
+				F07C065F1DC220B900B841CF /* RTHEditInformationFooterView.m */,
+				F07C06611DC220DE00B841CF /* RTHEditInformationFooterView.xib */,
 			);
 			path = RTHPersonInfor;
 			sourceTree = "<group>";
@@ -658,6 +666,7 @@
 				9F47AA401DAFFBAD00558743 /* Main.storyboard in Resources */,
 				F0B2E2D71DB85682006D187F /* RTHdynamicsCell.xib in Resources */,
 				9F47AA3F1DAFFBAD00558743 /* Assets.xcassets in Resources */,
+				F07C06621DC220DE00B841CF /* RTHEditInformationFooterView.xib in Resources */,
 				9F47AA491DAFFBAD00558743 /* RTHCicleDynamicHeaderView.xib in Resources */,
 				F09D6ED21DB0B65D00C4F4AE /* RTHCourseDownLoadTitleCell.xib in Resources */,
 				F0B2E2D91DB85682006D187F /* RTHPersonCardCell.xib in Resources */,
@@ -726,6 +735,7 @@
 				F09DEA871DC2116E0033D0B8 /* MASCompositeConstraint.m in Sources */,
 				9F47AA4C1DAFFBAD00558743 /* RTHCircleDynamicViewController.m in Sources */,
 				9F47AA591DAFFBAD00558743 /* RTHMyCircleCell.m in Sources */,
+				F07C06601DC220B900B841CF /* RTHEditInformationFooterView.m in Sources */,
 				9F47AA5F1DAFFBAD00558743 /* RTHCoursesEvaluateViewController.m in Sources */,
 				9F47A9CC1DAFFAE100558743 /* RTHModules.xcdatamodeld in Sources */,
 				F09D6ECA1DB0ADEF00C4F4AE /* RTHCoursesDownLoadViewController.m in Sources */,
