@@ -17,15 +17,15 @@
 /**
  *  实例方法
  *
- *  @return 相册拍照manager管理拍照和去相册
+ *  @return 相册拍照manager管理拍照和相册
  */
 + (instancetype)shareImageManager;
 /**
- *  打开相机
+ *  打开相册
  */
 - (void)sy_OpenImagePicker;
 /**
- *  打开相册
+ *  打开相机
  */
 - (void)sy_OpenCamera;
 @end

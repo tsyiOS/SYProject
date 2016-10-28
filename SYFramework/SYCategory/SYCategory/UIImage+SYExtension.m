@@ -101,4 +101,29 @@
     CGImageRelease(cgimg);
     return img;
 }
+
+- (UIImage *)sy_rotatedByRadians:(CGFloat)radians {
+    
+    UIGraphicsBeginImageContext(CGSizeMake(self.size.width, self.size.height));
+    CGContextRef bitmap = UIGraphicsGetCurrentContext();
+    
+    CGContextTranslateCTM(bitmap, self.size.width/2, self.size.height/2);
+    
+    CGContextRotateCTM(bitmap, radians);
+    
+    CGContextScaleCTM(bitmap, 1.0, -1.0);
+    CGContextDrawImage(bitmap, CGRectMake(-self.size.width / 2, -self.size.height / 2, self.size.width, self.size.height), [self CGImage]);
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+- (UIImage *)sy_rotatedByType:(SYImageRotationDirection)direction {
+    
+    CGFloat radians = - M_PI_2 + direction * M_PI_2;
+    return [self sy_rotatedByRadians:radians];
+}
+
 @end

@@ -57,6 +57,10 @@ typedef NS_ENUM(NSUInteger, RTHPictuerDisplayType) {
  *  @return 高度
  */
 - (CGFloat)dispalyImages:(NSArray *)images;
+/**
+ *  展示类型
+ */
+@property (nonatomic, assign) RTHPictuerDisplayType type;
 
 @property (nonatomic, strong) NSArray *images;
 @end

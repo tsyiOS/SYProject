@@ -20,11 +20,15 @@
 }
 
 - (IBAction)optionalAction {
-    
+    if (self.optionalBtnAction) {
+        self.optionalBtnAction();
+    }
 }
 
 - (IBAction)commit {
-    
+    if (self.bottomBtnAction) {
+        self.bottomBtnAction();
+    }
 }
 
 + (instancetype)viewFromNib {
@@ -34,7 +38,6 @@
 - (RTHPictureDisplayView *)displayView {
     if (_displayView == nil) {
         _displayView = [[RTHPictureDisplayView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 0) andType:RTHPictuerDisplayTypeEdit];
-//        _displayView.backgroundColor = [UIColor redColor];
     }
     return _displayView;
 }

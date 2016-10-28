@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, SYImageRotationDirection) {
+    SYImageRotationDirectionLeft = 0,//向左旋转
+    SYImageRotationDirectionRight,//向右旋转
+    SYImageRotationDirectionVertical//垂直旋转
+};
+
 @interface UIImage (SYExtension)
 /**
  *  将图片压缩到指定大小
@@ -31,4 +37,23 @@
  *  @return 旋转后的图片
  */
 - (UIImage *)sy_erected;
+/**
+ *  @brief  旋转图片
+ *
+ *  @param Radians 弧度
+ *
+ *  @return 旋转后图片
+ */
+- (UIImage *)sy_rotatedByRadians:(CGFloat)radians;
+/**
+ *  @brief  旋转图片
+ *
+ *  @param SYImageRotationDirection 方向
+ *                SYImageRotationDirectionLeft,//向左旋转
+ *                SYImageRotationDirectionRight,//向右旋转
+ *                SYImageRotationDirectionVertical//垂直旋转
+ *
+ *  @return 旋转后图片
+ */
+- (UIImage *)sy_rotatedByType:(SYImageRotationDirection)direction;
 @end

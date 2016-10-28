@@ -13,7 +13,6 @@
 #define AddPictureTag 1001
 
 @interface RTHPictureDisplayView ()
-@property (nonatomic, assign) RTHPictuerDisplayType type;
 
 @end
 
@@ -21,13 +20,17 @@
 
 - (instancetype)initWithFrame:(CGRect)frame andType:(RTHPictuerDisplayType)type{
     if (self = [super initWithFrame:frame]) {
-        self.type = type;
+        _type = type;
         self.maxCount = LONG_MAX;
         if (type != RTHPictuerDisplayTypeNormal) {
             [self initialActionBtn];
         }
     }
     return self;
+}
+
+- (void)setType:(RTHPictuerDisplayType)type {
+    [self dispalyImages:self.images];
 }
 
 - (CGFloat)dispalyImages:(NSArray *)images {
