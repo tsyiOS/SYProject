@@ -7,7 +7,6 @@
 //
 
 #import "ERPullDownMenu.h"
-#import "POP/POP.h"
 
 #define ANIMATION_DURATION      0.5f
 #define MENU_ITEM_HEIGHT        30
