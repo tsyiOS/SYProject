@@ -94,7 +94,11 @@
 }
 
 - (void)backAction {
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.navigationController.viewControllers containsObject:self]) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }else {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 - (BOOL)isCanOpenCamera {
@@ -120,11 +124,7 @@
         if (self.sy_finishedScan) {
             self.sy_finishedScan(stringValue);
         }
-        if ([self.navigationController.viewControllers containsObject:self]) {
-            [self.navigationController popViewControllerAnimated:NO];
-        }else {
-            [self dismissViewControllerAnimated:NO completion:nil];
-        }
+        [self backAction];
     }
 }
 
