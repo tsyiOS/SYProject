@@ -26,4 +26,5 @@ typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
  *  @return 下拉菜单
  */
 - (instancetype)initWithSize:(CGSize)size direction:(SYSelectBoxArrowPosition) position andCustomView:(UIView *)customView;
+- (void)showDependentOn:(UIView *)dependentView;
 @end

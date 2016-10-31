@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SYSelectBox.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)show:(UIButton *)sender {
+    SYSelectBox *box = [[SYSelectBox alloc] initWithSize:CGSizeMake(100, 100) direction:SYSelectBoxArrowPositionLeft andCustomView:nil];
+    [box showDependentOn:sender];
 }
 
 @end

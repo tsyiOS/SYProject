@@ -55,7 +55,7 @@
         [self drowRect];
         [self addSubview:self.containerView];
         
-        [ERCommonTool registerNibWithClass:[ERPullDownCell class] forTabelView:menuItemsTableView];
+//        [ERCommonTool registerNibWithClass:[ERPullDownCell class] forTabelView:menuItemsTableView];
     }
     
     return self;

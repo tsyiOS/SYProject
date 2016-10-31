@@ -29,8 +29,8 @@
 
 - (void)setChecked:(BOOL)checked {
     _checked = checked;
-    self.contentLabel.textColor = checked ? [UIColor appMainColor]:[UIColor textGrayColor];
-    self.bottomLine.backgroundColor = checked ? [UIColor appMainColor]:[UIColor lineDefaultColor];
+//    self.contentLabel.textColor = checked ? [UIColor appMainColor]:[UIColor textGrayColor];
+//    self.bottomLine.backgroundColor = checked ? [UIColor appMainColor]:[UIColor lineDefaultColor];
     if (self.model.imageNameNormal.length > 0) {
         self.iconImageView.image = [UIImage imageNamed:checked?self.model.imageNameSelected:self.model.imageNameNormal];
     }

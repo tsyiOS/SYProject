@@ -8,20 +8,25 @@
 
 #import "SYSelectBox.h"
 
-#define SYArrowHeight           10
-#define SYCornerRodius             8
+#define SYArrowHeight  10
+#define SYArrowWidth   15
+#define SYCornerRodius 8
 
 @interface SYSelectBox ()<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) SYSelectBoxArrowPosition arrowPosition;
 @property (nonatomic, assign) CGPoint arrowPoint;
 @property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIBezierPath *borderPath;
+@property (nonatomic, strong) CAShapeLayer *maskLayer;
+@property (nonatomic, strong) CAShapeLayer *borderLayer;
 @end
 
 @implementation SYSelectBox
 
 - (instancetype)initWithSize:(CGSize)size direction:(SYSelectBoxArrowPosition)position andCustomView:(UIView *)customView {
     if (self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)]) {
+        self.arrowPosition = position;
         [self setUpUI];
     }
     return self;
@@ -30,59 +35,8 @@
 - (void)setUpUI {
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.contentView];
-}
-
-- (void)drawRect:(CGRect)rect {
-    // 边界值
-    CGFloat left, right, top, bottom;
-    // 尖角宽度
-    CGFloat arrowWidth = 15;
-    // 尖角左右边X位置
-    CGFloat arrowLeftX, arrowRightX;
-    
-    left = 0.0;
-    right = CGRectGetWidth(self.frame);
-    top = SYArrowHeight;
-    bottom = CGRectGetHeight(self.frame);
-    
-    UIBezierPath *path = [[UIBezierPath alloc]init];
-    //start
-    [path moveToPoint:CGPointMake(left, SYCornerRodius+top)];
-    
-    //left
-    [path addLineToPoint:CGPointMake(left, bottom-SYCornerRodius)];
-    [path addQuadCurveToPoint:CGPointMake(left+SYCornerRodius, bottom) controlPoint:CGPointMake(left, bottom)];
-    
-    //bottom
-    [path addLineToPoint:CGPointMake(right-SYCornerRodius, bottom)];
-    [path addQuadCurveToPoint:CGPointMake(right, bottom-SYCornerRodius) controlPoint:CGPointMake(right, bottom)];
-    
-    //right
-    [path addLineToPoint:CGPointMake(right, SYCornerRodius+top)];
-    [path addQuadCurveToPoint:CGPointMake(right-SYCornerRodius, top) controlPoint:CGPointMake(right, top)];
-    
-    //arrow
-    self.arrowPoint = CGPointMake(arrowRightX - arrowWidth/2, 0);
-    [path addLineToPoint:CGPointMake(arrowRightX, top)];
-    [path addLineToPoint:CGPointMake(arrowRightX - arrowWidth/2, 0)];
-    [path addLineToPoint:CGPointMake(arrowLeftX, top)];
-    
-    //top
-    [path addLineToPoint:CGPointMake(left+SYCornerRodius, top)];
-    [path addQuadCurveToPoint:CGPointMake(left, SYCornerRodius+top) controlPoint:CGPointMake(left, top)];
-    
-    CAShapeLayer *cornerMaskLayer = [CAShapeLayer layer];
-    [cornerMaskLayer setPath:path.CGPath];
-    self.layer.mask = cornerMaskLayer;
-    
-    // 添加轮廓线
-    CAShapeLayer *borderLayer=[CAShapeLayer layer];
-    borderLayer.path    =   path.CGPath;
-    borderLayer.fillColor  = [UIColor clearColor].CGColor;
-    borderLayer.strokeColor    = [UIColor lightGrayColor].CGColor;
-    borderLayer.lineWidth      = 1;
-    borderLayer.frame=self.bounds;
-    [self.layer addSublayer:borderLayer];
+    self.layer.mask = self.maskLayer;
+    [self.layer addSublayer:self.borderLayer];
 }
 
 - (void)showDependentOn:(UIView *)dependentView {
@@ -143,10 +97,6 @@
     }];
 }
 
-//- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-//    return touch.view.tag == 9999;
-//}
-
 #pragma mark - 懒加载
 - (UIView *)contentView {
     if (_contentView == nil) {
@@ -167,6 +117,79 @@
         _backgroundView.tag = 9999;
     }
     return _backgroundView;
+}
+
+- (UIBezierPath *)borderPath {
+    if (_borderPath == nil) {
+        _borderPath = [[UIBezierPath alloc] init];
+
+        CGFloat arrowLeftX = 0;
+        
+        switch (self.arrowPosition) {
+            case SYSelectBoxArrowPositionLeft:
+                arrowLeftX = 10;
+                break;
+            case SYSelectBoxArrowPositionCenter:
+                arrowLeftX = (self.frame.size.width - SYArrowWidth)/2;
+                break;
+            case SYSelectBoxArrowPositionRight:
+                arrowLeftX = self.frame.size.width - 10 - SYArrowWidth;
+                break;
+        }
+        
+        CGFloat arrowRightX = arrowLeftX + SYArrowWidth;
+        
+        CGFloat left = 0.0;
+        CGFloat right = CGRectGetWidth(self.frame);
+        CGFloat top = SYArrowHeight;
+        CGFloat bottom = CGRectGetHeight(self.frame);
+        
+        //start
+        [_borderPath moveToPoint:CGPointMake(left, SYCornerRodius+top)];
+        
+        //left
+        [_borderPath addLineToPoint:CGPointMake(left, bottom-SYCornerRodius)];
+        [_borderPath addQuadCurveToPoint:CGPointMake(left+SYCornerRodius, bottom) controlPoint:CGPointMake(left, bottom)];
+        
+        //bottom
+        [_borderPath addLineToPoint:CGPointMake(right-SYCornerRodius, bottom)];
+        [_borderPath addQuadCurveToPoint:CGPointMake(right, bottom-SYCornerRodius) controlPoint:CGPointMake(right, bottom)];
+        
+        //right
+        [_borderPath addLineToPoint:CGPointMake(right, SYCornerRodius+top)];
+        [_borderPath addQuadCurveToPoint:CGPointMake(right-SYCornerRodius, top) controlPoint:CGPointMake(right, top)];
+        
+        //arrow
+        self.arrowPoint = CGPointMake(arrowRightX - SYArrowWidth/2, 0);
+        [_borderPath addLineToPoint:CGPointMake(arrowRightX, top)];
+        [_borderPath addLineToPoint:CGPointMake(arrowRightX - SYArrowWidth/2, 0)];
+        [_borderPath addLineToPoint:CGPointMake(arrowLeftX, top)];
+        
+        //top
+        [_borderPath addLineToPoint:CGPointMake(left+SYCornerRodius, top)];
+        [_borderPath addQuadCurveToPoint:CGPointMake(left, SYCornerRodius+top) controlPoint:CGPointMake(left, top)];
+    }
+    return _borderPath;
+}
+
+- (CAShapeLayer *)maskLayer {
+    if (_maskLayer == nil) {
+        _maskLayer = [CAShapeLayer layer];
+        _maskLayer.path = self.borderPath.CGPath;
+    }
+    return _maskLayer;
+}
+
+- (CAShapeLayer *)borderLayer {
+    if (_borderLayer == nil) {
+        _borderLayer = [CAShapeLayer layer];
+        _borderLayer.path = self.borderPath.CGPath;
+        _borderLayer.fillColor = [UIColor clearColor].CGColor;
+        _borderLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+        _borderLayer.lineWidth = 1;
+        _borderLayer.frame=self.bounds;
+    }
+    return _borderLayer;
 }
 
 @end
