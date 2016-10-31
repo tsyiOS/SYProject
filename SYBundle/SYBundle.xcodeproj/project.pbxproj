@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F8C5F681DBB32CE00AF87D4 /* sy_photo-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F661DBB32CE00AF87D4 /* sy_photo-normal.png */; };
-		9F8C5F691DBB32CE00AF87D4 /* sy_photo-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C5F671DBB32CE00AF87D4 /* sy_photo-selected.png */; };
+		F03F87971DC6F36100A1CCFE /* sy_scan_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F03F87941DC6F36100A1CCFE /* sy_scan_background.png */; };
+		F03F87981DC6F36100A1CCFE /* sy_back.png in Resources */ = {isa = PBXBuildFile; fileRef = F03F87951DC6F36100A1CCFE /* sy_back.png */; };
+		F03F87991DC6F36100A1CCFE /* sy_scan_line.png in Resources */ = {isa = PBXBuildFile; fileRef = F03F87961DC6F36100A1CCFE /* sy_scan_line.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F8C5F5D1DBB32A600AF87D4 /* SYBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8C5F601DBB32A600AF87D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SYBundle/Info.plist; sourceTree = "<group>"; };
-		9F8C5F661DBB32CE00AF87D4 /* sy_photo-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy_photo-normal.png"; sourceTree = "<group>"; };
-		9F8C5F671DBB32CE00AF87D4 /* sy_photo-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy_photo-selected.png"; sourceTree = "<group>"; };
+		F03F87941DC6F36100A1CCFE /* sy_scan_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sy_scan_background.png; sourceTree = "<group>"; };
+		F03F87951DC6F36100A1CCFE /* sy_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sy_back.png; sourceTree = "<group>"; };
+		F03F87961DC6F36100A1CCFE /* sy_scan_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sy_scan_line.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,8 +51,9 @@
 		9F8C5F5F1DBB32A600AF87D4 /* SYBundle */ = {
 			isa = PBXGroup;
 			children = (
-				9F8C5F661DBB32CE00AF87D4 /* sy_photo-normal.png */,
-				9F8C5F671DBB32CE00AF87D4 /* sy_photo-selected.png */,
+				F03F87941DC6F36100A1CCFE /* sy_scan_background.png */,
+				F03F87951DC6F36100A1CCFE /* sy_back.png */,
+				F03F87961DC6F36100A1CCFE /* sy_scan_line.png */,
 			);
 			path = SYBundle;
 			sourceTree = "<group>";
@@ -111,8 +114,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8C5F681DBB32CE00AF87D4 /* sy_photo-normal.png in Resources */,
-				9F8C5F691DBB32CE00AF87D4 /* sy_photo-selected.png in Resources */,
+				F03F87991DC6F36100A1CCFE /* sy_scan_line.png in Resources */,
+				F03F87981DC6F36100A1CCFE /* sy_back.png in Resources */,
+				F03F87971DC6F36100A1CCFE /* sy_scan_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +259,7 @@
 				9F8C5F651DBB32A600AF87D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

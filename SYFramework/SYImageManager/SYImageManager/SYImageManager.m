@@ -58,19 +58,18 @@ static SYImageManager *manager;
 }
 
 - (void)sy_OpenCamera {
-    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if (status == AVAuthorizationStatusRestricted || status ==AVAuthorizationStatusDenied) {
-        [self showErrorWithType:SYImageManagerTypeCamera];
+    if (TARGET_IPHONE_SIMULATOR) {
+        UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"请使用真机调试" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil,nil];
+        [alertview show];
     }else {
-        if (TARGET_IPHONE_SIMULATOR) {
-            UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"请使用真机调试" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil,nil];
-            [alertview show];
-        }else {
+        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        if (status == AVAuthorizationStatusRestricted || status ==AVAuthorizationStatusDenied) {
+            [self showErrorWithType:SYImageManagerTypeCamera];
+        }else{
             UIImagePickerController *pickerVC = [[UIImagePickerController alloc]init];
             pickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
             pickerVC.delegate = self;
             [self.delegate presentViewController:pickerVC animated:NO completion:nil];
-            return;
         }
     }
 }

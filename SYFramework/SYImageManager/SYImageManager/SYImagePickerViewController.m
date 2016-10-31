@@ -105,7 +105,11 @@
 }
 
 - (void)dismissViewController {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([self.navigationController.viewControllers containsObject:self]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (ALAssetsLibrary *)defaultAssetsLibrary {
