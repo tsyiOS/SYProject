@@ -8,6 +8,8 @@
 
 #import "SYSelectTable.h"
 
+#define tableViewCellHeight 30
+
 @interface SYSelectTable ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *titles;
@@ -16,11 +18,12 @@
 @implementation SYSelectTable
 
 - (instancetype)initWithDatas:(NSArray *)titles {
-    CGSize size = CGSizeMake(100, titles.count * 44);
+    CGSize size = CGSizeMake(100, titles.count * tableViewCellHeight);
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
     if (self = [super initWithSize:size direction:SYSelectBoxArrowPositionTopCenter andCustomView:tableView]) {
         self.titles = titles;
         self.tableView = tableView;
+        self.tableView.rowHeight = tableViewCellHeight;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     }

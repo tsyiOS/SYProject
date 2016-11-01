@@ -26,13 +26,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)show:(UIButton *)sender {
-//    UILabel *label = [[UILabel alloc] init];
-//    label.text = @"哈哈哈";
-//    SYSelectTable *box = [[SYSelectTable alloc] initWithSize:CGSizeMake(100, 200) direction:_count andCustomView:nil];
-//    [box showDependentOnView:sender];
-//    _count += 1;
-    SYSelectTable *table = [[SYSelectTable alloc] initWithDatas:@[@"快快快",@"福克斯",@"方式",@"就打破"]];
-    [table showDependentOnView:sender];
+    UILabel *label = [[UILabel alloc] init];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"哈哈哈";
+    SYSelectTable *box = [[SYSelectTable alloc] initWithSize:CGSizeMake(300, 400) direction:_count andCustomView:label];
+    [box showDependentOnView:sender];
+    _count += 1;
+//    SYSelectTable *table = [[SYSelectTable alloc] initWithDatas:@[@"快快快",@"福克斯",@"方式",@"就打破"]];
+//    [table showDependentOnView:sender];
     
 }
 

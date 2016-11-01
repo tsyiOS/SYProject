@@ -15,6 +15,8 @@
 #define SYArrowBorderMargin 15
 #define SelfWidth self.frame.size.width
 #define SelfHeight self.frame.size.height
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
 
 @interface SYSelectBox ()<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *contentView;
@@ -30,8 +32,24 @@
 @implementation SYSelectBox
 
 - (instancetype)initWithSize:(CGSize)size direction:(SYSelectBoxArrowPosition)position andCustomView:(UIView *)customView {
-    //最小size
+    
+    size = [self decentSizeWithSize:size andDirection:position];
+    
+    if (self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)]) {
+        _arrowPosition = position;
+        _customView = customView;
+        
+        self.backgroundColor = [UIColor whiteColor];
+    }
+    
+    return self;
+    
+}
+
+- (CGSize)decentSizeWithSize:(CGSize)size andDirection:(SYSelectBoxArrowPosition)position{
+    
     CGFloat minWidth = 2*SYCornerRodius + 2*SYArrowBorderMargin + SYArrowWidth;
+    
     if (size.width < minWidth) {
         size.width = minWidth;
     }
@@ -40,21 +58,30 @@
         size.height = minWidth;
     }
     
-    if (self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)]) {
-        _arrowPosition = position;
-        _customView = customView;
-        
-        self.backgroundColor = [UIColor whiteColor];
-        
-        _customView.frame = self.contentView.bounds;
-        [self addSubview:self.contentView];
-        [self.contentView addSubview:_customView];
-        self.layer.mask = self.maskLayer;
-        [self.layer addSublayer:self.borderLayer];
+    switch (position) {
+        case SYSelectBoxArrowPositionTopLeft:
+        case SYSelectBoxArrowPositionTopCenter:
+        case SYSelectBoxArrowPositionTopRight:
+            size.height += SYArrowHeight;
+            break;
+        case SYSelectBoxArrowPositionLeftTop:
+        case SYSelectBoxArrowPositionLeftCenter:
+        case SYSelectBoxArrowPositionLeftBottom:
+            size.width += SYArrowHeight;
+            break;
+        case SYSelectBoxArrowPositionBottomLeft:
+        case SYSelectBoxArrowPositionBottomCenter:
+        case SYSelectBoxArrowPositionBottomRight:
+            size.height += SYArrowHeight;
+            break;
+        case SYSelectBoxArrowPositionRightTop:
+        case SYSelectBoxArrowPositionRightCenter:
+        case SYSelectBoxArrowPositionRightBottom:
+            size.width += SYArrowHeight;
+            break;
     }
     
-    return self;
-    
+    return size;
 }
 
 - (void)showDependentOnView:(UIView *)dependentView {
@@ -69,7 +96,15 @@
 }
 
 - (void)show {
+    
     self.frame = [self frameWithArrorPoint:self.arrowPoint];
+    
+    self.customView.frame = self.contentView.bounds;
+    [self addSubview:self.contentView];
+    [self.contentView addSubview:self.customView];
+    self.layer.mask = self.maskLayer;
+    [self.layer addSublayer:self.borderLayer];
+    
     [[UIApplication sharedApplication].keyWindow addSubview:self.backgroundView];
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     self.transform = self.animationTransform;
@@ -159,6 +194,22 @@
         case SYSelectBoxArrowPositionRightBottom:
               frame = CGRectMake(point.x - self.frame.size.width, point.y - self.frame.size.height + SYArrowWidth*0.5 + SYArrowBorderMargin + SYCornerRodius, self.frame.size.width, self.frame.size.height);
             break;
+    }
+    
+    if (frame.origin.x < 0) {
+        frame = CGRectMake(10, frame.origin.y, frame.size.width + frame.origin.x - 10, frame.size.height);
+    }
+    
+    if (frame.origin.x + frame.size.width > ScreenW) {
+        frame = CGRectMake(frame.origin.x, frame.origin.y, ScreenW - frame.origin.x - 10, frame.size.height);
+    }
+    
+    if (frame.origin.y < 0) {
+        frame = CGRectMake(frame.origin.x, 20, frame.size.width, frame.origin.y + frame.size.height - 20);
+    }
+    
+    if (frame.origin.y + frame.size.height > ScreenH) {
+        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, ScreenH - frame.origin.y - 10);
     }
     
     return frame;

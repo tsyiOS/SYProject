@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
 /**
  *  自定义view
  */
-@property (nonatomic, strong,readonly) UIView *customView;
+@property (nonatomic,strong,readonly) UIView *customView;
 /**
  *  实例方法
  *
