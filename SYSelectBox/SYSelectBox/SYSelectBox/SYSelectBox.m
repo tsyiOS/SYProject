@@ -11,6 +11,9 @@
 #define SYArrowHeight  10
 #define SYArrowWidth   15
 #define SYCornerRodius 8
+#define SYArrowBorderMargin 15
+#define SelfWidth self.frame.size.width
+#define SelfHeight self.frame.size.height
 
 @interface SYSelectBox ()<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView *contentView;
@@ -20,11 +23,22 @@
 @property (nonatomic, strong) UIBezierPath *borderPath;
 @property (nonatomic, strong) CAShapeLayer *maskLayer;
 @property (nonatomic, strong) CAShapeLayer *borderLayer;
+@property (nonatomic) CGAffineTransform animationTransform;
 @end
 
 @implementation SYSelectBox
 
 - (instancetype)initWithSize:(CGSize)size direction:(SYSelectBoxArrowPosition)position andCustomView:(UIView *)customView {
+    //最小size
+    CGFloat minWidth = 2*SYCornerRodius + 2*SYArrowBorderMargin + SYArrowWidth;
+    if (size.width < minWidth) {
+        size.width = minWidth;
+    }
+    
+    if(size.height < minWidth){
+        size.height = minWidth;
+    }
+    
     if (self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)]) {
         self.arrowPosition = position;
         [self setUpUI];
@@ -42,59 +56,130 @@
 - (void)showDependentOn:(UIView *)dependentView {
     CGRect rect = [[UIApplication sharedApplication].keyWindow convertRect:dependentView.frame fromView:dependentView.superview];
     
-    CGRect frame = CGRectZero;
-    
-    CGFloat y = CGRectGetMaxY(rect);
-    
-    if (self.arrowPosition == SYSelectBoxArrowPositionLeft) {
-        frame = CGRectMake(rect.origin.x+rect.size.width * 0.5 - 20, y, self.frame.size.width, self.frame.size.height);
-    }else if (self.arrowPosition == SYSelectBoxArrowPositionRight) {
-        frame = CGRectMake(rect.origin.x+rect.size.width * 0.5 - self.frame.size.width + 20,y, self.frame.size.width, self.frame.size.height);
-    }else {
-        frame = CGRectMake(rect.origin.x+rect.size.width * 0.5 - self.frame.size.width * 0.5,y, self.frame.size.width, self.frame.size.height);
-    }
-    self.frame = frame;
-    
-    //添加阴影
-    self.backgroundView.layer.shadowPath =  [UIBezierPath bezierPathWithRect:CGRectMake(self.frame.origin.x, self.frame.origin.y + 10, self.frame.size.width, self.frame.size.height - 10) ].CGPath;
-    self.backgroundView.layer.shadowOffset = CGSizeMake(5, 5);
-    self.backgroundView.layer.shadowRadius = 5;
-    self.backgroundView.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.backgroundView.layer.shadowOpacity = 0.4;
+    self.arrowPoint = [self arrowPointWithDependentViewFrame:rect];
+    self.frame = [self frameWithArrorPoint:self.arrowPoint];
     
     [[UIApplication sharedApplication].keyWindow addSubview:self.backgroundView];
     [[UIApplication sharedApplication].keyWindow addSubview:self];
-    self.alpha = 1.0;
-    
-    CGAffineTransform transform = CGAffineTransformIdentity;
-    transform = CGAffineTransformTranslate(transform, _arrowPoint.x - CGRectGetWidth(self.frame)/2.0, _arrowPoint.y - CGRectGetHeight(self.frame)/2.0);
-    transform = CGAffineTransformScale(transform, 0.01, 0.01);
-    self.transform = transform;
-    self.alpha = 0.01;
-    [UIView animateWithDuration:0.25 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:2.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+
+    self.transform = self.animationTransform;
+    [UIView animateWithDuration:0.3 animations:^{
         self.transform = CGAffineTransformIdentity;
         self.alpha = 1.0;
-    } completion:^(BOOL finished) {
-        
+        self.backgroundView.alpha = 0.05;
     }];
 }
 
-
 - (void)dismiss {
     self.backgroundView.layer.shadowPath =  [UIBezierPath bezierPathWithRect:CGRectZero].CGPath;
-    
-    CGAffineTransform transform = CGAffineTransformIdentity;
-    transform = CGAffineTransformTranslate(transform, _arrowPoint.x - CGRectGetWidth(self.frame)/2.0, _arrowPoint.y - CGRectGetHeight(self.frame)/2.0);
-    transform = CGAffineTransformScale(transform, 0.01, 0.01);
-    self.transform = CGAffineTransformIdentity;
     [UIView animateWithDuration:0.2 animations:^{
-        self.transform = transform;
-        self.alpha = 0.01;
+        self.transform = self.animationTransform;
+        self.backgroundView.alpha =  0;
     } completion:^(BOOL finished) {
         self.transform = CGAffineTransformIdentity;
         [self.backgroundView removeFromSuperview];
         [self removeFromSuperview];
     }];
+}
+
+- (CGPoint)arrowPointWithDependentViewFrame:(CGRect)rect {
+    CGPoint point = CGPointZero;
+    switch (self.arrowPosition) {
+        case SYSelectBoxArrowPositionTopLeft:
+        case SYSelectBoxArrowPositionTopCenter:
+        case SYSelectBoxArrowPositionTopRight:
+           point = CGPointMake(rect.origin.x + rect.size.width * 0.5, rect.origin.y + rect.size.height);
+            break;
+        case SYSelectBoxArrowPositionLeftTop:
+        case SYSelectBoxArrowPositionLeftCenter:
+        case SYSelectBoxArrowPositionLeftBottom:
+           point = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height * 0.5);
+            break;
+        case SYSelectBoxArrowPositionBottomLeft:
+        case SYSelectBoxArrowPositionBottomCenter:
+        case SYSelectBoxArrowPositionBottomRight:
+           point = CGPointMake(rect.origin.x + rect.size.width * 0.5, rect.origin.y);
+            break;
+        case SYSelectBoxArrowPositionRightTop:
+        case SYSelectBoxArrowPositionRightCenter:
+        case SYSelectBoxArrowPositionRightBottom:
+            point = CGPointMake(rect.origin.x, rect.origin.y + rect.size.height * 0.5);
+            break;
+    }
+    return point;
+}
+
+- (CGRect)frameWithArrorPoint:(CGPoint)point {
+    CGRect frame = CGRectZero;
+    
+    switch (self.arrowPosition) {
+        case SYSelectBoxArrowPositionTopLeft:
+            frame = CGRectMake(point.x - SYArrowBorderMargin - SYArrowWidth * 0.5 - SYCornerRodius, point.y, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionTopCenter:
+            frame = CGRectMake(point.x - self.frame.size.width * 0.5, point.y, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionTopRight:
+            frame = CGRectMake(point.x - self.frame.size.width + SYArrowBorderMargin + SYArrowWidth * 0.5 + SYCornerRodius, point.y, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionLeftTop:
+             frame = CGRectMake(point.x, point.y - SYArrowBorderMargin - SYArrowWidth * 0.5 - SYCornerRodius, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionLeftCenter:
+             frame = CGRectMake(point.x, point.y - self.frame.size.height * 0.5, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionLeftBottom:
+             frame = CGRectMake(point.x, point.y - self.frame.size.height + SYArrowWidth*0.5 + SYArrowBorderMargin + SYCornerRodius, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionBottomLeft:
+            frame = CGRectMake(point.x - SYArrowBorderMargin - SYArrowWidth * 0.5 - SYCornerRodius, point.y - self.frame.size.height, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionBottomCenter:
+            frame = CGRectMake(point.x - self.frame.size.width * 0.5, point.y - self.frame.size.height, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionBottomRight:
+             frame = CGRectMake(point.x - self.frame.size.width + SYArrowBorderMargin + SYArrowWidth * 0.5 + SYCornerRodius, point.y - self.frame.size.height, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionRightTop:
+             frame = CGRectMake(point.x - self.frame.size.width, point.y - SYArrowBorderMargin - SYArrowWidth * 0.5 - SYCornerRodius, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionRightCenter:
+              frame = CGRectMake(point.x - self.frame.size.width, point.y - self.frame.size.height * 0.5, self.frame.size.width, self.frame.size.height);
+            break;
+        case SYSelectBoxArrowPositionRightBottom:
+              frame = CGRectMake(point.x - self.frame.size.width, point.y - self.frame.size.height + SYArrowWidth*0.5 + SYArrowBorderMargin + SYCornerRodius, self.frame.size.width, self.frame.size.height);
+            break;
+    }
+    
+    return frame;
+}
+
+- (CGAffineTransform)animationTransform {
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    switch (self.arrowPosition) {
+        case SYSelectBoxArrowPositionTopLeft:
+        case SYSelectBoxArrowPositionTopCenter:
+        case SYSelectBoxArrowPositionTopRight:
+            transform = CGAffineTransformTranslate(transform, 0, -self.frame.size.height/2);
+            break;
+        case SYSelectBoxArrowPositionLeftTop:
+        case SYSelectBoxArrowPositionLeftCenter:
+        case SYSelectBoxArrowPositionLeftBottom:
+            transform = CGAffineTransformTranslate(transform, -self.frame.size.width/2, 0);
+            break;
+        case SYSelectBoxArrowPositionBottomLeft:
+        case SYSelectBoxArrowPositionBottomCenter:
+        case SYSelectBoxArrowPositionBottomRight:
+            transform = CGAffineTransformTranslate(transform, 0, self.frame.size.height/2);
+            break;
+        case SYSelectBoxArrowPositionRightTop:
+        case SYSelectBoxArrowPositionRightCenter:
+        case SYSelectBoxArrowPositionRightBottom:
+            transform = CGAffineTransformTranslate(transform, self.frame.size.width/2, 0);
+            break;
+    }
+    transform = CGAffineTransformScale(transform, 0.01, 0.01);
+    return transform;
 }
 
 #pragma mark - 懒加载
@@ -108,11 +193,14 @@
 
 - (UIView *)backgroundView {
     if (_backgroundView == nil) {
+        
         _backgroundView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _backgroundView.backgroundColor = [UIColor clearColor];
+        _backgroundView.backgroundColor = [UIColor blackColor];
+        _backgroundView.alpha = 0;
+        _backgroundView.userInteractionEnabled = YES;
+        
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
         tap.delegate = self;
-        _backgroundView.userInteractionEnabled = YES;
         [_backgroundView addGestureRecognizer:tap];
         _backgroundView.tag = 9999;
     }
@@ -122,54 +210,179 @@
 - (UIBezierPath *)borderPath {
     if (_borderPath == nil) {
         _borderPath = [[UIBezierPath alloc] init];
-
-        CGFloat arrowLeftX = 0;
+        
+        NSMutableArray *tempArray = [NSMutableArray array];
+        
+        CGPoint arrorRight = CGPointZero;
+        CGPoint arrorTop = CGPointZero;
+        CGPoint arrorLeft = CGPointZero;
+        
+        NSInteger index = 0;
         
         switch (self.arrowPosition) {
-            case SYSelectBoxArrowPositionLeft:
-                arrowLeftX = 10;
+                
+            case SYSelectBoxArrowPositionTopLeft:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius + SYArrowHeight) isVertical:NO];
+                arrorRight = CGPointMake(SYCornerRodius + SYArrowBorderMargin + SYArrowWidth, SYArrowHeight);
+                arrorTop = CGPointMake(arrorRight.x - SYArrowWidth * 0.5, 0);
+                arrorLeft = CGPointMake(arrorRight.x - SYArrowWidth, arrorRight.y);
+                index = 7;
                 break;
-            case SYSelectBoxArrowPositionCenter:
-                arrowLeftX = (self.frame.size.width - SYArrowWidth)/2;
+            case SYSelectBoxArrowPositionTopCenter:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius + SYArrowHeight) isVertical:NO];
+                arrorRight = CGPointMake((SelfWidth + SYArrowWidth)*0.5, SYArrowHeight);
+                arrorTop = CGPointMake(arrorRight.x - SYArrowWidth * 0.5, 0);
+                arrorLeft = CGPointMake(arrorRight.x - SYArrowWidth, arrorRight.y);
+                index = 7;
                 break;
-            case SYSelectBoxArrowPositionRight:
-                arrowLeftX = self.frame.size.width - 10 - SYArrowWidth;
+            case SYSelectBoxArrowPositionTopRight:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius + SYArrowHeight) isVertical:NO];
+                arrorRight = CGPointMake(SelfWidth - SYCornerRodius - SYArrowBorderMargin, SYArrowHeight);
+                arrorTop = CGPointMake(arrorRight.x - SYArrowWidth * 0.5, 0);
+                arrorLeft = CGPointMake(arrorRight.x - SYArrowWidth, arrorRight.y);
+                index = 7;
+                break;
+                
+            case SYSelectBoxArrowPositionLeftTop:
+                tempArray = [self basePointsByStartPoints:CGPointMake(SYArrowHeight, SYCornerRodius ) isVertical:YES];
+                arrorRight = CGPointMake(SYArrowHeight, SYCornerRodius + SYArrowBorderMargin);
+                arrorTop = CGPointMake(0,arrorRight.y + SYArrowWidth * 0.5);
+                arrorLeft = CGPointMake(arrorRight.x, arrorRight.y + SYArrowWidth);
+                index = 1;
+                break;
+            case SYSelectBoxArrowPositionLeftCenter:
+                tempArray = [self basePointsByStartPoints:CGPointMake(SYArrowHeight, SYCornerRodius ) isVertical:YES];
+                arrorRight = CGPointMake(SYArrowHeight, (SelfHeight - SYArrowWidth) *0.5);
+                arrorTop = CGPointMake(0,arrorRight.y + SYArrowWidth * 0.5);
+                arrorLeft = CGPointMake(arrorRight.x, arrorRight.y + SYArrowWidth);
+                 index = 1;
+                break;
+            case SYSelectBoxArrowPositionLeftBottom:
+                tempArray = [self basePointsByStartPoints:CGPointMake(SYArrowHeight, SYCornerRodius ) isVertical:YES];
+                arrorRight = CGPointMake(SYArrowHeight, SelfHeight - SYCornerRodius - SYArrowBorderMargin - SYArrowWidth);
+                arrorTop = CGPointMake(0,arrorRight.y + SYArrowWidth * 0.5);
+                arrorLeft = CGPointMake(arrorRight.x, arrorRight.y + SYArrowWidth);
+                index = 1;
+                break;
+                
+            case SYSelectBoxArrowPositionBottomLeft:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius) isVertical:NO];
+                arrorRight = CGPointMake(SYCornerRodius + SYArrowBorderMargin, SelfHeight-SYArrowHeight);
+                arrorTop = CGPointMake(arrorRight.x + SYArrowWidth * 0.5, SelfHeight);
+                arrorLeft = CGPointMake(arrorRight.x + SYArrowWidth, arrorRight.y);
+                index = 3;
+                break;
+            case SYSelectBoxArrowPositionBottomCenter:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius) isVertical:NO];
+                arrorRight = CGPointMake((SelfWidth - SYArrowWidth)*0.5, SelfHeight-SYArrowHeight);
+                arrorTop = CGPointMake(arrorRight.x + SYArrowWidth * 0.5, SelfHeight);
+                arrorLeft = CGPointMake(arrorRight.x + SYArrowWidth, arrorRight.y);
+                index = 3;
+                break;
+            case SYSelectBoxArrowPositionBottomRight:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius) isVertical:NO];
+                arrorRight = CGPointMake(SelfWidth - SYCornerRodius - SYArrowBorderMargin - SYArrowWidth, SelfHeight-SYArrowHeight);
+                arrorTop = CGPointMake(arrorRight.x + SYArrowWidth * 0.5, SelfHeight);
+                arrorLeft = CGPointMake(arrorRight.x + SYArrowWidth, arrorRight.y);
+                index = 3;
+                break;
+                
+            case SYSelectBoxArrowPositionRightTop:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius) isVertical:YES];
+                arrorRight = CGPointMake(SelfWidth - SYArrowHeight, SYCornerRodius + SYArrowBorderMargin + SYArrowWidth);
+                arrorTop = CGPointMake(SelfWidth,arrorRight.y - SYArrowWidth * 0.5);
+                arrorLeft = CGPointMake(arrorRight.x, arrorRight.y - SYArrowWidth);
+                index = 5;
+                break;
+            case SYSelectBoxArrowPositionRightCenter:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius) isVertical:YES];
+                arrorRight = CGPointMake(SelfWidth - SYArrowHeight, (SelfHeight + SYArrowWidth)*0.5);
+                arrorTop = CGPointMake(SelfWidth,arrorRight.y - SYArrowWidth * 0.5);
+                arrorLeft = CGPointMake(arrorRight.x, arrorRight.y - SYArrowWidth);
+                index = 5;
+                break;
+            case SYSelectBoxArrowPositionRightBottom:
+                tempArray = [self basePointsByStartPoints:CGPointMake(0, SYCornerRodius) isVertical:YES];
+                arrorRight = CGPointMake(SelfWidth - SYArrowHeight, SelfHeight - SYArrowBorderMargin - SYCornerRodius);
+                arrorTop = CGPointMake(SelfWidth,arrorRight.y - SYArrowWidth * 0.5);
+                arrorLeft = CGPointMake(arrorRight.x, arrorRight.y - SYArrowWidth);
+                index = 5;
                 break;
         }
         
-        CGFloat arrowRightX = arrowLeftX + SYArrowWidth;
+        SYBezierModel *arrorRightModel = [[SYBezierModel alloc] initWithPoint:arrorRight controlPoint:CGPointZero andDrawType:SYBezierDrawTypeLine];
+        [tempArray insertObject:arrorRightModel atIndex:index];
+        SYBezierModel *arrorTopModel = [[SYBezierModel alloc] initWithPoint:arrorTop controlPoint:CGPointZero andDrawType:SYBezierDrawTypeLine];
+        [tempArray insertObject:arrorTopModel atIndex:index + 1];
+        SYBezierModel *arrorLeftModel = [[SYBezierModel alloc] initWithPoint:arrorLeft controlPoint:CGPointZero andDrawType:SYBezierDrawTypeLine];
+        [tempArray insertObject:arrorLeftModel atIndex:index + 2];
         
-        CGFloat left = 0.0;
-        CGFloat right = CGRectGetWidth(self.frame);
-        CGFloat top = SYArrowHeight;
-        CGFloat bottom = CGRectGetHeight(self.frame);
-        
-        //start
-        [_borderPath moveToPoint:CGPointMake(left, SYCornerRodius+top)];
-        
-        //left
-        [_borderPath addLineToPoint:CGPointMake(left, bottom-SYCornerRodius)];
-        [_borderPath addQuadCurveToPoint:CGPointMake(left+SYCornerRodius, bottom) controlPoint:CGPointMake(left, bottom)];
-        
-        //bottom
-        [_borderPath addLineToPoint:CGPointMake(right-SYCornerRodius, bottom)];
-        [_borderPath addQuadCurveToPoint:CGPointMake(right, bottom-SYCornerRodius) controlPoint:CGPointMake(right, bottom)];
-        
-        //right
-        [_borderPath addLineToPoint:CGPointMake(right, SYCornerRodius+top)];
-        [_borderPath addQuadCurveToPoint:CGPointMake(right-SYCornerRodius, top) controlPoint:CGPointMake(right, top)];
-        
-        //arrow
-        self.arrowPoint = CGPointMake(arrowRightX - SYArrowWidth/2, 0);
-        [_borderPath addLineToPoint:CGPointMake(arrowRightX, top)];
-        [_borderPath addLineToPoint:CGPointMake(arrowRightX - SYArrowWidth/2, 0)];
-        [_borderPath addLineToPoint:CGPointMake(arrowLeftX, top)];
-        
-        //top
-        [_borderPath addLineToPoint:CGPointMake(left+SYCornerRodius, top)];
-        [_borderPath addQuadCurveToPoint:CGPointMake(left, SYCornerRodius+top) controlPoint:CGPointMake(left, top)];
+        for (SYBezierModel *model in tempArray) {
+            if (model.type == SYBezierDrawTypeStart) {
+                 [_borderPath moveToPoint:model.point];
+            }else if (model.type == SYBezierDrawTypeLine) {
+                [_borderPath addLineToPoint:model.point];
+            }else {
+                [_borderPath addQuadCurveToPoint:model.point controlPoint:model.controlPoint];
+            }
+        }
     }
     return _borderPath;
+}
+
+- (NSMutableArray *)basePointsByStartPoints:(CGPoint)startPoint isVertical:(BOOL )vertical{
+    NSMutableArray *tempArray = [NSMutableArray array];
+    
+    SYBezierModel *startModel = [[SYBezierModel alloc] initWithPoint:startPoint controlPoint:CGPointZero andDrawType:SYBezierDrawTypeStart];
+    [tempArray addObject:startModel];
+    
+    CGPoint point = CGPointZero;
+    CGPoint controlPoint = CGPointZero;
+    
+    CGFloat marginV = vertical?(self.frame.size.height - 2 *SYCornerRodius):(self.frame.size.height - SYArrowHeight - 2 *SYCornerRodius);
+    CGFloat marginH = vertical?(self.frame.size.width - SYArrowHeight):self.frame.size.width;
+    
+    for (int i = 0; i < 8; i++) {
+        switch (i) {
+            case 0:
+                point = CGPointMake(startPoint.x, startPoint.y + marginV);
+                controlPoint = CGPointZero;
+                break;
+            case 1:
+                point = CGPointMake(startPoint.x + SYCornerRodius, startPoint.y + marginV  + SYCornerRodius);
+                controlPoint = CGPointMake(startPoint.x, startPoint.y + marginV + SYCornerRodius);
+                break;
+            case 2:
+                point = CGPointMake(startPoint.x + marginH - SYCornerRodius, startPoint.y + marginV  + SYCornerRodius);
+                controlPoint = CGPointZero;
+                break;
+            case 3:
+                point = CGPointMake(startPoint.x + marginH, startPoint.y + marginV);
+                controlPoint = CGPointMake(startPoint.x + marginH, startPoint.y + marginV + SYCornerRodius);
+                break;
+            case 4:
+                point = CGPointMake(startPoint.x + marginH, startPoint.y);
+                controlPoint = CGPointZero;
+                break;
+            case 5:
+                point = CGPointMake(startPoint.x + marginH - SYCornerRodius, startPoint.y - SYCornerRodius);
+                controlPoint = CGPointMake(startPoint.x + marginH, startPoint.y - SYCornerRodius);
+                break;
+            case 6:
+                point = CGPointMake(startPoint.x + SYCornerRodius, startPoint.y - SYCornerRodius);
+                controlPoint = CGPointZero;
+                break;
+            case 7:
+                point = startPoint;
+                controlPoint = CGPointMake(startPoint.x, startPoint.y - SYCornerRodius);
+                break;
+            default:
+                break;
+        }
+        SYBezierModel *model = [[SYBezierModel alloc] initWithPoint:point controlPoint:controlPoint andDrawType:i%2 == 0?SYBezierDrawTypeLine:SYBezierDrawTypeCurve];
+        [tempArray addObject:model];
+    }
+    return tempArray;
 }
 
 - (CAShapeLayer *)maskLayer {
@@ -193,3 +406,19 @@
 }
 
 @end
+
+
+@implementation SYBezierModel
+
+- (instancetype)initWithPoint:(CGPoint)point controlPoint:(CGPoint)control andDrawType:(SYBezierDrawType)type {
+    if (self = [super init]) {
+        self.point = point;
+        self.controlPoint = control;
+        self.type = type;
+    }
+    return self;
+}
+
+@end
+
+

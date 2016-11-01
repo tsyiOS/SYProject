@@ -14,8 +14,6 @@
 		F05B0DBF1DC74FE200A47CED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05B0DBE1DC74FE200A47CED /* Assets.xcassets */; };
 		F05B0DC21DC74FE200A47CED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05B0DC01DC74FE200A47CED /* LaunchScreen.storyboard */; };
 		F05B0DCC1DC7514100A47CED /* SYSelectBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F05B0DCB1DC7514100A47CED /* SYSelectBox.m */; };
-		F05B0DD11DC7557900A47CED /* ERPullDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F05B0DCE1DC7557900A47CED /* ERPullDownCell.m */; };
-		F05B0DD21DC7557900A47CED /* ERPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F05B0DD01DC7557900A47CED /* ERPullDownMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +29,6 @@
 		F05B0DC31DC74FE200A47CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F05B0DCA1DC7514100A47CED /* SYSelectBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectBox.h; sourceTree = "<group>"; };
 		F05B0DCB1DC7514100A47CED /* SYSelectBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectBox.m; sourceTree = "<group>"; };
-		F05B0DCD1DC7557900A47CED /* ERPullDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPullDownCell.h; sourceTree = "<group>"; };
-		F05B0DCE1DC7557900A47CED /* ERPullDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPullDownCell.m; sourceTree = "<group>"; };
-		F05B0DCF1DC7557900A47CED /* ERPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPullDownMenu.h; sourceTree = "<group>"; };
-		F05B0DD01DC7557900A47CED /* ERPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPullDownMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +88,6 @@
 			children = (
 				F05B0DCA1DC7514100A47CED /* SYSelectBox.h */,
 				F05B0DCB1DC7514100A47CED /* SYSelectBox.m */,
-				F05B0DCD1DC7557900A47CED /* ERPullDownCell.h */,
-				F05B0DCE1DC7557900A47CED /* ERPullDownCell.m */,
-				F05B0DCF1DC7557900A47CED /* ERPullDownMenu.h */,
-				F05B0DD01DC7557900A47CED /* ERPullDownMenu.m */,
 			);
 			path = SYSelectBox;
 			sourceTree = "<group>";
@@ -174,8 +164,6 @@
 			files = (
 				F05B0DBA1DC74FE200A47CED /* ViewController.m in Sources */,
 				F05B0DCC1DC7514100A47CED /* SYSelectBox.m in Sources */,
-				F05B0DD21DC7557900A47CED /* ERPullDownMenu.m in Sources */,
-				F05B0DD11DC7557900A47CED /* ERPullDownCell.m in Sources */,
 				F05B0DB71DC74FE200A47CED /* AppDelegate.m in Sources */,
 				F05B0DB41DC74FE200A47CED /* main.m in Sources */,
 			);
@@ -326,6 +314,7 @@
 				F05B0DC81DC74FE200A47CED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

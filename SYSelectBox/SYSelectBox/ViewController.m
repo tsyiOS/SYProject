@@ -10,7 +10,7 @@
 #import "SYSelectBox.h"
 
 @interface ViewController ()
-
+@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation ViewController
@@ -25,8 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)show:(UIButton *)sender {
-    SYSelectBox *box = [[SYSelectBox alloc] initWithSize:CGSizeMake(100, 100) direction:SYSelectBoxArrowPositionLeft andCustomView:nil];
+    SYSelectBox *box = [[SYSelectBox alloc] initWithSize:CGSizeMake(10, 10) direction:_count andCustomView:nil];
     [box showDependentOn:sender];
+    _count += 1;
 }
 
 @end
