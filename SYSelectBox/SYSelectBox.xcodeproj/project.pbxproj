@@ -14,6 +14,8 @@
 		F05B0DBF1DC74FE200A47CED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05B0DBE1DC74FE200A47CED /* Assets.xcassets */; };
 		F05B0DC21DC74FE200A47CED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05B0DC01DC74FE200A47CED /* LaunchScreen.storyboard */; };
 		F05B0DCC1DC7514100A47CED /* SYSelectBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F05B0DCB1DC7514100A47CED /* SYSelectBox.m */; };
+		F0ED9E191DC897900069E47F /* SYBezierModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED9E181DC897900069E47F /* SYBezierModel.m */; };
+		F0ED9E1C1DC89D220069E47F /* SYSelectTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED9E1B1DC89D220069E47F /* SYSelectTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		F05B0DC31DC74FE200A47CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F05B0DCA1DC7514100A47CED /* SYSelectBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectBox.h; sourceTree = "<group>"; };
 		F05B0DCB1DC7514100A47CED /* SYSelectBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectBox.m; sourceTree = "<group>"; };
+		F0ED9E171DC897900069E47F /* SYBezierModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBezierModel.h; sourceTree = "<group>"; };
+		F0ED9E181DC897900069E47F /* SYBezierModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBezierModel.m; sourceTree = "<group>"; };
+		F0ED9E1A1DC89D220069E47F /* SYSelectTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectTable.h; sourceTree = "<group>"; };
+		F0ED9E1B1DC89D220069E47F /* SYSelectTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 			children = (
 				F05B0DCA1DC7514100A47CED /* SYSelectBox.h */,
 				F05B0DCB1DC7514100A47CED /* SYSelectBox.m */,
+				F0ED9E171DC897900069E47F /* SYBezierModel.h */,
+				F0ED9E181DC897900069E47F /* SYBezierModel.m */,
+				F0ED9E1A1DC89D220069E47F /* SYSelectTable.h */,
+				F0ED9E1B1DC89D220069E47F /* SYSelectTable.m */,
 			);
 			path = SYSelectBox;
 			sourceTree = "<group>";
@@ -162,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0ED9E1C1DC89D220069E47F /* SYSelectTable.m in Sources */,
 				F05B0DBA1DC74FE200A47CED /* ViewController.m in Sources */,
+				F0ED9E191DC897900069E47F /* SYBezierModel.m in Sources */,
 				F05B0DCC1DC7514100A47CED /* SYSelectBox.m in Sources */,
 				F05B0DB71DC74FE200A47CED /* AppDelegate.m in Sources */,
 				F05B0DB41DC74FE200A47CED /* main.m in Sources */,

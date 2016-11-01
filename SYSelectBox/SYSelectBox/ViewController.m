@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SYSelectBox.h"
+#import "SYSelectTable.h"
 
 @interface ViewController ()
 @property (nonatomic, assign) NSInteger count;
@@ -25,9 +26,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)show:(UIButton *)sender {
-    SYSelectBox *box = [[SYSelectBox alloc] initWithSize:CGSizeMake(10, 10) direction:_count andCustomView:nil];
-    [box showDependentOn:sender];
-    _count += 1;
+//    UILabel *label = [[UILabel alloc] init];
+//    label.text = @"哈哈哈";
+//    SYSelectTable *box = [[SYSelectTable alloc] initWithSize:CGSizeMake(100, 200) direction:_count andCustomView:nil];
+//    [box showDependentOnView:sender];
+//    _count += 1;
+    SYSelectTable *table = [[SYSelectTable alloc] initWithDatas:@[@"快快快",@"福克斯",@"方式",@"就打破"]];
+    [table showDependentOnView:sender];
+    
 }
 
 @end

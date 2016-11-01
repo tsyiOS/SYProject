@@ -7,6 +7,7 @@
 //
 
 #import "SYSelectBox.h"
+#import "SYBezierModel.h"
 
 #define SYArrowHeight  10
 #define SYArrowWidth   15
@@ -40,28 +41,37 @@
     }
     
     if (self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)]) {
-        self.arrowPosition = position;
-        [self setUpUI];
+        _arrowPosition = position;
+        _customView = customView;
+        
+        self.backgroundColor = [UIColor whiteColor];
+        
+        _customView.frame = self.contentView.bounds;
+        [self addSubview:self.contentView];
+        [self.contentView addSubview:_customView];
+        self.layer.mask = self.maskLayer;
+        [self.layer addSublayer:self.borderLayer];
     }
+    
     return self;
+    
 }
 
-- (void)setUpUI {
-    self.backgroundColor = [UIColor whiteColor];
-    [self addSubview:self.contentView];
-    self.layer.mask = self.maskLayer;
-    [self.layer addSublayer:self.borderLayer];
-}
-
-- (void)showDependentOn:(UIView *)dependentView {
+- (void)showDependentOnView:(UIView *)dependentView {
     CGRect rect = [[UIApplication sharedApplication].keyWindow convertRect:dependentView.frame fromView:dependentView.superview];
-    
     self.arrowPoint = [self arrowPointWithDependentViewFrame:rect];
+    [self show];
+}
+
+- (void)showDependentOnPoint:(CGPoint)point {
+    self.arrowPoint = point;
+    [self show];
+}
+
+- (void)show {
     self.frame = [self frameWithArrorPoint:self.arrowPoint];
-    
     [[UIApplication sharedApplication].keyWindow addSubview:self.backgroundView];
     [[UIApplication sharedApplication].keyWindow addSubview:self];
-
     self.transform = self.animationTransform;
     [UIView animateWithDuration:0.3 animations:^{
         self.transform = CGAffineTransformIdentity;
@@ -185,7 +195,30 @@
 #pragma mark - 懒加载
 - (UIView *)contentView {
     if (_contentView == nil) {
-        _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, SYArrowHeight, self.bounds.size.width, self.bounds.size.height)];
+        CGRect rect = CGRectZero;
+        switch (self.arrowPosition) {
+            case SYSelectBoxArrowPositionTopLeft:
+            case SYSelectBoxArrowPositionTopCenter:
+            case SYSelectBoxArrowPositionTopRight:
+                rect = CGRectMake(0, SYArrowHeight, SelfWidth, SelfHeight - SYArrowHeight);
+                break;
+            case SYSelectBoxArrowPositionLeftTop:
+            case SYSelectBoxArrowPositionLeftCenter:
+            case SYSelectBoxArrowPositionLeftBottom:
+                rect = CGRectMake(SYArrowHeight, 0, SelfWidth - SYArrowHeight, SelfHeight);
+                break;
+            case SYSelectBoxArrowPositionBottomLeft:
+            case SYSelectBoxArrowPositionBottomCenter:
+            case SYSelectBoxArrowPositionBottomRight:
+                rect = CGRectMake(0, 0, SelfWidth, SelfHeight - SYArrowHeight);
+                break;
+            case SYSelectBoxArrowPositionRightTop:
+            case SYSelectBoxArrowPositionRightCenter:
+            case SYSelectBoxArrowPositionRightBottom:
+                rect = CGRectMake(0, 0, SelfWidth - SYArrowHeight, SelfHeight);
+                break;
+        }
+        _contentView = [[UIView alloc] initWithFrame:rect];
         _contentView.backgroundColor = [UIColor clearColor];
     }
     return _contentView;
@@ -408,17 +441,5 @@
 @end
 
 
-@implementation SYBezierModel
-
-- (instancetype)initWithPoint:(CGPoint)point controlPoint:(CGPoint)control andDrawType:(SYBezierDrawType)type {
-    if (self = [super init]) {
-        self.point = point;
-        self.controlPoint = control;
-        self.type = type;
-    }
-    return self;
-}
-
-@end
 
 

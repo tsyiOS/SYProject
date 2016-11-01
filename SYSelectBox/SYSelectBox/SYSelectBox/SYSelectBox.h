@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+//箭头的朝向
 typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
     SYSelectBoxArrowPositionTopLeft,            //上左
     SYSelectBoxArrowPositionTopCenter,        //上中
-    SYSelectBoxArrowPositionTopRight,
+    SYSelectBoxArrowPositionTopRight,          //上右
     SYSelectBoxArrowPositionLeftTop,
     SYSelectBoxArrowPositionLeftCenter,
     SYSelectBoxArrowPositionLeftBottom,
@@ -25,6 +26,10 @@ typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
 
 @interface SYSelectBox : UIView
 /**
+ *  自定义view
+ */
+@property (nonatomic, strong,readonly) UIView *customView;
+/**
  *  实例方法
  *
  *  @param frame        大小
@@ -34,23 +39,20 @@ typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
  *  @return 下拉菜单
  */
 - (instancetype)initWithSize:(CGSize)size direction:(SYSelectBoxArrowPosition) position andCustomView:(UIView *)customView;
-- (void)showDependentOn:(UIView *)dependentView;
-@end
-
-typedef NS_ENUM(NSUInteger, SYBezierDrawType) {
-    SYBezierDrawTypeStart,
-    SYBezierDrawTypeLine,
-    SYBezierDrawTypeCurve
-};
-
-@interface SYBezierModel : NSObject
-@property (nonatomic, assign) CGPoint point;
 /**
- *  基准点，画曲线时候用
+ *  依赖展开
+ *
+ *  @param dependentView 依赖的view
  */
-@property (nonatomic, assign) CGPoint controlPoint;
-@property (nonatomic, assign) SYBezierDrawType type;
-- (instancetype)initWithPoint:(CGPoint)point controlPoint:(CGPoint)control andDrawType:(SYBezierDrawType)type;
+- (void)showDependentOnView:(UIView *)dependentView;
+/**
+ *  依赖某点展开
+ *
+ *  @param point 依赖的点,改点必须是相对于UIScreen屏幕上的点
+ */
+- (void)showDependentOnPoint:(CGPoint)point;
 @end
+
+
 
 
