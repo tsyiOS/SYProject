@@ -8,12 +8,16 @@
 
 #import "SYBubbleBox.h"
 
-static CGFloat const radius = 150;//圆心距
-static CGFloat const titleBtnR = 50;//小按钮的直径
+//static CGFloat const radius = 150;//圆心距
+//static CGFloat const titleBtnR = 50;//小按钮的直径
+
+CGFloat SYDistanceBetweenPoints(CGPoint p1, CGPoint p2){
+    return sqrtf(powf(p1.x - p2.x, 2) + powf(p1.y - p2.y, 2));
+}
 
 @interface SYBubbleBox ()
 @property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, strong) UIButton *addButton;
+@property (nonatomic, strong) UIButton *centerButton;
 @property (nonatomic, strong) UIView *backgroundView;
 @end
 
@@ -21,27 +25,172 @@ static CGFloat const titleBtnR = 50;//小按钮的直径
 
 - (instancetype)initWithTitles:(NSArray *)titles andFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.titles = titles;
-        for (int i = 0; i<titles.count; i++) {
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-            btn.tag = i+1000;
-            [btn setTitle:titles[i] forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            btn.backgroundColor = [UIColor darkGrayColor];
-            btn.bounds = CGRectMake(0, 0, titleBtnR, titleBtnR);
-            btn.layer.cornerRadius = titleBtnR*0.5;
-            btn.clipsToBounds = YES;
-            btn.titleLabel.font = [UIFont systemFontOfSize:12];
-            btn.center = self.addButton.center;
-            [btn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            [self addSubview:btn];
-        }
-        [self addSubview:self.addButton];
+        _titles = titles;
+        _startAngle = 90;
+        _endAngle = 180;
+        _radius = 150;
+        _centerRotateAngle = 45;
+        _itemDiam = [self centerButtonDiam] - 10;
+        _itemColor = [UIColor darkGrayColor];
+        _itemFont = [UIFont systemFontOfSize:12];
+        _itemTextColor = [UIColor whiteColor];
+        _centerTitle = @"+";
+        _centerColor = [UIColor redColor];
+        _centerFont = [UIFont boldSystemFontOfSize:45];
+        _centerTextColor = [UIColor whiteColor];
+        [self setUpUI];
     }
     return self;
 }
 
-- (void)addButtonClick:(UIButton *)sender {
+- (void)setUpUI {
+    for (int i = 0; i<_titles.count; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.tag = i+1000;
+        [btn setTitle:_titles[i] forState:UIControlStateNormal];
+        [btn setTitleColor:_itemTextColor forState:UIControlStateNormal];
+        btn.backgroundColor = _itemColor;
+        btn.bounds = CGRectMake(0, 0, _itemDiam, _itemDiam);
+        btn.layer.cornerRadius = _itemDiam*0.5;
+        btn.clipsToBounds = YES;
+        btn.titleLabel.font = _itemFont;
+        btn.center = self.centerButton.center;
+        [btn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:btn];
+    }
+    [self addSubview:self.centerButton];
+}
+
+#pragma mark - 设置小按钮的属性
+- (void)setItemDiam:(CGFloat)itemDiam {
+    if (itemDiam > 0 && itemDiam <= [self centerButtonDiam]) {
+        _itemDiam = itemDiam;
+        [self setItemProprety:^(UIButton *sub){
+            sub.bounds = CGRectMake(0, 0, itemDiam,itemDiam);
+            sub.layer.cornerRadius = itemDiam*0.5;
+        }];
+    }
+}
+
+- (void)setItemColor:(UIColor *)itemColor {
+    _itemColor = itemColor;
+    [self setItemProprety:^(UIButton *sub) {
+        [sub setBackgroundColor:itemColor];
+    }];
+}
+
+- (void)setItemFont:(UIFont *)itemFont {
+    _itemFont = itemFont;
+    [self setItemProprety:^(UIButton *sub) {
+        sub.titleLabel.font = itemFont;
+    }];
+}
+
+- (void)setItemTextColor:(UIColor *)itemTextColor {
+    _itemTextColor = itemTextColor;
+    [self setItemProprety:^(UIButton *sub) {
+        [sub setTitleColor:itemTextColor forState:UIControlStateNormal];
+    }];
+}
+
+- (void)setItemProprety:(void(^)(UIButton *sub))block {
+    if (block) {
+        for (UIButton *sub in self.subviews) {
+            if (sub.tag >= 1000){
+                block(sub);
+            }
+        }
+    }
+}
+
+#pragma mark - 设置中心按钮属性
+- (void)setCenterImage:(UIImage *)centerImage {
+    _centerImage = centerImage;
+    [self.centerButton setBackgroundImage:centerImage forState:UIControlStateNormal];
+}
+
+- (void)setCenterTitle:(NSString *)centerTitle {
+    _centerTitle = centerTitle;
+    [self.centerButton setTitle:self.centerTitle forState:UIControlStateNormal];
+}
+
+- (void)setCenterColor:(UIColor *)centerColor {
+    _centerColor = centerColor;
+    [self.centerButton setBackgroundColor:centerColor];
+}
+
+- (void)setCenterFont:(UIFont *)centerFont {
+    _centerFont = centerFont;
+    self.centerButton.titleLabel.font = centerFont;
+}
+
+- (void)setCenterTextColor:(UIColor *)centerTextColor {
+    _centerTextColor = centerTextColor;
+    [self.centerButton setTitleColor:centerTextColor forState:UIControlStateNormal];
+}
+
+#pragma mark - 设置自身属性
+- (void)setAllowRotation:(BOOL)allowRotation {
+    _allowRotation = allowRotation;
+    if (allowRotation) {
+        for (UIView *sub in self.subviews) {
+            if (sub.tag >= 1000) {
+                UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerMove:)];
+                [sub addGestureRecognizer:pan];
+            }
+        }
+    }
+}
+
+- (void)setStartAngle:(CGFloat)startAngle {
+    _startAngle = [self transformAngle:startAngle];
+}
+
+- (void)setEndAngle:(CGFloat)endAngle {
+    _endAngle = [self transformAngle:endAngle];
+}
+
+- (CGFloat)transformAngle:(CGFloat)angle {
+    while (angle > 360) {
+        angle -= 360;
+    }
+    
+    while (angle < 0) {
+        angle += 360;
+    }
+    
+    return angle;
+}
+
+#pragma mark - 移动手势
+- (void)panGestureRecognizerMove:(UIPanGestureRecognizer *)pan {
+    CGPoint point = [pan locationInView:self];
+    
+    CGFloat distance = SYDistanceBetweenPoints(point, self.centerButton.center);
+    CGFloat offsetX = (point.x - self.centerButton.center.x)*_radius/distance;
+    CGFloat offsetY = (point.y - self.centerButton.center.y)*_radius/distance;
+    
+    CGFloat marginAngle = (self.endAngle - self.startAngle)/_titles.count;
+    
+    CGFloat newStartAnagle= 0;
+    if (offsetY >= 0) {
+        newStartAnagle = (-1)*acos(offsetX/_radius)*180.0/M_PI;
+    }else {
+        newStartAnagle = acos(offsetX/_radius)*180.0/M_PI;
+    }
+    
+    for (UIView *sub in self.subviews) {
+        CGFloat startAngle = (newStartAnagle + marginAngle*(sub.tag - pan.view.tag))/180.0 * M_PI ;
+        if (sub.tag >= 1000 ) {
+            CGFloat marginX = _radius* cos(startAngle);
+            CGFloat marginY = _radius* sin(startAngle) * (-1);
+            sub.center = CGPointMake(self.centerButton.center.x + marginX, self.centerButton.center.y + marginY);
+        }
+    }
+}
+
+#pragma mark - 点击事件
+- (void)centerButtonClick:(UIButton *)sender {
     if (sender.selected) {
         [self dismiss];
     }else {
@@ -53,30 +202,31 @@ static CGFloat const titleBtnR = 50;//小按钮的直径
     if (self.action) {
         self.action(sender.tag - 1000);
     }
-    [self addButtonClick:self.addButton];
+    [self centerButtonClick:self.centerButton];
 }
 
 - (void)backgroundViewCilck {
-    [self addButtonClick:self.addButton];
+    [self dismiss];
 }
 
+#pragma mark - 展开与收起
 - (void)show {
-    if (self.addButton.selected) {
+    if (self.centerButton.selected || self.titles.count == 0) {
         return;
     }
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.addButton.transform = CGAffineTransformMakeRotation(M_PI_4);
+        self.centerButton.transform = CGAffineTransformMakeRotation(_centerRotateAngle/180*M_PI);
     }];
     
-    CGFloat marginAngle = 90.0/(_titles.count - 1);
+    CGFloat marginAngle = (self.endAngle - self.startAngle)/(_titles.count - 1);
     for (UIView *sub in self.subviews) {
-        CGFloat startAngle = (90 + marginAngle*(sub.tag - 1000))/180.0 * M_PI ;
+        CGFloat startAngle = (self.startAngle + marginAngle*(sub.tag - 1000))/180.0 * M_PI ;
         if (sub.tag >= 1000) {
-            CGFloat marginX = (radius*self.titles.count/5.0) * cos(startAngle);
-            CGFloat marginY = (radius*self.titles.count/5.0) * sin(startAngle) * (-1);
+            CGFloat marginX = (_radius*self.titles.count/self.titles.count) * cos(startAngle);
+            CGFloat marginY = (_radius*self.titles.count/self.titles.count) * sin(startAngle) * (-1);
             [UIView animateWithDuration:0.25+0.1*(sub.tag - 1000) animations:^{
-                sub.center = CGPointMake(self.addButton.center.x + marginX, self.addButton.center.y + marginY);
+                sub.center = CGPointMake(self.centerButton.center.x + marginX, self.centerButton.center.y + marginY);
                 
             }];
         }
@@ -84,30 +234,32 @@ static CGFloat const titleBtnR = 50;//小按钮的直径
     
     [self.superview addSubview:self.backgroundView];
     [self.superview bringSubviewToFront:self];
-    self.addButton.selected = YES;
+    self.centerButton.selected = YES;
 }
 
 - (void)dismiss {
     
-    if (!self.addButton.selected) {
+    if (!self.centerButton.selected || self.titles.count == 0) {
         return;
     }
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.addButton.transform = CGAffineTransformIdentity;
+        self.centerButton.transform = CGAffineTransformIdentity;
     }];
     
     for (UIView *sub in self.subviews) {
         if (sub.tag >= 1000) {
             [UIView animateWithDuration:0.25 animations:^{
-                sub.center = self.addButton.center;
+                sub.center = self.centerButton.center;
             }];
         }
     }
     
     [self.backgroundView removeFromSuperview];
-    self.addButton.selected = NO;
+    self.centerButton.selected = NO;
 }
+
+#pragma mark - 其他
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
     if (CGRectContainsPoint(self.bounds, point)) {
@@ -121,20 +273,26 @@ static CGFloat const titleBtnR = 50;//小按钮的直径
     return NO;
 }
 
+- (CGFloat)centerButtonDiam {
+    return MAX(self.frame.size.width, self.frame.size.height);
+}
+
 #pragma mark - 懒加载
-- (UIButton *)addButton {
-    if (_addButton == nil) {
-        _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _addButton.frame = CGRectMake(0,0,self.bounds.size.width,self.bounds.size.height);
-        _addButton.backgroundColor = [UIColor redColor];
-        [_addButton setTitle:@"+" forState:UIControlStateNormal];
-        _addButton.titleLabel.font = [UIFont boldSystemFontOfSize:45];
-        _addButton.layer.cornerRadius = _addButton.frame.size.width*0.5;
-        _addButton.clipsToBounds = YES;
-        _addButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 5, 0);
-        [_addButton addTarget:self action:@selector(addButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton *)centerButton {
+    if (_centerButton == nil) {
+        _centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        CGFloat itemW = [self centerButtonDiam];
+        _centerButton.frame = CGRectMake(0,0,itemW,itemW);
+        _centerButton.backgroundColor = _centerColor;
+        _centerButton.titleLabel.font = _centerFont;
+        _centerButton.layer.cornerRadius = _centerButton.frame.size.width*0.5;
+        _centerButton.clipsToBounds = YES;
+        _centerButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 5, 0);
+        [_centerButton setTitle:_centerTitle forState:UIControlStateNormal];
+        [_centerButton setTitleColor:_centerTextColor forState:UIControlStateNormal];
+        [_centerButton addTarget:self action:@selector(centerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _addButton;
+    return _centerButton;
 }
 
 - (UIView *)backgroundView {

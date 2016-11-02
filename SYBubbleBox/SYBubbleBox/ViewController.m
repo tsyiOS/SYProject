@@ -27,7 +27,12 @@
 
 - (SYBubbleBox *)bubbleBox {
     if (_bubbleBox == nil) {
-        _bubbleBox = [[SYBubbleBox alloc] initWithTitles:@[@"打卡",@"地图",@"日常",@"地图",@"日常"] andFrame:CGRectMake(200, 300, 60, 60)];
+        _bubbleBox = [[SYBubbleBox alloc] initWithTitles:@[@"打卡",@"地图",@"日常",@"地图",@"日常"] andFrame:CGRectMake(130, 300, 60, 60)];
+        _bubbleBox.startAngle = 0;
+        _bubbleBox.centerColor = [UIColor purpleColor];
+        _bubbleBox.itemColor = [UIColor lightGrayColor];
+        _bubbleBox.allowRotation = YES;
+        _bubbleBox.centerRotateAngle = 30;
     }
     return _bubbleBox;
 }
