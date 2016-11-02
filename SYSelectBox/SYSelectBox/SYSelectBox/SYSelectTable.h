@@ -9,5 +9,13 @@
 #import "SYSelectBox.h"
 
 @interface SYSelectTable : SYSelectBox
-- (instancetype)initWithDatas:(NSArray *)titles;
+/**
+ *  初始化下拉菜单
+ *
+ *  @param titles    标题
+ *  @param direction 方向
+ *
+ *  @return 下拉菜单
+ */
+- (instancetype)initWithDatas:(NSArray *)titles andDirection:(SYSelectBoxArrowPosition)direction;
 @end

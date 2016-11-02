@@ -38,7 +38,6 @@
     if (self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)]) {
         _arrowPosition = position;
         _customView = customView;
-        
         self.backgroundColor = [UIColor whiteColor];
     }
     
@@ -221,22 +220,22 @@
         case SYSelectBoxArrowPositionTopLeft:
         case SYSelectBoxArrowPositionTopCenter:
         case SYSelectBoxArrowPositionTopRight:
-            transform = CGAffineTransformTranslate(transform, 0, -self.frame.size.height/2);
+            transform = CGAffineTransformTranslate(transform,self.arrowPoint.x -  self.frame.size.width * 0.5 - self.frame.origin.x, -self.frame.size.height/2);
             break;
         case SYSelectBoxArrowPositionLeftTop:
         case SYSelectBoxArrowPositionLeftCenter:
         case SYSelectBoxArrowPositionLeftBottom:
-            transform = CGAffineTransformTranslate(transform, -self.frame.size.width/2, 0);
+            transform = CGAffineTransformTranslate(transform, -self.frame.size.width/2, self.arrowPoint.y -  self.frame.size.height * 0.5 - self.frame.origin.y);
             break;
         case SYSelectBoxArrowPositionBottomLeft:
         case SYSelectBoxArrowPositionBottomCenter:
         case SYSelectBoxArrowPositionBottomRight:
-            transform = CGAffineTransformTranslate(transform, 0, self.frame.size.height/2);
+            transform = CGAffineTransformTranslate(transform, self.arrowPoint.x -  self.frame.size.width * 0.5 - self.frame.origin.x, self.frame.size.height/2);
             break;
         case SYSelectBoxArrowPositionRightTop:
         case SYSelectBoxArrowPositionRightCenter:
         case SYSelectBoxArrowPositionRightBottom:
-            transform = CGAffineTransformTranslate(transform, self.frame.size.width/2, 0);
+            transform = CGAffineTransformTranslate(transform, self.frame.size.width/2, self.arrowPoint.y -  self.frame.size.height * 0.5 - self.frame.origin.y);
             break;
     }
     transform = CGAffineTransformScale(transform, 0.01, 0.01);
@@ -403,7 +402,7 @@
         
         for (SYBezierModel *model in tempArray) {
             if (model.type == SYBezierDrawTypeStart) {
-                 [_borderPath moveToPoint:model.point];
+                [_borderPath moveToPoint:model.point];
             }else if (model.type == SYBezierDrawTypeLine) {
                 [_borderPath addLineToPoint:model.point];
             }else {
