@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F01E5A391D6AAB32006F2B43 /* SYDataManager+LJFood.m in Sources */ = {isa = PBXBuildFile; fileRef = F01E5A381D6AAB32006F2B43 /* SYDataManager+LJFood.m */; };
+		F01E5A4F1D6AAE31006F2B43 /* Dog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F01E5A481D6AAE31006F2B43 /* Dog+CoreDataProperties.m */; };
+		F01E5A501D6AAE31006F2B43 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = F01E5A4A1D6AAE31006F2B43 /* Dog.m */; };
+		F01E5A511D6AAE31006F2B43 /* LJFood+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F01E5A4C1D6AAE31006F2B43 /* LJFood+CoreDataProperties.m */; };
+		F01E5A521D6AAE31006F2B43 /* LJFood.m in Sources */ = {isa = PBXBuildFile; fileRef = F01E5A4E1D6AAE31006F2B43 /* LJFood.m */; };
+		F01E5A561D6AD766006F2B43 /* SYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F01E5A551D6AD766006F2B43 /* SYDataManager.m */; };
+		F0CB0ED91D65BD420070EE51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0ED81D65BD420070EE51 /* main.m */; };
+		F0CB0EDC1D65BD420070EE51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0EDB1D65BD420070EE51 /* AppDelegate.m */; };
+		F0CB0EDF1D65BD420070EE51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0EDE1D65BD420070EE51 /* ViewController.m */; };
+		F0CB0EE21D65BD420070EE51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CB0EE01D65BD420070EE51 /* Main.storyboard */; };
+		F0CB0EE51D65BD420070EE51 /* SYCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0EE31D65BD420070EE51 /* SYCoreData.xcdatamodeld */; };
+		F0CB0EE71D65BD420070EE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CB0EE61D65BD420070EE51 /* Assets.xcassets */; };
+		F0CB0EEA1D65BD420070EE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CB0EE81D65BD420070EE51 /* LaunchScreen.storyboard */; };
+		F0CB0EF71D65D2CA0070EE51 /* NSArray+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0EF31D65D2CA0070EE51 /* NSArray+SYExtension.m */; };
+		F0CB0EF81D65D2CA0070EE51 /* NSObject+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0EF51D65D2CA0070EE51 /* NSObject+SYExtension.m */; };
+		F0CB0F041D66EB750070EE51 /* SYFood.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0F031D66EB750070EE51 /* SYFood.m */; };
+		F0CB0F081D672CE00070EE51 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CB0F071D672CE00070EE51 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F01E5A371D6AAB32006F2B43 /* SYDataManager+LJFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SYDataManager+LJFood.h"; sourceTree = "<group>"; };
+		F01E5A381D6AAB32006F2B43 /* SYDataManager+LJFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SYDataManager+LJFood.m"; sourceTree = "<group>"; };
+		F01E5A471D6AAE31006F2B43 /* Dog+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F01E5A481D6AAE31006F2B43 /* Dog+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F01E5A491D6AAE31006F2B43 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		F01E5A4A1D6AAE31006F2B43 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		F01E5A4B1D6AAE31006F2B43 /* LJFood+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LJFood+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F01E5A4C1D6AAE31006F2B43 /* LJFood+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LJFood+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F01E5A4D1D6AAE31006F2B43 /* LJFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFood.h; sourceTree = "<group>"; };
+		F01E5A4E1D6AAE31006F2B43 /* LJFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFood.m; sourceTree = "<group>"; };
+		F01E5A541D6AD766006F2B43 /* SYDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDataManager.h; sourceTree = "<group>"; };
+		F01E5A551D6AD766006F2B43 /* SYDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDataManager.m; sourceTree = "<group>"; };
+		F0CB0ED41D65BD420070EE51 /* SYCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0CB0ED81D65BD420070EE51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0CB0EDA1D65BD420070EE51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0CB0EDB1D65BD420070EE51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0CB0EDD1D65BD420070EE51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F0CB0EDE1D65BD420070EE51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0CB0EE11D65BD420070EE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0CB0EE41D65BD420070EE51 /* SYCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SYCoreData.xcdatamodel; sourceTree = "<group>"; };
+		F0CB0EE61D65BD420070EE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0CB0EE91D65BD420070EE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0CB0EEB1D65BD420070EE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0CB0EF21D65D2CA0070EE51 /* NSArray+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SYExtension.h"; sourceTree = "<group>"; };
+		F0CB0EF31D65D2CA0070EE51 /* NSArray+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SYExtension.m"; sourceTree = "<group>"; };
+		F0CB0EF41D65D2CA0070EE51 /* NSObject+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SYExtension.h"; sourceTree = "<group>"; };
+		F0CB0EF51D65D2CA0070EE51 /* NSObject+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SYExtension.m"; sourceTree = "<group>"; };
+		F0CB0EF61D65D2CA0070EE51 /* SYCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCoder.h; sourceTree = "<group>"; };
+		F0CB0F021D66EB750070EE51 /* SYFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFood.h; sourceTree = "<group>"; };
+		F0CB0F031D66EB750070EE51 /* SYFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFood.m; sourceTree = "<group>"; };
+		F0CB0F071D672CE00070EE51 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0CB0ED11D65BD420070EE51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0CB0F081D672CE00070EE51 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F01E5A461D6AAE31006F2B43 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F01E5A471D6AAE31006F2B43 /* Dog+CoreDataProperties.h */,
+				F01E5A481D6AAE31006F2B43 /* Dog+CoreDataProperties.m */,
+				F01E5A491D6AAE31006F2B43 /* Dog.h */,
+				F01E5A4A1D6AAE31006F2B43 /* Dog.m */,
+				F01E5A4B1D6AAE31006F2B43 /* LJFood+CoreDataProperties.h */,
+				F01E5A4C1D6AAE31006F2B43 /* LJFood+CoreDataProperties.m */,
+				F01E5A4D1D6AAE31006F2B43 /* LJFood.h */,
+				F01E5A4E1D6AAE31006F2B43 /* LJFood.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F01E5A531D6AD766006F2B43 /* SYCoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F01E5A541D6AD766006F2B43 /* SYDataManager.h */,
+				F01E5A551D6AD766006F2B43 /* SYDataManager.m */,
+			);
+			path = SYCoreDataManager;
+			sourceTree = "<group>";
+		};
+		F0CB0ECB1D65BD420070EE51 = {
+			isa = PBXGroup;
+			children = (
+				F0CB0F071D672CE00070EE51 /* CoreData.framework */,
+				F0CB0ED61D65BD420070EE51 /* SYCoreData */,
+				F0CB0ED51D65BD420070EE51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0CB0ED51D65BD420070EE51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0CB0ED41D65BD420070EE51 /* SYCoreData.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0CB0ED61D65BD420070EE51 /* SYCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F01E5A461D6AAE31006F2B43 /* Data */,
+				F0CB0EF11D65D2CA0070EE51 /* SYCacheExtension */,
+				F01E5A531D6AD766006F2B43 /* SYCoreDataManager */,
+				F0CB0EDA1D65BD420070EE51 /* AppDelegate.h */,
+				F0CB0EDB1D65BD420070EE51 /* AppDelegate.m */,
+				F0CB0EDD1D65BD420070EE51 /* ViewController.h */,
+				F0CB0EDE1D65BD420070EE51 /* ViewController.m */,
+				F01E5A371D6AAB32006F2B43 /* SYDataManager+LJFood.h */,
+				F01E5A381D6AAB32006F2B43 /* SYDataManager+LJFood.m */,
+				F0CB0EE01D65BD420070EE51 /* Main.storyboard */,
+				F0CB0EE61D65BD420070EE51 /* Assets.xcassets */,
+				F0CB0EE81D65BD420070EE51 /* LaunchScreen.storyboard */,
+				F0CB0EEB1D65BD420070EE51 /* Info.plist */,
+				F0CB0EE31D65BD420070EE51 /* SYCoreData.xcdatamodeld */,
+				F0CB0F021D66EB750070EE51 /* SYFood.h */,
+				F0CB0F031D66EB750070EE51 /* SYFood.m */,
+				F0CB0ED71D65BD420070EE51 /* Supporting Files */,
+			);
+			path = SYCoreData;
+			sourceTree = "<group>";
+		};
+		F0CB0ED71D65BD420070EE51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0CB0ED81D65BD420070EE51 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0CB0EF11D65D2CA0070EE51 /* SYCacheExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F0CB0EF21D65D2CA0070EE51 /* NSArray+SYExtension.h */,
+				F0CB0EF31D65D2CA0070EE51 /* NSArray+SYExtension.m */,
+				F0CB0EF41D65D2CA0070EE51 /* NSObject+SYExtension.h */,
+				F0CB0EF51D65D2CA0070EE51 /* NSObject+SYExtension.m */,
+				F0CB0EF61D65D2CA0070EE51 /* SYCoder.h */,
+			);
+			path = SYCacheExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0CB0ED31D65BD420070EE51 /* SYCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0CB0EEE1D65BD420070EE51 /* Build configuration list for PBXNativeTarget "SYCoreData" */;
+			buildPhases = (
+				F0CB0ED01D65BD420070EE51 /* Sources */,
+				F0CB0ED11D65BD420070EE51 /* Frameworks */,
+				F0CB0ED21D65BD420070EE51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SYCoreData;
+			productName = SYCoreData;
+			productReference = F0CB0ED41D65BD420070EE51 /* SYCoreData.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0CB0ECC1D65BD420070EE51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = tsy;
+				TargetAttributes = {
+					F0CB0ED31D65BD420070EE51 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F0CB0ECF1D65BD420070EE51 /* Build configuration list for PBXProject "SYCoreData" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0CB0ECB1D65BD420070EE51;
+			productRefGroup = F0CB0ED51D65BD420070EE51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0CB0ED31D65BD420070EE51 /* SYCoreData */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0CB0ED21D65BD420070EE51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0CB0EEA1D65BD420070EE51 /* LaunchScreen.storyboard in Resources */,
+				F0CB0EE71D65BD420070EE51 /* Assets.xcassets in Resources */,
+				F0CB0EE21D65BD420070EE51 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0CB0ED01D65BD420070EE51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F01E5A501D6AAE31006F2B43 /* Dog.m in Sources */,
+				F0CB0EDF1D65BD420070EE51 /* ViewController.m in Sources */,
+				F0CB0EDC1D65BD420070EE51 /* AppDelegate.m in Sources */,
+				F0CB0EE51D65BD420070EE51 /* SYCoreData.xcdatamodeld in Sources */,
+				F0CB0EF81D65D2CA0070EE51 /* NSObject+SYExtension.m in Sources */,
+				F0CB0EF71D65D2CA0070EE51 /* NSArray+SYExtension.m in Sources */,
+				F01E5A4F1D6AAE31006F2B43 /* Dog+CoreDataProperties.m in Sources */,
+				F01E5A561D6AD766006F2B43 /* SYDataManager.m in Sources */,
+				F0CB0ED91D65BD420070EE51 /* main.m in Sources */,
+				F0CB0F041D66EB750070EE51 /* SYFood.m in Sources */,
+				F01E5A521D6AAE31006F2B43 /* LJFood.m in Sources */,
+				F01E5A391D6AAB32006F2B43 /* SYDataManager+LJFood.m in Sources */,
+				F01E5A511D6AAE31006F2B43 /* LJFood+CoreDataProperties.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F0CB0EE01D65BD420070EE51 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0CB0EE11D65BD420070EE51 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0CB0EE81D65BD420070EE51 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0CB0EE91D65BD420070EE51 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0CB0EEC1D65BD420070EE51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F0CB0EED1D65BD420070EE51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0CB0EEF1D65BD420070EE51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SYCoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leju.SYCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wno-objc-designated-initializers";
+			};
+			name = Debug;
+		};
+		F0CB0EF01D65BD420070EE51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SYCoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leju.SYCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wno-objc-designated-initializers";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0CB0ECF1D65BD420070EE51 /* Build configuration list for PBXProject "SYCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0CB0EEC1D65BD420070EE51 /* Debug */,
+				F0CB0EED1D65BD420070EE51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0CB0EEE1D65BD420070EE51 /* Build configuration list for PBXNativeTarget "SYCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0CB0EEF1D65BD420070EE51 /* Debug */,
+				F0CB0EF01D65BD420070EE51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F0CB0EE31D65BD420070EE51 /* SYCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F0CB0EE41D65BD420070EE51 /* SYCoreData.xcdatamodel */,
+			);
+			currentVersion = F0CB0EE41D65BD420070EE51 /* SYCoreData.xcdatamodel */;
+			path = SYCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F0CB0ECC1D65BD420070EE51 /* Project object */;
+}
