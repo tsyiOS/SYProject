@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import "RTHPictureDisplayView.h"
 #import "SYImageManager.h"
+#import "SYImageEditViewController.h"
 
 @interface ViewController ()<SYImagePickerDelegate>
 @property (nonatomic, strong) RTHPictureDisplayView *display;
+@property (nonatomic, strong) UIImage *image;
 @end
 
 @implementation ViewController
@@ -27,9 +29,12 @@
 }
 
 - (IBAction)camera {
-    SYImageManager *manager = [SYImageManager shareImageManager];
-    manager.delegate = self;
-    [manager sy_OpenCamera];
+//    SYImageManager *manager = [SYImageManager shareImageManager];
+//    manager.delegate = self;
+//    [manager sy_OpenCamera];
+    SYImageEditViewController *editVc = [[SYImageEditViewController alloc] init];
+    editVc.image = self.image;
+    [self presentViewController:editVc animated:YES completion:nil];
 }
 - (IBAction)album {
     SYImageManager *manager = [SYImageManager shareImageManager];
@@ -38,7 +43,12 @@
 }
 
 - (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
-    [self.display dispalyImages:info[SYSelectedImages]];
+//    [self.display dispalyImages:info[SYSelectedImages]];
+    NSArray *array  = info[SYSelectedAssets];
+    ALAsset *asset = array.firstObject;
+    
+    self.image = [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+    
 }
 
 - (RTHPictureDisplayView *)display {

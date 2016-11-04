@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F03CDD3C1DCC84BA0072DA01 /* SYImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CDD3B1DCC84BA0072DA01 /* SYImageEditViewController.m */; };
 		F0BCF2621DC19D2000E6556F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BCF2611DC19D2000E6556F /* main.m */; };
 		F0BCF2651DC19D2000E6556F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BCF2641DC19D2000E6556F /* AppDelegate.m */; };
 		F0BCF2681DC19D2000E6556F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BCF2671DC19D2000E6556F /* ViewController.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F03CDD3A1DCC84BA0072DA01 /* SYImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYImageEditViewController.h; path = ../../../SYFramework/SYImageManager/SYImageManager/SYImageEditViewController.h; sourceTree = "<group>"; };
+		F03CDD3B1DCC84BA0072DA01 /* SYImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYImageEditViewController.m; path = ../../../SYFramework/SYImageManager/SYImageManager/SYImageEditViewController.m; sourceTree = "<group>"; };
 		F0BCF25D1DC19D2000E6556F /* SYImagePickerDevelop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYImagePickerDevelop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BCF2611DC19D2000E6556F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0BCF2631DC19D2000E6556F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				F0BCF2971DC1A40700E6556F /* SYImagePickerCell.m */,
 				F0BCF2981DC1A40700E6556F /* SYImagePickerViewController.h */,
 				F0BCF2991DC1A40700E6556F /* SYImagePickerViewController.m */,
+				F03CDD3A1DCC84BA0072DA01 /* SYImageEditViewController.h */,
+				F03CDD3B1DCC84BA0072DA01 /* SYImageEditViewController.m */,
 				F0BCF29A1DC1A40700E6556F /* SYPhotoBrowserViewController.h */,
 				F0BCF29B1DC1A40700E6556F /* SYPhotoBrowserViewController.m */,
 				F0BCF29C1DC1A40700E6556F /* UIImage+SYExtension.h */,
@@ -207,6 +212,7 @@
 			files = (
 				F0BCF2681DC19D2000E6556F /* ViewController.m in Sources */,
 				F0BCF2791DC1A0D400E6556F /* RTHPictureDisplayView.m in Sources */,
+				F03CDD3C1DCC84BA0072DA01 /* SYImageEditViewController.m in Sources */,
 				F0BCF29E1DC1A40700E6556F /* SYBottomView.m in Sources */,
 				F0BCF2A11DC1A40700E6556F /* SYImagePickerCell.m in Sources */,
 				F0BCF2651DC19D2000E6556F /* AppDelegate.m in Sources */,

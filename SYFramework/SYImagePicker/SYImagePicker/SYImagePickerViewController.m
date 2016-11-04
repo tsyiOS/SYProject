@@ -18,7 +18,6 @@
 @interface SYImagePickerViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UINavigationBar *sy_navigationBar;
 @property (nonatomic, strong) UINavigationItem *sy_navigationItem;
-@property (nonatomic, strong) UIBarButtonItem *cancleItem;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) SYBottomView *bottomView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowlayout;

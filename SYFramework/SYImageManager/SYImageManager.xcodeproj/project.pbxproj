@@ -21,6 +21,8 @@
 		9FDA6E5A1DC0FB2100192371 /* SYPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E4C1DC0FB2100192371 /* SYPhotoBrowserViewController.m */; };
 		9FDA6E5B1DC0FB2100192371 /* UIImage+SYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FDA6E4D1DC0FB2100192371 /* UIImage+SYExtension.h */; };
 		9FDA6E5C1DC0FB2100192371 /* UIImage+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E4E1DC0FB2100192371 /* UIImage+SYExtension.m */; };
+		F03CDD381DCC849E0072DA01 /* SYImageEditViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F03CDD361DCC849E0072DA01 /* SYImageEditViewController.h */; };
+		F03CDD391DCC849E0072DA01 /* SYImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CDD371DCC849E0072DA01 /* SYImageEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		9FDA6E4C1DC0FB2100192371 /* SYPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		9FDA6E4D1DC0FB2100192371 /* UIImage+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYExtension.h"; sourceTree = "<group>"; };
 		9FDA6E4E1DC0FB2100192371 /* UIImage+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYExtension.m"; sourceTree = "<group>"; };
+		F03CDD361DCC849E0072DA01 /* SYImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImageEditViewController.h; sourceTree = "<group>"; };
+		F03CDD371DCC849E0072DA01 /* SYImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImageEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				9FDA6E481DC0FB2100192371 /* SYImagePickerCell.m */,
 				9FDA6E491DC0FB2100192371 /* SYImagePickerViewController.h */,
 				9FDA6E4A1DC0FB2100192371 /* SYImagePickerViewController.m */,
+				F03CDD361DCC849E0072DA01 /* SYImageEditViewController.h */,
+				F03CDD371DCC849E0072DA01 /* SYImageEditViewController.m */,
 				9FDA6E4B1DC0FB2100192371 /* SYPhotoBrowserViewController.h */,
 				9FDA6E4C1DC0FB2100192371 /* SYPhotoBrowserViewController.m */,
 				9FDA6E4D1DC0FB2100192371 /* UIImage+SYExtension.h */,
@@ -103,6 +109,7 @@
 				9FDA6E511DC0FB2100192371 /* SYBrowserViewCell.h in Headers */,
 				9FDA6E4F1DC0FB2100192371 /* SYBottomView.h in Headers */,
 				9FDA6E551DC0FB2100192371 /* SYImagePickerCell.h in Headers */,
+				F03CDD381DCC849E0072DA01 /* SYImageEditViewController.h in Headers */,
 				9FDA6E5B1DC0FB2100192371 /* UIImage+SYExtension.h in Headers */,
 				9FDA6E591DC0FB2100192371 /* SYPhotoBrowserViewController.h in Headers */,
 			);
@@ -177,6 +184,7 @@
 			files = (
 				9FDA6E5A1DC0FB2100192371 /* SYPhotoBrowserViewController.m in Sources */,
 				9FDA6E5C1DC0FB2100192371 /* UIImage+SYExtension.m in Sources */,
+				F03CDD391DCC849E0072DA01 /* SYImageEditViewController.m in Sources */,
 				9FDA6E541DC0FB2100192371 /* SYImageManager.m in Sources */,
 				9FDA6E581DC0FB2100192371 /* SYImagePickerViewController.m in Sources */,
 				9FDA6E501DC0FB2100192371 /* SYBottomView.m in Sources */,
@@ -339,6 +347,7 @@
 				9FDA6E401DC0FAD200192371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
