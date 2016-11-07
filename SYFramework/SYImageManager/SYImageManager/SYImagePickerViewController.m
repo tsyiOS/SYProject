@@ -103,7 +103,7 @@
 }
 
 - (void)dismissViewController {
-    if ([self.navigationController.viewControllers containsObject:self]) {
+    if ([self.navigationController.viewControllers containsObject:self] && self.navigationController.viewControllers.count > 1) {
         [self.navigationController popViewControllerAnimated:YES];
     }else {
         [self dismissViewControllerAnimated:YES completion:nil];

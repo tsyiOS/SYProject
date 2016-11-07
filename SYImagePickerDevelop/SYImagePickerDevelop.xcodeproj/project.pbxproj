@@ -24,6 +24,8 @@
 		F0BCF2A41DC1A40700E6556F /* UIImage+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BCF29D1DC1A40700E6556F /* UIImage+SYExtension.m */; };
 		F0BCF2A61DC1A60200E6556F /* SYCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BCF2A51DC1A60200E6556F /* SYCategory.framework */; };
 		F0BCF2A81DC1A6B200E6556F /* SYImagePickerSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0BCF2A71DC1A6B200E6556F /* SYImagePickerSource.bundle */; };
+		F0F212441DD0348C00BC9715 /* CPUImageFilterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F212431DD0348C00BC9715 /* CPUImageFilterUtil.m */; };
+		F0F2124B1DD03E8B00BC9715 /* SYImageRenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2124A1DD03E8B00BC9715 /* SYImageRenderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		F0BCF29D1DC1A40700E6556F /* UIImage+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SYExtension.m"; path = "../../../SYFramework/SYImageManager/SYImageManager/UIImage+SYExtension.m"; sourceTree = "<group>"; };
 		F0BCF2A51DC1A60200E6556F /* SYCategory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SYCategory.framework; sourceTree = "<group>"; };
 		F0BCF2A71DC1A6B200E6556F /* SYImagePickerSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYImagePickerSource.bundle; sourceTree = "<group>"; };
+		F0F212421DD0348C00BC9715 /* CPUImageFilterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPUImageFilterUtil.h; path = ../../../SYFramework/SYImageManager/SYImageManager/CPUImageFilterUtil.h; sourceTree = "<group>"; };
+		F0F212431DD0348C00BC9715 /* CPUImageFilterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPUImageFilterUtil.m; path = ../../../SYFramework/SYImageManager/SYImageManager/CPUImageFilterUtil.m; sourceTree = "<group>"; };
+		F0F212491DD03E8B00BC9715 /* SYImageRenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYImageRenderViewController.h; path = ../../../SYFramework/SYImageManager/SYImageManager/SYImageRenderViewController.h; sourceTree = "<group>"; };
+		F0F2124A1DD03E8B00BC9715 /* SYImageRenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYImageRenderViewController.m; path = ../../../SYFramework/SYImageManager/SYImageManager/SYImageRenderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +137,14 @@
 				F0BCF2991DC1A40700E6556F /* SYImagePickerViewController.m */,
 				F03CDD3A1DCC84BA0072DA01 /* SYImageEditViewController.h */,
 				F03CDD3B1DCC84BA0072DA01 /* SYImageEditViewController.m */,
+				F0F212491DD03E8B00BC9715 /* SYImageRenderViewController.h */,
+				F0F2124A1DD03E8B00BC9715 /* SYImageRenderViewController.m */,
 				F0BCF29A1DC1A40700E6556F /* SYPhotoBrowserViewController.h */,
 				F0BCF29B1DC1A40700E6556F /* SYPhotoBrowserViewController.m */,
 				F0BCF29C1DC1A40700E6556F /* UIImage+SYExtension.h */,
 				F0BCF29D1DC1A40700E6556F /* UIImage+SYExtension.m */,
+				F0F212421DD0348C00BC9715 /* CPUImageFilterUtil.h */,
+				F0F212431DD0348C00BC9715 /* CPUImageFilterUtil.m */,
 			);
 			path = SYImagePicker;
 			sourceTree = "<group>";
@@ -210,7 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F2124B1DD03E8B00BC9715 /* SYImageRenderViewController.m in Sources */,
 				F0BCF2681DC19D2000E6556F /* ViewController.m in Sources */,
+				F0F212441DD0348C00BC9715 /* CPUImageFilterUtil.m in Sources */,
 				F0BCF2791DC1A0D400E6556F /* RTHPictureDisplayView.m in Sources */,
 				F03CDD3C1DCC84BA0072DA01 /* SYImageEditViewController.m in Sources */,
 				F0BCF29E1DC1A40700E6556F /* SYBottomView.m in Sources */,

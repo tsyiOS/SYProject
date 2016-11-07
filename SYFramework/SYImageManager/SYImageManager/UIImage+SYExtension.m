@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+SYExtension.h"
+#import "CPUImageFilterUtil.h"
 
 @implementation UIImage (SYExtension)
 - (UIImage *)sy_scaleToSize:(CGSize)size {
@@ -17,7 +18,6 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
-    
 }
 
 - (UIImage *)sy_clipByRect:(CGRect)rect {
@@ -31,7 +31,7 @@
     
     if (self == nil) return nil;
     if (self.imageOrientation == UIImageOrientationUp) return self;
-
+    
     CGAffineTransform transform = CGAffineTransformIdentity;
     
     switch (self.imageOrientation) {
@@ -101,4 +101,79 @@
     CGImageRelease(cgimg);
     return img;
 }
+
+- (UIImage *)sy_rotatedByRadians:(CGFloat)radians {
+    
+    UIGraphicsBeginImageContext(CGSizeMake(self.size.width, self.size.height));
+    CGContextRef bitmap = UIGraphicsGetCurrentContext();
+    
+    CGContextTranslateCTM(bitmap, self.size.width/2, self.size.height/2);
+    
+    CGContextRotateCTM(bitmap, radians);
+    
+    CGContextScaleCTM(bitmap, 1.0, -1.0);
+    CGContextDrawImage(bitmap, CGRectMake(-self.size.width / 2, -self.size.height / 2, self.size.width, self.size.height), [self CGImage]);
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+- (UIImage *)sy_rotatedByType:(SYImageRotationDirection)direction {
+    
+    CGFloat radians = - M_PI_2 + direction * M_PI_2;
+    return [self sy_rotatedByRadians:radians];
+}
+
+- (UIImage *)sy_renderByType:(SYImageRenderType)type {
+    const float *colorMatrix = NULL;
+    switch (type) {
+        case SYImageRenderTypeLOMO:
+            colorMatrix = colormatrix_lomo;
+            break;
+        case SYImageRenderTypeHB:
+            colorMatrix = colormatrix_heibai;
+            break;
+        case SYImageRenderTypeFG:
+            colorMatrix = colormatrix_huajiu;
+            break;
+        case SYImageRenderTypeGT:
+            colorMatrix = colormatrix_gete;
+            break;
+        case SYImageRenderTypeRH:
+            colorMatrix = colormatrix_ruise;
+            break;
+        case SYImageRenderTypeDY:
+            colorMatrix = colormatrix_danya;
+            break;
+        case SYImageRenderTypeJH:
+            colorMatrix = colormatrix_jiuhong;
+            break;
+        case SYImageRenderTypeQN:
+            colorMatrix = colormatrix_qingning;
+            break;
+        case SYImageRenderTypeLM:
+            colorMatrix = colormatrix_langman;
+            break;
+        case SYImageRenderTypeGY:
+            colorMatrix = colormatrix_guangyun;
+            break;
+        case SYImageRenderTypeLD:
+            colorMatrix = colormatrix_landiao;
+            break;
+        case SYImageRenderTypeMH:
+            colorMatrix = colormatrix_menghuan;
+            break;
+        case SYImageRenderTypeYS:
+            colorMatrix = colormatrix_yese;
+            break;
+        default:
+            return self;
+            break;
+    }
+    return  [CPUImageFilterUtil imageWithImage:self withColorMatrix:colorMatrix];
+}
+
 @end
+

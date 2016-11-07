@@ -53,14 +53,6 @@
     [self.view addSubview:self.imageMaskView];
 }
 
-- (void)completeEdit {
-    if ([self.navigationController.viewControllers containsObject:self]) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-}
-
 - (void)setClipSize:(CGSize)clipSize {
     _clipSize = clipSize;
     self.imageMaskView.clipSize = clipSize;
@@ -70,7 +62,9 @@
 - (void)setImage:(UIImage *)image {
     _image = image;
     self.imageView.image = image;
-    [self refreshUI];
+    if (image) {
+        [self refreshUI];
+    }
 }
 
 - (void)refreshUI {
@@ -90,13 +84,6 @@
     self.scrollView.contentSize = _imageSize;
     CGFloat scale = _clipSize.height == _imageSize.height ? -1:(-0.5);
     self.scrollView.contentOffset = CGPointMake((_imageSize.width - ScreenW) *0.5, scale*y);
-    
-//    BOOL isClip = [self.clipIndexs containsObject:self.selectedIndex];
-//    NSString *clipBtnTitle = isClip ? @"已裁剪":@"裁 剪";
-//    self.imageMaskView.hidden = isClip;
-//    self.clipButton.userInteractionEnabled = !isClip;
-//    [self.clipButton setTitle:clipBtnTitle forState:UIControlStateNormal];
-//    self.scrollView.scrollEnabled = !isClip;
 }
 
 - (CGSize)getImageDisplaySizeWith:(UIImage *)image {
@@ -142,27 +129,30 @@
  *  剪切按钮点击
  */
 - (void)clipButtonClick {
-    
+    UIImage *image = [self clipImage];
+    if ([self.delegate respondsToSelector:@selector(sy_didFinishedEditingPhoto:)]) {
+        [self.delegate sy_didFinishedEditingPhoto:image];
+    }
     UIView *flashView = [[UIView alloc] initWithFrame:self.view.bounds];
     flashView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:flashView];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         flashView.alpha = 0.1;
     } completion:^(BOOL finished) {
         [flashView removeFromSuperview];
-//        SYDisplayClipImageView *clipImageView = [[SYDisplayClipImageView alloc] initWithFrame:CGRectMake((ScreenW - _clipSize.width)*0.5, (ScreenH- NavBarHeight - _clipSize.height)*0.5, _clipSize.width, (_clipSize.height + 65))];
-//        UIImage *clipImage = [self clipImage];
-//        clipImageView.image = clipImage;
-//        [clipImageView setSaveAction:^{
-//            [self.images removeObjectAtIndex:self.selectedIndex.item];
-//            [self.images insertObject:clipImage atIndex:self.selectedIndex.item];
-//            [self.clipIndexs addObject:self.selectedIndex];
-//            self.image = clipImage;
-//            [self.collectionView reloadData];
-//        }];
-        
-//        [clipImageView show];
+        [self backAction];
     }];
+}
+
+/**
+ *  返回按钮点击
+ */
+- (void)backAction {
+    if ([self.navigationController.viewControllers containsObject:self] && self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark: - UIScrollView代理方法
@@ -212,7 +202,7 @@
         _imageMaskView = [[SYImageMaskView alloc] initWithFrame:CGRectMake(0, NavBarHeight, ScreenW, ScreenH - NavBarHeight)];
         _imageMaskView.backgroundColor = [UIColor clearColor];
         _imageMaskView.userInteractionEnabled = NO;
-        _imageMaskView.clipSize = CGSizeMake(300, 400);
+        _imageMaskView.clipSize = _clipSize;
     }
     return _imageMaskView;
     
@@ -221,7 +211,8 @@
 - (UINavigationItem *)sy_navigationItem {
     if (_sy_navigationItem == nil) {
         _sy_navigationItem = [[UINavigationItem alloc] initWithTitle:@"编辑图片"];
-        _sy_navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(completeEdit)];
+        _sy_navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"裁剪" style:UIBarButtonItemStylePlain target:self action:@selector(clipButtonClick)];
+        _sy_navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
     }
     return _sy_navigationItem;
 }

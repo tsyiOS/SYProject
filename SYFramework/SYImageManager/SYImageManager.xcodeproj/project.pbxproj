@@ -23,6 +23,10 @@
 		9FDA6E5C1DC0FB2100192371 /* UIImage+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA6E4E1DC0FB2100192371 /* UIImage+SYExtension.m */; };
 		F03CDD381DCC849E0072DA01 /* SYImageEditViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F03CDD361DCC849E0072DA01 /* SYImageEditViewController.h */; };
 		F03CDD391DCC849E0072DA01 /* SYImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CDD371DCC849E0072DA01 /* SYImageEditViewController.m */; };
+		F0F212401DD033DA00BC9715 /* CPUImageFilterUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F2123E1DD033DA00BC9715 /* CPUImageFilterUtil.h */; };
+		F0F212411DD033DA00BC9715 /* CPUImageFilterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2123F1DD033DA00BC9715 /* CPUImageFilterUtil.m */; };
+		F0F212471DD03E7200BC9715 /* SYImageRenderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F212451DD03E7200BC9715 /* SYImageRenderViewController.h */; };
+		F0F212481DD03E7200BC9715 /* SYImageRenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F212461DD03E7200BC9715 /* SYImageRenderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		9FDA6E4E1DC0FB2100192371 /* UIImage+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYExtension.m"; sourceTree = "<group>"; };
 		F03CDD361DCC849E0072DA01 /* SYImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImageEditViewController.h; sourceTree = "<group>"; };
 		F03CDD371DCC849E0072DA01 /* SYImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImageEditViewController.m; sourceTree = "<group>"; };
+		F0F2123E1DD033DA00BC9715 /* CPUImageFilterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUImageFilterUtil.h; sourceTree = "<group>"; };
+		F0F2123F1DD033DA00BC9715 /* CPUImageFilterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUImageFilterUtil.m; sourceTree = "<group>"; };
+		F0F212451DD03E7200BC9715 /* SYImageRenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYImageRenderViewController.h; sourceTree = "<group>"; };
+		F0F212461DD03E7200BC9715 /* SYImageRenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYImageRenderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +96,14 @@
 				9FDA6E4A1DC0FB2100192371 /* SYImagePickerViewController.m */,
 				F03CDD361DCC849E0072DA01 /* SYImageEditViewController.h */,
 				F03CDD371DCC849E0072DA01 /* SYImageEditViewController.m */,
+				F0F212451DD03E7200BC9715 /* SYImageRenderViewController.h */,
+				F0F212461DD03E7200BC9715 /* SYImageRenderViewController.m */,
 				9FDA6E4B1DC0FB2100192371 /* SYPhotoBrowserViewController.h */,
 				9FDA6E4C1DC0FB2100192371 /* SYPhotoBrowserViewController.m */,
 				9FDA6E4D1DC0FB2100192371 /* UIImage+SYExtension.h */,
 				9FDA6E4E1DC0FB2100192371 /* UIImage+SYExtension.m */,
+				F0F2123E1DD033DA00BC9715 /* CPUImageFilterUtil.h */,
+				F0F2123F1DD033DA00BC9715 /* CPUImageFilterUtil.m */,
 				9FDA6E3B1DC0FAD200192371 /* Info.plist */,
 			);
 			path = SYImageManager;
@@ -104,10 +116,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F212401DD033DA00BC9715 /* CPUImageFilterUtil.h in Headers */,
 				9FDA6E571DC0FB2100192371 /* SYImagePickerViewController.h in Headers */,
 				9FDA6E531DC0FB2100192371 /* SYImageManager.h in Headers */,
 				9FDA6E511DC0FB2100192371 /* SYBrowserViewCell.h in Headers */,
 				9FDA6E4F1DC0FB2100192371 /* SYBottomView.h in Headers */,
+				F0F212471DD03E7200BC9715 /* SYImageRenderViewController.h in Headers */,
 				9FDA6E551DC0FB2100192371 /* SYImagePickerCell.h in Headers */,
 				F03CDD381DCC849E0072DA01 /* SYImageEditViewController.h in Headers */,
 				9FDA6E5B1DC0FB2100192371 /* UIImage+SYExtension.h in Headers */,
@@ -182,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F212481DD03E7200BC9715 /* SYImageRenderViewController.m in Sources */,
 				9FDA6E5A1DC0FB2100192371 /* SYPhotoBrowserViewController.m in Sources */,
 				9FDA6E5C1DC0FB2100192371 /* UIImage+SYExtension.m in Sources */,
 				F03CDD391DCC849E0072DA01 /* SYImageEditViewController.m in Sources */,
@@ -189,6 +204,7 @@
 				9FDA6E581DC0FB2100192371 /* SYImagePickerViewController.m in Sources */,
 				9FDA6E501DC0FB2100192371 /* SYBottomView.m in Sources */,
 				9FDA6E521DC0FB2100192371 /* SYBrowserViewCell.m in Sources */,
+				F0F212411DD033DA00BC9715 /* CPUImageFilterUtil.m in Sources */,
 				9FDA6E561DC0FB2100192371 /* SYImagePickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

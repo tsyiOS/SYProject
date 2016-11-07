@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -50,14 +51,62 @@
                                     <constraint firstItem="rAg-hI-UhU" firstAttribute="leading" secondItem="dcY-TA-FOs" secondAttribute="trailing" id="spn-C2-mV7"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKq-uI-pqk">
+                                <rect key="frame" x="0.0" y="468" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Q-GY-Ylq">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                        <state key="normal" title="裁剪"/>
+                                        <connections>
+                                            <action selector="editPhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvi-U8-dLY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLB-ra-vVl">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                        <state key="normal" title="渲染"/>
+                                        <connections>
+                                            <action selector="renderPhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="7aR-Ka-xLF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="g4Q-GY-Ylq" secondAttribute="bottom" id="1AJ-Ci-qxC"/>
+                                    <constraint firstItem="MLB-ra-vVl" firstAttribute="width" secondItem="g4Q-GY-Ylq" secondAttribute="width" id="4r5-Z6-9YZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="MLB-ra-vVl" secondAttribute="bottom" id="6am-vZ-Evu"/>
+                                    <constraint firstItem="g4Q-GY-Ylq" firstAttribute="leading" secondItem="mKq-uI-pqk" secondAttribute="leading" id="ECs-DM-Vax"/>
+                                    <constraint firstItem="MLB-ra-vVl" firstAttribute="height" secondItem="g4Q-GY-Ylq" secondAttribute="height" id="M1o-0C-rXF"/>
+                                    <constraint firstItem="MLB-ra-vVl" firstAttribute="leading" secondItem="g4Q-GY-Ylq" secondAttribute="trailing" id="VRh-Ks-kWx"/>
+                                    <constraint firstItem="g4Q-GY-Ylq" firstAttribute="top" secondItem="mKq-uI-pqk" secondAttribute="top" id="Xb9-9A-xw2"/>
+                                    <constraint firstAttribute="trailing" secondItem="MLB-ra-vVl" secondAttribute="trailing" id="bF7-xE-55u"/>
+                                    <constraint firstItem="MLB-ra-vVl" firstAttribute="top" secondItem="mKq-uI-pqk" secondAttribute="top" id="bx8-IP-ZP6"/>
+                                    <constraint firstAttribute="height" constant="50" id="jP5-TM-RAY"/>
+                                    <constraint firstItem="MLB-ra-vVl" firstAttribute="leading" secondItem="g4Q-GY-Ylq" secondAttribute="trailing" id="qyt-zZ-LXk"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pj1-IB-ShT">
+                                <rect key="frame" x="10" y="40" width="300" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pj1-IB-ShT" secondAttribute="height" multiplier="3:4" id="Fn7-u4-Ywg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mKq-uI-pqk" secondAttribute="trailing" id="7Qr-Wz-Qou"/>
+                            <constraint firstItem="Pj1-IB-ShT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="OhE-0b-IJi"/>
+                            <constraint firstAttribute="trailing" secondItem="Pj1-IB-ShT" secondAttribute="trailing" constant="10" id="PHj-WC-vh5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tLC-FG-D26" secondAttribute="bottom" id="PlX-B0-alV"/>
+                            <constraint firstItem="tLC-FG-D26" firstAttribute="top" secondItem="mKq-uI-pqk" secondAttribute="bottom" id="Xem-iK-eQL"/>
+                            <constraint firstItem="Pj1-IB-ShT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Yc7-jc-Jf2"/>
                             <constraint firstItem="tLC-FG-D26" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f5S-yp-22f"/>
                             <constraint firstAttribute="trailing" secondItem="tLC-FG-D26" secondAttribute="trailing" id="tY3-cc-M6u"/>
+                            <constraint firstItem="mKq-uI-pqk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w6L-RK-T4C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Pj1-IB-ShT" id="7qM-Li-MQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

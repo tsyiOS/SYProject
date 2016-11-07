@@ -10,9 +10,13 @@
 #import "RTHPictureDisplayView.h"
 #import "SYImageManager.h"
 #import "SYImageEditViewController.h"
+#import "CPUImageFilterUtil.h"
+#import "UIImage+SYExtension.h"
+#import "SYImageRenderViewController.h"
 
-@interface ViewController ()<SYImagePickerDelegate>
+@interface ViewController ()<SYImagePickerDelegate,SYImageEditDelegate>
 @property (nonatomic, strong) RTHPictureDisplayView *display;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
 @end
 
@@ -29,12 +33,9 @@
 }
 
 - (IBAction)camera {
-//    SYImageManager *manager = [SYImageManager shareImageManager];
-//    manager.delegate = self;
-//    [manager sy_OpenCamera];
-    SYImageEditViewController *editVc = [[SYImageEditViewController alloc] init];
-    editVc.image = self.image;
-    [self presentViewController:editVc animated:YES completion:nil];
+    SYImageManager *manager = [SYImageManager shareImageManager];
+    manager.delegate = self;
+    [manager sy_OpenCamera];
 }
 - (IBAction)album {
     SYImageManager *manager = [SYImageManager shareImageManager];
@@ -42,13 +43,32 @@
     [manager sy_OpenImagePicker];
 }
 
+- (IBAction)editPhoto {
+    SYImageEditViewController *editVc = [[SYImageEditViewController alloc] init];
+    editVc.image = self.image;
+    editVc.delegate = self;
+    [self presentViewController:editVc animated:YES completion:nil];
+}
+
+- (IBAction)renderPhoto {
+    SYImageRenderViewController *renderVC = [[SYImageRenderViewController alloc] init];
+    renderVC.image = self.image;
+     [self presentViewController:renderVC animated:YES completion:nil];
+}
+
+- (void)sy_didFinishedEditingPhoto:(UIImage *)image {
+    self.imageView.image = image;
+}
+
 - (void)sy_didFinishedPickingMediaWithInfo:(NSDictionary *)info {
 //    [self.display dispalyImages:info[SYSelectedImages]];
     NSArray *array  = info[SYSelectedAssets];
     ALAsset *asset = array.firstObject;
-    
+   
     self.image = [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
-    
+//    self.asset = asset;
+//    self.imageView.image =  [CPUImageFilterUtil imageWithImage:self.image withColorMatrix:colormatrix_lomo];
+    self.imageView.image = [self.image sy_renderByType:SYImageRenderTypeYS];
 }
 
 - (RTHPictureDisplayView *)display {
