@@ -94,8 +94,8 @@
 
 - (NSArray *)images {
     if (_images == nil) {
-        NSData *imageData = UIImageJPEGRepresentation(self.image, 0.1);
-        UIImage *smallImage = [UIImage imageWithData:imageData];
+//        NSData *imageData = UIImageJPEGRepresentation(self.image, 0.1);
+        UIImage *smallImage = [self.image sy_scaleToSize:CGSizeMake(200, 200*self.image.size.height/self.image.size.width)];
         if (self.image) {
             NSMutableArray *tempArray = [NSMutableArray array];
             for (int i = 1; i < 14; i++) {

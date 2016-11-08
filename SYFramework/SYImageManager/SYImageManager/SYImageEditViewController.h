@@ -24,8 +24,15 @@
  * 导航栏的标题颜色
  */
 @property (nonatomic, strong) UIColor *sy_tintColor;
+/**
+ *  要裁剪的图片
+ */
 @property (nonatomic, strong) UIImage *image;
+/**
+ *  裁剪的大小尺寸
+ */
 @property (nonatomic, assign) CGSize clipSize;
+
 @property (nonatomic, weak) id<SYImageEditDelegate> delegate;
 @end
 

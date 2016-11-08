@@ -5,7 +5,7 @@
 
 @implementation CPUImageFilterUtil
 
-static CGContextRef CreateRGBABitmapContext (CGImageRef inImage)// 返回一个使用RGBA通道的位图上下文
+static CGContextRef CreateRGBABitmapContext (UIImage *inImage)// 返回一个使用RGBA通道的位图上下文
 {
   CGContextRef context = NULL;
   CGColorSpaceRef colorSpace;
@@ -13,9 +13,11 @@ static CGContextRef CreateRGBABitmapContext (CGImageRef inImage)// 返回一个�
   int bitmapByteCount;
   int bitmapBytesPerRow;
   
-  size_t pixelsWide = CGImageGetWidth(inImage); //获取横向的像素点的个数
-  size_t pixelsHigh = CGImageGetHeight(inImage); //纵向
-  
+//  size_t pixelsWide = CGImageGetWidth(inImage); //获取横向的像素点的个数
+//  size_t pixelsHigh = CGImageGetHeight(inImage); //纵向
+    size_t pixelsWide = inImage.size.width;
+    size_t pixelsHigh = inImage.size.height;
+    
   bitmapBytesPerRow	= (int)(pixelsWide * 4); //每一行的像素点占用的字节数，每个像素点的ARGB四个通道各占8个bit(0-255)的空间
   bitmapByteCount	= (int)(bitmapBytesPerRow * pixelsHigh); //计算整张图占用的字节数
   
@@ -38,7 +40,7 @@ static unsigned char *RequestImagePixelData(UIImage *inImage)
   CGImageRef img = [inImage CGImage];
   CGSize size = [inImage size];
   
-  CGContextRef cgctx = CreateRGBABitmapContext(img); //使用上面的函数创建上下文
+  CGContextRef cgctx = CreateRGBABitmapContext(inImage); //使用上面的函数创建上下文
   
   CGRect rect = {{0,0},{size.width, size.height}};
   
@@ -98,11 +100,13 @@ static void changeRGBA(int *red,int *green,int *blue,int *alpha, const float* f)
 + (UIImage*)imageWithImage:(UIImage*)inImage withColorMatrix:(const float*) f
 {
   unsigned char *imgPixel = RequestImagePixelData(inImage);
-  CGImageRef inImageRef = [inImage CGImage];
-  GLuint w = (GLuint)CGImageGetWidth(inImageRef);
-  GLuint h = (GLuint)CGImageGetHeight(inImageRef);
+//  CGImageRef inImageRef = [inImage CGImage];
+//  GLuint w = (GLuint)CGImageGetWidth(inImageRef);
+//  GLuint h = (GLuint)CGImageGetHeight(inImageRef);
+    GLuint w = (GLuint)inImage.size.width;
+    GLuint h = (GLuint)inImage.size.height;
 
-  int wOff = 0;
+    int wOff = 0;
   int pixOff = 0;
   
   for(GLuint y = 0;y< h;y++)//双层循环按照长宽的像素个数迭代每个像素点

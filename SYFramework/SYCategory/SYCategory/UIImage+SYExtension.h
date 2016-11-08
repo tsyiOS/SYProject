@@ -56,4 +56,12 @@ typedef NS_ENUM(NSUInteger, SYImageRotationDirection) {
  *  @return 旋转后图片
  */
 - (UIImage *)sy_rotatedByType:(SYImageRotationDirection)direction;
+/**
+ *  截取某个view上的图像
+ *
+ *  @param view 被截view
+ *
+ *  @return 截图
+ */
++ (UIImage *)sy_screenShotImageByView:(UIView *)view;
 @end

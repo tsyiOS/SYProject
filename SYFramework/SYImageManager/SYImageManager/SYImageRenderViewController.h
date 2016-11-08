@@ -17,6 +17,9 @@
  * 导航栏的标题颜色
  */
 @property (nonatomic, strong) UIColor *sy_tintColor;
+/**
+ *  渲染的图片
+ */
 @property (nonatomic, strong) UIImage *image;
 @end
 
