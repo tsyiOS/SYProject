@@ -46,6 +46,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([self.delegate respondsToSelector:@selector(sy_didSelectRowAtIndexPath:)]) {
+        [self.delegate sy_didSelectRowAtIndexPath:indexPath];
+    }
 }
 
 #pragma mark - 懒加载

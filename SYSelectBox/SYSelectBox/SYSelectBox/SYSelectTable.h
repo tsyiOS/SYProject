@@ -8,6 +8,16 @@
 
 #import "SYSelectBox.h"
 
+@protocol SYSelectTableDelegate <NSObject>
+
+@required
+/**
+ *  点击之后触发的代理方法
+ */
+- (void)sy_didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 @interface SYSelectTable : SYSelectBox
 /**
  *  初始化下拉菜单
@@ -18,4 +28,6 @@
  *  @return 下拉菜单
  */
 - (instancetype)initWithDatas:(NSArray *)titles andDirection:(SYSelectBoxArrowPosition)direction;
+
+@property (nonatomic, strong) id<SYSelectTableDelegate>delegate;
 @end

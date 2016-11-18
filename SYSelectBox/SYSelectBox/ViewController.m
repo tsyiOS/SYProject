@@ -32,7 +32,7 @@
 //    SYSelectTable *box = [[SYSelectTable alloc] initWithSize:CGSizeMake(300, 400) direction:_count andCustomView:label];
 //    [box showDependentOnView:sender];
 //    _count += 1;
-    SYSelectTable *table = [[SYSelectTable alloc] initWithDatas:@[@"快快快",@"福克斯",@"方式",@"就打破"]];
+    SYSelectTable *table = [[SYSelectTable alloc] initWithDatas:@[@"green",@"gray", @"blue",@"purple", @"yellow",@"purple", @"yellow", @"green",@"gray", @"blue",@"purple", @"yellow",@"purple", @"yellow",@"green",@"gray", @"blue",@"purple", @"yellow",@"purple", @"yellow"] andDirection:SYSelectBoxArrowPositionLeftTop];
     [table showDependentOnView:sender];
 }
 

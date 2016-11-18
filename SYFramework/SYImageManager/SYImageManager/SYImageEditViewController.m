@@ -165,7 +165,7 @@
     CGFloat offsetX = (ScrollViewWidth - _clipSize.width) * 0.5;
     offsetX = offsetX < 0 ? _leftMargin : offsetX;
     CGFloat offsetY = (ScrollViewHeight - _clipSize.height) * 0.5;
-    offsetY = offsetY < 0 ? _leftMargin : offsetY;;
+    offsetY = offsetY < 0 ? _topMargin : offsetY;;
     self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, offsetX, offsetY, offsetX);
 }
 

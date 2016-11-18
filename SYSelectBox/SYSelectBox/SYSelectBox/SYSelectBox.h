@@ -32,9 +32,9 @@ typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
 /**
  *  实例方法
  *
- *  @param frame        大小
- *  @param dataSrcArray 显示的数据源
- *  @param direction    箭头方向
+ *  @param size        大小
+ *  @param customView 显示的view
+ *  @param position    箭头方向
  *
  *  @return 下拉菜单
  */
