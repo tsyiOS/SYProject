@@ -83,7 +83,7 @@
     self.scrollView.contentInset = UIEdgeInsetsMake(y, _leftMargin, y, _leftMargin);
     self.scrollView.contentSize = _imageSize;
     CGFloat scale = _clipSize.height == _imageSize.height ? -1:(-0.5);
-    self.scrollView.contentOffset = CGPointMake((_imageSize.width - ScreenW) *0.5, scale*y);
+    self.scrollView.contentOffset = CGPointMake((_imageSize.width - ScreenW) *0.5, scale*(ScrollViewSize.height - _imageSize.height));
 }
 
 - (CGSize)getImageDisplaySizeWith:(UIImage *)image {
