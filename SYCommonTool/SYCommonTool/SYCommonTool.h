@@ -41,7 +41,7 @@
  *
  *  @return YES：正确 NO：错误
  */
-+ (BOOL)sy_checkMobileNumber:(NSString *)mobileNum;
++ (BOOL)sy_checkMobileNumber:(NSString *)mobile;
 
 /**
  *  判断是否为汉字

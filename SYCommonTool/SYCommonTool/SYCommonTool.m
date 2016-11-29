@@ -60,7 +60,7 @@ static SYCommonTool *instance;
  *
  *  @return YES：正确 NO：错误
  */
-+ (BOOL)sy_checkMobileNumber:(NSString *)mobileNum {
++ (BOOL)sy_checkMobileNumber:(NSString *)mobile {
     
     mobile = [mobile stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (mobile.length != 11)
