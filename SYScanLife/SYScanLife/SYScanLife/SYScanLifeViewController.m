@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UILabel *tipLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *backBtn;
+@property (nonatomic, strong) AVCaptureMetadataOutput *output;
 @end
 
 @implementation SYScanLifeViewController
@@ -29,6 +30,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         [self setUpUI];
+        _type = SYScanTypeQRCodeAndBarCode;
     }
     return self;
 }
@@ -71,6 +73,27 @@
     [self.view addSubview:self.scanBackground];
     [self.view addSubview:self.scanLine];
     [self.view addSubview:self.tipLabel];
+}
+
+- (void)setType:(SYScanType)type {
+    _type = type;
+    if (type == SYScanTypeQRCode) {
+        self.output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+        self.tipLabel.text = @"扫描二维码";
+        self.titleLabel.text = @"将二维码放入框内，即可自动扫描";
+    }else if (type == SYScanTypeBarCode) {
+        self.output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code,
+                                            AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,
+                                            AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode93Code];
+        self.tipLabel.text = @"扫描条形码";
+        self.titleLabel.text = @"将条形码放入框内，即可自动扫描";
+    }else {
+        self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code,
+                                                                              AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,
+                                                                              AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode93Code];
+        self.tipLabel.text = @"扫描二维码/条形码";
+        self.titleLabel.text = @"将二维码/条形码放入框内，即可自动扫描";
+    }
 }
 
 - (void)viewDidLoad {
@@ -121,8 +144,8 @@
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         NSString *stringValue = metadataObject.stringValue;
         NSLog(@"扫描结果=%@",stringValue);
-        if (self.sy_finishedScan) {
-            self.sy_finishedScan(stringValue);
+        if (self.finishedScan) {
+            self.finishedScan(stringValue);
         }
         [self backAction];
     }
@@ -141,7 +164,12 @@
         if (buttonIndex == 1) {
             NSString *appId = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleIdentifier"];
             NSURL *setUrl = [NSURL URLWithString:[NSString stringWithFormat: @"prefs:root=%@", appId ]];
-            [[UIApplication sharedApplication] openURL:setUrl];
+            NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+            if ([phoneVersion integerValue] >= 10) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }else {
+                [[UIApplication sharedApplication] openURL:setUrl];
+            }
         }else {
            [self.navigationController popViewControllerAnimated:YES];
         }
@@ -192,21 +220,30 @@
         
         AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
         
-        AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
-        [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+        //AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
         _session = [[AVCaptureSession alloc] init];
         [_session setSessionPreset:AVCaptureSessionPresetHigh];
         if ([_session canAddInput:input]) {
             [_session addInput:input];
         }
-        if ([_session canAddOutput:output]) {
-            [_session addOutput:output];
+        if ([_session canAddOutput:self.output]) {
+            [_session addOutput:self.output];
         }
         
-        output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
-        output.rectOfInterest = CGRectMake(129/ScreenH, 50/ScreenW, (ScreenW - 100)/ScreenH, (ScreenW - 100)/ScreenW);
+        self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code,
+                                       AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,
+                                       AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode93Code];
+        self.output.rectOfInterest = CGRectMake(129/ScreenH, 50/ScreenW, (ScreenW - 100)/ScreenH, (ScreenW - 100)/ScreenW);
     }
     return _session;
+}
+
+- (AVCaptureMetadataOutput *)output {
+    if (_output == nil) {
+        _output = [[AVCaptureMetadataOutput alloc] init];
+        [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    }
+    return _output;
 }
 
 - (SYMaskView *)maskView {
@@ -220,7 +257,7 @@
 - (UILabel *)tipLabel {
     if (_tipLabel == nil) {
         _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.scanBackground.frame.size.height + self.scanBackground.frame.origin.y, ScreenW, 50)];
-        _tipLabel.text = @"将二维码放入框内，即可自动扫描";
+        _tipLabel.text = @"将二维码/条形码放入框内，即可自动扫描";
         _tipLabel.font = [UIFont systemFontOfSize:15];
         _tipLabel.textColor = [UIColor whiteColor];
         _tipLabel.textAlignment = NSTextAlignmentCenter;
@@ -234,7 +271,7 @@
         _titleLabel.font = [UIFont systemFontOfSize:18];
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.text = @"扫描二维码";
+        _titleLabel.text = @"扫描二维码/条形码";
     }
     return _titleLabel;
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kKe-wj-Qqt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="kKe-wj-Qqt">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,24 +15,35 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-5z-DMS">
-                                <rect key="frame" x="123" y="269" width="75" height="30"/>
                                 <state key="normal" title="扫描二维码"/>
                                 <connections>
                                     <action selector="scanLife" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZIf-ce-7pp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR2-1Q-sxm">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xR2-1Q-sxm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ru-Sz-SA9"/>
                             <constraint firstItem="EgF-5z-DMS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="79u-lE-uPV"/>
+                            <constraint firstItem="xR2-1Q-sxm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JQm-HZ-sAI"/>
+                            <constraint firstItem="xR2-1Q-sxm" firstAttribute="top" secondItem="EgF-5z-DMS" secondAttribute="bottom" constant="50" id="Qge-oM-zEV"/>
                             <constraint firstItem="EgF-5z-DMS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uu6-I1-DIb"/>
+                            <constraint firstAttribute="trailing" secondItem="xR2-1Q-sxm" secondAttribute="trailing" id="cXG-Ib-Bf9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Woe-vr-wYg"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="xR2-1Q-sxm" id="UaP-Ar-1Wj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,4 +68,9 @@
             <point key="canvasLocation" x="162" y="396"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

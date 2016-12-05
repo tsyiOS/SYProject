@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+
+typedef NS_ENUM(NSUInteger, SYScanType) {
+    SYScanTypeQRCode,//二维码
+    SYScanTypeBarCode,//条形码
+    SYScanTypeQRCodeAndBarCode//条形码和二维码
+};
+
 @interface SYScanLifeViewController : UIViewController
 /**
  *  扫描的结果回调
  */
-@property (nonatomic, copy) void(^sy_finishedScan)(NSString *url);
+@property (nonatomic, copy) void(^finishedScan)(NSString *result);
+/**
+ *  扫描的类型
+ */
+@property (nonatomic, assign) SYScanType type;
 @end
 
 @interface SYMaskView : UIView

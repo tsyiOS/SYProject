@@ -10,6 +10,7 @@
 #import "SYScanLifeViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 @end
 
@@ -27,6 +28,10 @@
 
 - (IBAction)scanLife {
     SYScanLifeViewController *scanVC = [[SYScanLifeViewController alloc] init];
+   // scanVC.type = SYScanTypeBarCode;
+    [scanVC setFinishedScan:^(NSString *str) {
+        self.resultLabel.text = str;
+    }];
     [self.navigationController presentViewController:scanVC animated:YES completion:nil];
 }
 @end
