@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, SYScanType) {
  */
 @property (nonatomic, copy) void(^finishedScan)(NSString *result);
 /**
- *  扫描的类型
+ *  扫描的类型,默认是 SYScanTypeQRCodeAndBarCode 条形码和二维码
  */
 @property (nonatomic, assign) SYScanType type;
 @end
