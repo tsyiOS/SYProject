@@ -38,8 +38,8 @@
     }else {
         //长图
         self.imageView.frame = CGRectMake(0, 0, size.width, size.height);
-        self.scrollView.contentSize = size;
     }
+    self.scrollView.contentSize = size;
     self.imageView.image = image;
 }
 

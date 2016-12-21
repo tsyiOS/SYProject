@@ -56,11 +56,7 @@ NSString *const SYBrowserCell = @"SYBrowserCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)canclebrowser {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma maSY : - collectionView数据源方法
+#pragma mark : - collectionView数据源方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.images.count;
 }
@@ -78,7 +74,7 @@ NSString *const SYBrowserCell = @"SYBrowserCell";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma maSY : - collectionView代理方法
+#pragma mark : - collectionView代理方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat scale = scrollView.contentOffset.x/[UIScreen mainScreen].bounds.size.width;
     int currentNum = (int)scale + 1;
