@@ -101,12 +101,13 @@
         NSArray *currentCells = [self.collectionView visibleCells];
         if (currentCells.count > 0) {
             SYBrowserViewCell *cell = currentCells.firstObject;
-            CGRect rect = [[UIApplication sharedApplication].keyWindow convertRect:cell.imageView.frame fromView:cell.contentView];
+            CGRect rect = [[UIApplication sharedApplication].keyWindow convertRect:cell.imageView.frame fromView:cell.imageView];
+             CGRect endFrame = [[UIApplication sharedApplication].keyWindow convertRect:self.sourceImageView.frame fromView:self.sourceImageView.superview];
             UIImageView *animationImageView = [[UIImageView alloc] initWithFrame:rect];
             animationImageView.image = cell.imageView.image;
             [[UIApplication sharedApplication].keyWindow addSubview:animationImageView];
             [UIView animateWithDuration:0.25 animations:^{
-                animationImageView.frame = self.sourceImageView.frame;
+                animationImageView.frame = endFrame;
             }completion:^(BOOL finished) {
                 [animationImageView removeFromSuperview];
                 [self removeFromParentViewController];
@@ -125,7 +126,7 @@
 
 #pragma mark : - collectionView代理方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat scale = scrollView.contentOffset.x/[UIScreen mainScreen].bounds.size.width;
+    CGFloat scale = scrollView.contentOffset.x/scrollView.bounds.size.width;
     int currentNum = (int)scale + 1;
     CGFloat decimal = scale - currentNum;
     if (decimal > 0.5) {
