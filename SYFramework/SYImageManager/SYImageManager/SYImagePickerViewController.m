@@ -9,7 +9,7 @@
 #import "SYImagePickerViewController.h"
 #import "SYBottomView.h"
 #import "SYImagePickerCell.h"
-#import "SYPhotoBrowserViewController.h"
+#import "SYPhotoBrowser.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
@@ -97,7 +97,6 @@
     self.bottomView.selectedNumber = self.selectedIndexPaths.count;
 }
 
-// 设置内边距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, _sy_rowSpacing, 0, _sy_rowSpacing);
 }
@@ -119,9 +118,6 @@
     return library;
 }
 
-/**
- *  获取照片资源
- */
 - (void)getPhotoAssets {
     ALAssetsLibrary *assetLibrary = [self defaultAssetsLibrary];
     __block NSMutableArray *groupPhotos = [[NSMutableArray alloc]init];
@@ -174,9 +170,16 @@
             NSDictionary *info = [weakSelf getAssetsAndImages];
             NSArray *selectedAssets = info[SYSelectedAssets];
             if (selectedAssets.count > 0) {
-                SYPhotoBrowserViewController *browserVc = [[SYPhotoBrowserViewController alloc] init];
-                browserVc.assets = selectedAssets;
-                [weakSelf presentViewController:browserVc animated:YES completion:nil];
+                SYPhotoBrowser *browserVc = [[SYPhotoBrowser alloc] init];
+                NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:selectedAssets.count];
+                for (ALAsset *asset in selectedAssets) {
+                    UIImage *image = [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+                    SYPhoto *photo = [[SYPhoto alloc] init];
+                    photo.image = image;
+                    [tempArray addObject:photo];
+                }
+                browserVc.images = tempArray;
+                [browserVc show];
             }
             
         }];

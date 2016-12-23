@@ -14,6 +14,6 @@
 
 @interface SYBrowserViewCell : UICollectionViewCell
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, weak)id <SYBrowserViewCellDelegate>delegate;
-
 @end
