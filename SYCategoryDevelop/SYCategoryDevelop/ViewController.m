@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UIColor+SYExtension.h"
 #import "UIImage+SYExtension.h"
+#import "NSDate+SYExtension.h"
 
 @interface ViewController ()
 
@@ -27,7 +28,7 @@
     
     [self.view addSubview:imageView];
     
-//    [self.view addSubview:test];
+    NSLog(@"%zd",[[[NSDate date] sy_yesterday] sy_day]) ;
 }
 
 - (void)didReceiveMemoryWarning {

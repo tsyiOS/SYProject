@@ -2,15 +2,14 @@
 #import "NSDate+SYExtension.h"
 
 @implementation NSDate (SYExtension)
-- (BOOL)sy_today {
+- (BOOL)sy_isToday {
     NSUInteger flags = NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear;
     NSDateComponents *currentComponent = [[NSCalendar currentCalendar]components:flags fromDate:[NSDate date]];
     NSDateComponents *lastComponent = [[NSCalendar currentCalendar]components:flags fromDate:self];
     return  currentComponent.year == lastComponent.year && currentComponent.month == lastComponent.month && currentComponent.day == lastComponent.day;
 }
-- (BOOL)sy_yesterday {
-   NSDate *date = [NSDate dateWithTimeInterval:24*60*60 sinceDate:self];
-    return  [date sy_today];
+- (BOOL)sy_isYesterday {
+    return  [[self sy_yesterday] sy_isToday];
 }
 
 - (NSInteger)sy_year {
@@ -43,6 +42,14 @@
     return components.second;
 }
 
+- (NSInteger)sy_secondsFrom:(NSDate *)date {
+    return [self timeIntervalSince1970] - [date timeIntervalSince1970];
+}
+
+- (NSInteger)sy_daysFrom:(NSDate *)date {
+    return (NSInteger)[self sy_secondsFrom:date]/(24*60*60);
+}
+
 - (NSString *)sy_weekday {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSString *weekdayStr = nil;
@@ -73,6 +80,13 @@
     return string;
 }
 
+- (NSDate *)sy_yesterday {
+    return [NSDate dateWithTimeInterval:-24*60*60 sinceDate:self];
+}
+
+- (NSDate *)sy_tomorrow {
+    return [NSDate dateWithTimeInterval:24*60*60 sinceDate:self];
+}
 
 + (NSDate *)sy_dateWithString:(NSString *)str formate:(NSString *)formate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -80,7 +94,5 @@
     NSDate *date = [formatter dateFromString:str];
     return date;
 }
-
-
 
 @end

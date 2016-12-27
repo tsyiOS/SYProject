@@ -126,9 +126,9 @@ static NSString *const SYRefreshTimeKey = @"SYRefreshTimeKey";
 }
 
 - (NSString *)dateString:(NSDate *)day {
-    if ([day sy_today]) {
+    if ([day sy_isToday]) {
         return @"今天";
-    }else if([day sy_yesterday]){
+    }else if([day sy_isYesterday]){
        return @"昨天";
     }else {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
