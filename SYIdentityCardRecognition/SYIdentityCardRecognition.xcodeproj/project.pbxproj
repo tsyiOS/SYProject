@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0085EA21E1CF46B00273D3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0085EA11E1CF46B00273D3E /* main.m */; };
+		F0085EA51E1CF46B00273D3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0085EA41E1CF46B00273D3E /* AppDelegate.m */; };
+		F0085EA81E1CF46B00273D3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0085EA71E1CF46B00273D3E /* ViewController.m */; };
+		F0085EAB1E1CF46B00273D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0085EA91E1CF46B00273D3E /* Main.storyboard */; };
+		F0085EAD1E1CF46B00273D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0085EAC1E1CF46B00273D3E /* Assets.xcassets */; };
+		F0085EB01E1CF46B00273D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0085EAE1E1CF46B00273D3E /* LaunchScreen.storyboard */; };
+		F0085EBA1E1CF5F100273D3E /* SYIDCardRecogintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0085EB91E1CF5F100273D3E /* SYIDCardRecogintViewController.m */; };
+		F0085EBC1E1CF60700273D3E /* SYScanLifeSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0085EBB1E1CF60700273D3E /* SYScanLifeSource.bundle */; };
+		F0085EC31E1CFD5800273D3E /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = F0085EC01E1CFD5800273D3E /* zocr0.lib */; };
+		F0085EC41E1CFD5800273D3E /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0085EC21E1CFD5800273D3E /* libexidcardios.a */; };
+		F0085EC71E1CFDA400273D3E /* SYIdentityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0085EC61E1CFDA400273D3E /* SYIdentityModel.m */; };
+		F0085ECA1E1CFFC900273D3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0085EC91E1CFFC900273D3E /* CoreGraphics.framework */; };
+		F0085ECC1E1CFFDB00273D3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0085ECB1E1CFFDB00273D3E /* Foundation.framework */; };
+		F0085ECE1E1CFFE300273D3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0085ECD1E1CFFE300273D3E /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F0085E9D1E1CF46B00273D3E /* SYIdentityCardRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYIdentityCardRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0085EA11E1CF46B00273D3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0085EA31E1CF46B00273D3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0085EA41E1CF46B00273D3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0085EA61E1CF46B00273D3E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F0085EA71E1CF46B00273D3E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0085EAA1E1CF46B00273D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0085EAC1E1CF46B00273D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0085EAF1E1CF46B00273D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0085EB11E1CF46B00273D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0085EB81E1CF5F100273D3E /* SYIDCardRecogintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYIDCardRecogintViewController.h; sourceTree = "<group>"; };
+		F0085EB91E1CF5F100273D3E /* SYIDCardRecogintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYIDCardRecogintViewController.m; sourceTree = "<group>"; };
+		F0085EBB1E1CF60700273D3E /* SYScanLifeSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SYScanLifeSource.bundle; sourceTree = "<group>"; };
+		F0085EBE1E1CFD5800273D3E /* commondef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commondef.h; sourceTree = "<group>"; };
+		F0085EC01E1CFD5800273D3E /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
+		F0085EC11E1CFD5800273D3E /* excards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = excards.h; sourceTree = "<group>"; };
+		F0085EC21E1CFD5800273D3E /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+		F0085EC51E1CFDA400273D3E /* SYIdentityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYIdentityModel.h; sourceTree = "<group>"; };
+		F0085EC61E1CFDA400273D3E /* SYIdentityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYIdentityModel.m; sourceTree = "<group>"; };
+		F0085EC91E1CFFC900273D3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F0085ECB1E1CFFDB00273D3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F0085ECD1E1CFFE300273D3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0085E9A1E1CF46B00273D3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0085ECE1E1CFFE300273D3E /* UIKit.framework in Frameworks */,
+				F0085ECC1E1CFFDB00273D3E /* Foundation.framework in Frameworks */,
+				F0085ECA1E1CFFC900273D3E /* CoreGraphics.framework in Frameworks */,
+				F0085EC41E1CFD5800273D3E /* libexidcardios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0085E941E1CF46B00273D3E = {
+			isa = PBXGroup;
+			children = (
+				F0085E9F1E1CF46B00273D3E /* SYIdentityCardRecognition */,
+				F0085E9E1E1CF46B00273D3E /* Products */,
+				F0085EC81E1CFFC800273D3E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F0085E9E1E1CF46B00273D3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0085E9D1E1CF46B00273D3E /* SYIdentityCardRecognition.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0085E9F1E1CF46B00273D3E /* SYIdentityCardRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				F0085EB71E1CF49E00273D3E /* SYIdentityCard */,
+				F0085EA31E1CF46B00273D3E /* AppDelegate.h */,
+				F0085EA41E1CF46B00273D3E /* AppDelegate.m */,
+				F0085EA61E1CF46B00273D3E /* ViewController.h */,
+				F0085EA71E1CF46B00273D3E /* ViewController.m */,
+				F0085EA91E1CF46B00273D3E /* Main.storyboard */,
+				F0085EAC1E1CF46B00273D3E /* Assets.xcassets */,
+				F0085EAE1E1CF46B00273D3E /* LaunchScreen.storyboard */,
+				F0085EB11E1CF46B00273D3E /* Info.plist */,
+				F0085EA01E1CF46B00273D3E /* Supporting Files */,
+			);
+			path = SYIdentityCardRecognition;
+			sourceTree = "<group>";
+		};
+		F0085EA01E1CF46B00273D3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0085EA11E1CF46B00273D3E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0085EB71E1CF49E00273D3E /* SYIdentityCard */ = {
+			isa = PBXGroup;
+			children = (
+				F0085EBD1E1CFD5800273D3E /* libexidcard */,
+				F0085EB81E1CF5F100273D3E /* SYIDCardRecogintViewController.h */,
+				F0085EB91E1CF5F100273D3E /* SYIDCardRecogintViewController.m */,
+				F0085EC51E1CFDA400273D3E /* SYIdentityModel.h */,
+				F0085EC61E1CFDA400273D3E /* SYIdentityModel.m */,
+				F0085EBB1E1CF60700273D3E /* SYScanLifeSource.bundle */,
+			);
+			path = SYIdentityCard;
+			sourceTree = "<group>";
+		};
+		F0085EBD1E1CFD5800273D3E /* libexidcard */ = {
+			isa = PBXGroup;
+			children = (
+				F0085EBE1E1CFD5800273D3E /* commondef.h */,
+				F0085EBF1E1CFD5800273D3E /* dicts */,
+				F0085EC11E1CFD5800273D3E /* excards.h */,
+				F0085EC21E1CFD5800273D3E /* libexidcardios.a */,
+			);
+			path = libexidcard;
+			sourceTree = "<group>";
+		};
+		F0085EBF1E1CFD5800273D3E /* dicts */ = {
+			isa = PBXGroup;
+			children = (
+				F0085EC01E1CFD5800273D3E /* zocr0.lib */,
+			);
+			path = dicts;
+			sourceTree = "<group>";
+		};
+		F0085EC81E1CFFC800273D3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0085ECD1E1CFFE300273D3E /* UIKit.framework */,
+				F0085ECB1E1CFFDB00273D3E /* Foundation.framework */,
+				F0085EC91E1CFFC900273D3E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0085E9C1E1CF46B00273D3E /* SYIdentityCardRecognition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0085EB41E1CF46B00273D3E /* Build configuration list for PBXNativeTarget "SYIdentityCardRecognition" */;
+			buildPhases = (
+				F0085E991E1CF46B00273D3E /* Sources */,
+				F0085E9A1E1CF46B00273D3E /* Frameworks */,
+				F0085E9B1E1CF46B00273D3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SYIdentityCardRecognition;
+			productName = SYIdentityCardRecognition;
+			productReference = F0085E9D1E1CF46B00273D3E /* SYIdentityCardRecognition.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0085E951E1CF46B00273D3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SY;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = tsy;
+				TargetAttributes = {
+					F0085E9C1E1CF46B00273D3E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 5Z3XUN2VRQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F0085E981E1CF46B00273D3E /* Build configuration list for PBXProject "SYIdentityCardRecognition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0085E941E1CF46B00273D3E;
+			productRefGroup = F0085E9E1E1CF46B00273D3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0085E9C1E1CF46B00273D3E /* SYIdentityCardRecognition */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0085E9B1E1CF46B00273D3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0085EB01E1CF46B00273D3E /* LaunchScreen.storyboard in Resources */,
+				F0085EBC1E1CF60700273D3E /* SYScanLifeSource.bundle in Resources */,
+				F0085EAD1E1CF46B00273D3E /* Assets.xcassets in Resources */,
+				F0085EC31E1CFD5800273D3E /* zocr0.lib in Resources */,
+				F0085EAB1E1CF46B00273D3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0085E991E1CF46B00273D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0085EBA1E1CF5F100273D3E /* SYIDCardRecogintViewController.m in Sources */,
+				F0085EC71E1CFDA400273D3E /* SYIdentityModel.m in Sources */,
+				F0085EA81E1CF46B00273D3E /* ViewController.m in Sources */,
+				F0085EA51E1CF46B00273D3E /* AppDelegate.m in Sources */,
+				F0085EA21E1CF46B00273D3E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F0085EA91E1CF46B00273D3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0085EAA1E1CF46B00273D3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0085EAE1E1CF46B00273D3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0085EAF1E1CF46B00273D3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0085EB21E1CF46B00273D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F0085EB31E1CF46B00273D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0085EB51E1CF46B00273D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = SYIdentityCardRecognition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SYIdentityCardRecognition/SYIdentityCard/libexidcard",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYIdentityCardRecognition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F0085EB61E1CF46B00273D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = SYIdentityCardRecognition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SYIdentityCardRecognition/SYIdentityCard/libexidcard",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sy.team.SYIdentityCardRecognition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0085E981E1CF46B00273D3E /* Build configuration list for PBXProject "SYIdentityCardRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0085EB21E1CF46B00273D3E /* Debug */,
+				F0085EB31E1CF46B00273D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0085EB41E1CF46B00273D3E /* Build configuration list for PBXNativeTarget "SYIdentityCardRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0085EB51E1CF46B00273D3E /* Debug */,
+				F0085EB61E1CF46B00273D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0085E951E1CF46B00273D3E /* Project object */;
+}
