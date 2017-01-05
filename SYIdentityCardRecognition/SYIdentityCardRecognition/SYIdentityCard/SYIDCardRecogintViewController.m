@@ -44,13 +44,14 @@
 }
 
 - (void)startScaning {
+    const char *thePath = [[[NSBundle mainBundle] resourcePath] UTF8String];
+    EXCARDS_Init(thePath);
     [self.session startRunning];
-//    [self addAnimationForLine];
 }
 
 - (void)stopScaning {
     [ self.session stopRunning];
-//    [self.scanLine.layer removeAnimationForKey:@"moveAnimation"];
+    EXCARDS_Done();
 }
 
 - (void)backAction {
@@ -93,7 +94,6 @@
             [self.view.layer insertSublayer:self.preview atIndex:0];
         }
     }
-    [self addVideoInput:AVCaptureDevicePositionBack];
     
     [self.view addSubview:self.backBtn];
 }
@@ -135,7 +135,6 @@
 
 #pragma mark - 代理方法
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-//    NSLog(@"走了而已");
     [self handleResult:sampleBuffer];
 }
 
@@ -162,15 +161,11 @@
         
         int ret = EXCARDS_RecoIDCardData(_buffer, (int)width, (int)height, (int)rowBytes, (int)8, (char*)pResult, sizeof(pResult));
         NSLog(@"ret:%d",ret);
-        if (ret <= 0) {
-            
-        }else {
-
+        if (ret > 0) {
             char ctype;
             char content[256];
             int xlen;
             int i = 0;
-            
             ctype = pResult[i++];
             self.identityModel.type = ctype;
             while(i < ret){
@@ -198,60 +193,14 @@
                         self.identityModel.valid = [NSString stringWithCString:(char *)content encoding:gbkEncoding];
                 }
             }
-        
+            
             NSLog(@"====%@",self.identityModel);
-            [self stopScaning];
-        }
-    }
-
-}
-
-- (void)addVideoInput:(AVCaptureDevicePosition)_campos
-{
-    AVCaptureDevice *videoDevice=nil;
-    
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    
-    if (_campos == AVCaptureDevicePositionBack)
-    {
-        for (AVCaptureDevice *device in devices)
-        {
-            if ([device position] == AVCaptureDevicePositionBack)
-            {
-                if ([device isFocusModeSupported:AVCaptureFocusModeAutoFocus])
-                {
-                    NSError *error = nil;
-                    if ([device lockForConfiguration:&error])
-                    {
-                        device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-                        [device unlockForConfiguration];
-                    }
-                }
-                videoDevice = device;
+            if ([self.identityModel gathered]) {
+                [self stopScaning];
             }
         }
     }
-    else if (_campos == AVCaptureDevicePositionFront)
-    {
-        for (AVCaptureDevice *device in devices)
-        {
-            if ([device position] == AVCaptureDevicePositionFront)
-            {
-                if ([device isFocusModeSupported:AVCaptureFocusModeAutoFocus])
-                {
-                    NSError *error = nil;
-                    if ([device lockForConfiguration:&error])
-                    {
-                        device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-                        [device unlockForConfiguration];
-                    }
-                }
-                videoDevice = device;
-            }
-        }
-    }
-    else
-        NSLog(@"Error setting camera device position.");
+
 }
 
 #pragma mark - 懒加载

@@ -179,7 +179,7 @@
 				TargetAttributes = {
 					F0085E9C1E1CF46B00273D3E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 5Z3XUN2VRQ;
+						DevelopmentTeam = LLM3BZ329B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -344,7 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				DEVELOPMENT_TEAM = LLM3BZ329B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SYIdentityCardRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -362,7 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				DEVELOPMENT_TEAM = LLM3BZ329B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SYIdentityCardRecognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -395,6 +395,7 @@
 				F0085EB61E1CF46B00273D3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

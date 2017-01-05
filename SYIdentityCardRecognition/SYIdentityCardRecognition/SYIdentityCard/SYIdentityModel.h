@@ -17,4 +17,5 @@
 @property (retain, nonatomic) NSString *address; //地址
 @property (retain, nonatomic) NSString *issue; //签发机关
 @property (retain, nonatomic) NSString *valid; //有效期
+- (BOOL)gathered;
 @end

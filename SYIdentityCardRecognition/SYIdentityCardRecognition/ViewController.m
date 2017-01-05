@@ -33,6 +33,6 @@
 }
 
 - (IBAction)recognitIdentityCard {
-    
+
 }
 @end
