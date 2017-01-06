@@ -35,12 +35,21 @@
                                     <action selector="recognitIdentityCard" destination="BYZ-38-t0r" eventType="touchUpInside" id="0F5-Lg-bwN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nl-07-15g">
+                                <rect key="frame" x="162" y="384" width="51" height="30"/>
+                                <state key="normal" title="列     表"/>
+                                <connections>
+                                    <action selector="listVC" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebo-VO-1k9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dgr-46-Ja7" firstAttribute="top" secondItem="CM7-mx-Ynr" secondAttribute="bottom" constant="50" id="3db-Xj-DZv"/>
                             <constraint firstItem="CM7-mx-Ynr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ib6-JG-Lh8"/>
                             <constraint firstItem="CM7-mx-Ynr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="160" id="J6c-FD-Njc"/>
+                            <constraint firstItem="3nl-07-15g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NRG-p9-e4O"/>
+                            <constraint firstItem="3nl-07-15g" firstAttribute="top" secondItem="Dgr-46-Ja7" secondAttribute="bottom" constant="50" id="XFf-Y2-PMn"/>
                             <constraint firstItem="Dgr-46-Ja7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ikP-Ss-8S7"/>
                         </constraints>
                     </view>

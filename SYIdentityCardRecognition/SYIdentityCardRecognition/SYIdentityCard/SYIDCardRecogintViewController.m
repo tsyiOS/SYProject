@@ -10,10 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "excards.h"
 #import "SYIdentityModel.h"
+#import "SYAlertView.h"
 
 #define SYScanLifeSrcName(file) [@"SYScanLifeSource.bundle" stringByAppendingPathComponent:file]
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-#define ScreenH [UIScreen mainScreen].bounds.size.height
 
 @interface SYIDCardRecogintViewController ()<UIAlertViewDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>{
     unsigned char* _buffer;
@@ -153,6 +152,8 @@
         if (_buffer == NULL)
             _buffer = (unsigned char*)malloc(sizeof(unsigned char) * width * height);
         
+        
+        
         memcpy(_buffer, pixelAddress, sizeof(unsigned char) * width * height);
         
         CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
@@ -160,7 +161,7 @@
         unsigned char pResult[1024];
         
         int ret = EXCARDS_RecoIDCardData(_buffer, (int)width, (int)height, (int)rowBytes, (int)8, (char*)pResult, sizeof(pResult));
-        NSLog(@"ret:%d",ret);
+//        NSLog(@"ret:%d",ret);
         if (ret > 0) {
             char ctype;
             char content[256];
@@ -175,6 +176,7 @@
                     content[xlen++] = pResult[i];
                 }
                 content[xlen] = 0;
+                NSLog(@"------%s",content);
                 if(xlen){
                     NSStringEncoding gbkEncoding =CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
                     if(ctype == 0x21)
@@ -194,8 +196,17 @@
                 }
             }
             
-            NSLog(@"====%@",self.identityModel);
+            NSLog(@"%@",self.identityModel);
             if ([self.identityModel gathered]) {
+                if (self.identityModel.type == 1) {
+                    [SYIdentityModel insertModel:self.identityModel];
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    SYAlertView *alertView = [SYAlertView alertViewWithModel:self.identityModel andComplete:^{
+                        [self backAction];
+                    }];
+                     [alertView show];
+                });
                 [self stopScaning];
             }
         }
