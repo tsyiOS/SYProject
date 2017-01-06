@@ -15,10 +15,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sexLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *birthdayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) SYIdentityModel *model;
 @property (nonatomic, copy) void(^completion)();
 @property (nonatomic, strong) UIView *shadow;
@@ -51,10 +52,11 @@
     self.nationLabel.text = model.nation;
     self.addressLabel.text =  model.address;
     self.numberLabel.text = model.code;
+    self.yearLabel.text = model.year;
+    self.monthLabel.text = model.month;
+    self.dayLabel.text = model.day;
     
-    self.birthdayLabel.text = [NSString stringWithFormat:@""];
-    
-    if (model.code) {
+   /* if (model.code) {
         
         NSArray *strs = @[model.year,@" 年 ",model.month,@" 月 ",model.day,@" 日 "];
         
@@ -71,6 +73,7 @@
         }
         self.birthdayLabel.attributedText = [SYAttributedStringModel sy_attributedStringWithModels:tempArray];
     }
+    */
 }
 
 - (void)show {
