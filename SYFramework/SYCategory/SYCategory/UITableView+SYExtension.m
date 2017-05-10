@@ -65,10 +65,12 @@
 }
 
 - (void)sy_endRefresh {
-    [UIView animateWithDuration:0.25 animations:^{
-        self.contentInset = UIEdgeInsetsMake(self.contentInset.top-SYRefreshTopHeight, 0, 1, 0);
-    }];
-    self.refreshView.status = SYRefreshPullDown;
+    if (self.refreshView.status != SYRefreshing && self.sy_headerRefresh) {
+        [UIView animateWithDuration:0.25 animations:^{
+            self.contentInset = UIEdgeInsetsMake(self.contentInset.top-SYRefreshTopHeight, 0, 1, 0);
+        }];
+        self.refreshView.status = SYRefreshPullDown;
+    }
 }
 
 static const char SY_RefreshKey = '\1';

@@ -28,6 +28,10 @@
     return [[self alloc] initWithFont:font Color:color String:string];
 }
 
+- (NSAttributedString *)attributedString {
+    return [[NSAttributedString alloc] initWithString:self.string attributes:@{NSForegroundColorAttributeName:self.color,NSFontAttributeName:self.font}];
+}
+
 + (NSMutableAttributedString *)sy_setPartString:(NSString *)partString WithFontSize:(CGFloat)fontSize Color:(UIColor *)color inString:(id)string;{
     return  [self sy_setPartString:partString WithFont:[UIFont systemFontOfSize:fontSize] Color:color inString:string];
 }

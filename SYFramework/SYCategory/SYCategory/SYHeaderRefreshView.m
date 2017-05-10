@@ -28,7 +28,7 @@ static NSString *const SYRefreshTimeKey = @"SYRefreshTimeKey";
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setUpUI];
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }

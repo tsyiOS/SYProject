@@ -22,6 +22,12 @@
 + (instancetype)attributedStringModelWithFont:(UIFont *)font Color:(UIColor *)color String:(NSString *)string;
 
 /**
+ 获取富文本
+
+ @return 富文本
+ */
+- (NSAttributedString *)attributedString ;
+/**
  *  设置部分文字颜色字体
  *
  *  @param partString 要设置的文字
@@ -86,4 +92,6 @@
  *  @return NSAttributedString
  */
 + (NSAttributedString *)sy_attributedStringWithString:(NSString *)string andLineHeight:(CGFloat)lineHeight;
+
+
 @end
