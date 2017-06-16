@@ -11,6 +11,15 @@
 #import "NSArray+SYExtension.h"
 #import "SYCoder.h"
 
+#define SYPropertyType_Bool @"B"
+#define SYPropertyType_char @"c"
+#define SYPropertyType_int @"i"
+#define SYPropertyType_float @"f"
+#define SYPropertyType_double @"d"
+#define SYPropertyType_NSInteger @"q"
+#define SYPropertyType_Blcok @"@?"
+#define SYPropertyType_id @"@"
+
 static NSSet *foundationClasses_;
 
 @implementation NSObject (SYExtension)
@@ -65,35 +74,47 @@ static NSSet *foundationClasses_;
         return tempArray;
     }
     //对象
-    NSArray *keys = [[self class] sy_propertyList];
+//    NSArray *keys = [[self class] sy_propertyList];
+    NSDictionary *keyTypes = [[self class] sy_propertyAndClassTypeDictionary];
+    
     NSMutableDictionary *keyValues = [NSMutableDictionary dictionary];
-    for (NSString *key in keys) {
+    for (NSString *key in keyTypes.allKeys) {
         id value = [self valueForKey:key];
         //如何在此处崩溃，请查看属性修饰是否正确
-        if ([[value class] sy_isClassFromFoundation]) {
+        
+        if ([[value class] sy_isClassFromFoundation] || [[self class] sy_baseData:[keyTypes objectForKey:key]]) {
             [keyValues setValue:value forKey:key];
         }else {
             [keyValues setValue: [value sy_keyValues] forKey:key];
         }
     }
-    [keyValues setValue:NSStringFromClass([self class]) forKey:sy_keyForClassName];
+//    [keyValues setValue:NSStringFromClass([self class]) forKey:sy_keyForClassName];
     return keyValues;
 }
 
 + (instancetype)sy_objectWithKeyValueDictionary:(NSDictionary *)keyValues {
+    NSDictionary *keyTypes = [[self class] sy_propertyAndClassTypeDictionary];
     id model = [[self alloc] init];
-    for (NSString *key in [self sy_propertyList]) {
+    for (NSString *key in keyTypes.allKeys) {
         if (![keyValues.allKeys containsObject:key]) {
             continue;
         }
         id value = keyValues[key];
         if ([value isKindOfClass:[NSDictionary class]]) {
-            Class c = NSClassFromString(value[sy_keyForClassName]);
+            Class c = NSClassFromString([keyTypes objectForKey:key]);
             id propretyModel = [c sy_objectWithKeyValueDictionary:value];
             [model setValue:propretyModel forKey:key];
         }else if ([value isKindOfClass:[NSArray class]]) {
             NSArray *valueArray = (NSArray *)value;
-            [model setValue:[valueArray sy_objectsWithKeyValues] forKey:key];
+            NSMutableArray *tempArray = [NSMutableArray array];
+            if ([[self sy_classNameInArrayProperty].allKeys containsObject:key]) {
+                for (NSDictionary *dict in valueArray) {
+                    Class c = NSClassFromString(value[[[self sy_classNameInArrayProperty] objectForKey:key]]);
+                    id propretyModel = [c sy_objectWithKeyValueDictionary:dict];
+                    [tempArray addObject:propretyModel];
+                }
+                [model setValue:tempArray forKey:key];
+            }
         }else {
              [model setValue:value forKey:key];
         }
@@ -112,22 +133,40 @@ static NSSet *foundationClasses_;
     
 }
 
-+ (NSArray *)sy_propertyList {
++ (NSDictionary *)sy_propertyAndClassTypeDictionary {
     Class c = self;
-    NSMutableArray *tempArray = [NSMutableArray array];
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     while (c && c != [NSObject class]) {
         unsigned int count = 0;
         Ivar *ivar = class_copyIvarList(c, &count);
         for (int i = 0; i<count; i++) {
             Ivar iva = ivar[i];
             const char *name = ivar_getName(iva);
-            NSString *strName = [NSString stringWithUTF8String:name];
-            [tempArray addObject:[strName substringFromIndex:1]];
+            const char *type = ivar_getTypeEncoding(iva);
+            NSString *typeStr = [NSString stringWithUTF8String:type];
+            NSString *nameStr = [NSString stringWithUTF8String:name];
+            NSString *key = [nameStr substringFromIndex:1];
+            if (![typeStr isEqualToString:SYPropertyType_id]&&![typeStr hasPrefix:SYPropertyType_Blcok]) {
+                if ([typeStr hasPrefix:@"@\"NS"]) {
+                    [mutableDict setObject:[typeStr substringWithRange:NSMakeRange(2, typeStr.length - 3)] forKey:key];
+                }else if ([self sy_baseData:typeStr]){
+                    [mutableDict setObject:typeStr forKey:key];
+                }
+                else if ([typeStr hasPrefix:@"@\""]){
+                    if (![typeStr hasPrefix:@"@\"UI"] && ![typeStr hasPrefix:@"@\"AV"]) {
+                        [mutableDict setObject:[typeStr substringWithRange:NSMakeRange(2, typeStr.length - 3)] forKey:key];
+                    }
+                }
+            }
         }
         free(ivar);
         c = [c superclass];
     }
-    return tempArray.copy;
+    return mutableDict.copy;
+}
+
++ (NSArray *)sy_propertyList {
+    return [self sy_propertyAndClassTypeDictionary].allKeys;
 }
 
 + (NSSet *)sy_foundationClasses {
@@ -158,6 +197,10 @@ static NSSet *foundationClasses_;
         }
     }];
     return result;
+}
+
++ (BOOL)sy_baseData:(NSString *)type {
+    return [@[SYPropertyType_char,SYPropertyType_Bool,SYPropertyType_int,SYPropertyType_float,SYPropertyType_double,SYPropertyType_NSInteger] containsObject:type];
 }
 @end
 

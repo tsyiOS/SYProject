@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "SYCoder.h"
+#import "SYModel.h"
+/**
+ 只能保存NSUserdefault 能保存的对象
+ */
 @interface SYCacheManager : NSObject
-SYUserDefaultSingleton_interface(SYCacheManager)
+SYSingleton_interface(SYCacheManager)
+
+@property (nonatomic, copy) NSString *code;
+
+@property (nonatomic, strong) SYModel *user;
 @end

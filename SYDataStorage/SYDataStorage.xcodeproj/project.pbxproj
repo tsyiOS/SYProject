@@ -16,6 +16,7 @@
 		F03CDCE51DCC28DF0072DA01 /* NSArray+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CDCE11DCC28DF0072DA01 /* NSArray+SYExtension.m */; };
 		F03CDCE61DCC28DF0072DA01 /* NSObject+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CDCE31DCC28DF0072DA01 /* NSObject+SYExtension.m */; };
 		F03CDCE91DCC291A0072DA01 /* SYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CDCE81DCC291A0072DA01 /* SYCacheManager.m */; };
+		F0C1CF771EF3BFED00B5C55C /* SYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C1CF761EF3BFED00B5C55C /* SYModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		F03CDCE41DCC28DF0072DA01 /* SYCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCoder.h; sourceTree = "<group>"; };
 		F03CDCE71DCC291A0072DA01 /* SYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCacheManager.h; sourceTree = "<group>"; };
 		F03CDCE81DCC291A0072DA01 /* SYCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCacheManager.m; sourceTree = "<group>"; };
+		F0C1CF751EF3BFED00B5C55C /* SYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYModel.h; sourceTree = "<group>"; };
+		F0C1CF761EF3BFED00B5C55C /* SYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				F03CDCE41DCC28DF0072DA01 /* SYCoder.h */,
 				F03CDCE71DCC291A0072DA01 /* SYCacheManager.h */,
 				F03CDCE81DCC291A0072DA01 /* SYCacheManager.m */,
+				F0C1CF751EF3BFED00B5C55C /* SYModel.h */,
+				F0C1CF761EF3BFED00B5C55C /* SYModel.m */,
 			);
 			path = SYCacheExtension;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			files = (
 				F03CDCE91DCC291A0072DA01 /* SYCacheManager.m in Sources */,
 				F03CDCE51DCC28DF0072DA01 /* NSArray+SYExtension.m in Sources */,
+				F0C1CF771EF3BFED00B5C55C /* SYModel.m in Sources */,
 				F03CDCD01DCC28CE0072DA01 /* ViewController.m in Sources */,
 				F03CDCE61DCC28DF0072DA01 /* NSObject+SYExtension.m in Sources */,
 				F03CDCCD1DCC28CE0072DA01 /* AppDelegate.m in Sources */,
@@ -328,6 +334,7 @@
 				F03CDCDE1DCC28CE0072DA01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

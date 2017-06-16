@@ -49,22 +49,22 @@
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:fileName];
 }
 
-- (NSArray *)sy_objectsWithKeyValues {
-    NSMutableArray *tempArray = [NSMutableArray array];
-    NSArray *array = (NSArray *)self;
-    for (id value in array) {
-        if ([value isKindOfClass:[NSArray class]]) {
-            [tempArray addObject:[value sy_objectsWithKeyValues]];
-        }else if ([value isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *keyValues = (NSDictionary *)value;
-            Class c = NSClassFromString(keyValues[sy_keyForClassName]);
-            id propretyModel = [c sy_objectWithKeyValueDictionary:value];
-            [tempArray addObject:propretyModel];
-        }else {
-            [tempArray addObject:value];
-        }
-    }
-    return tempArray;
-}
+//- (NSArray *)sy_objectsWithKeyValues {
+//    NSMutableArray *tempArray = [NSMutableArray array];
+//    NSArray *array = (NSArray *)self;
+//    for (id value in array) {
+//        if ([value isKindOfClass:[NSArray class]]) {
+//            [tempArray addObject:[value sy_objectsWithKeyValues]];
+//        }else if ([value isKindOfClass:[NSDictionary class]]) {
+//            NSDictionary *keyValues = (NSDictionary *)value;
+//            Class c = NSClassFromString(keyValues[sy_keyForClassName]);
+//            id propretyModel = [c sy_objectWithKeyValueDictionary:value];
+//            [tempArray addObject:propretyModel];
+//        }else {
+//            [tempArray addObject:value];
+//        }
+//    }
+//    return tempArray;
+//}
 
 @end

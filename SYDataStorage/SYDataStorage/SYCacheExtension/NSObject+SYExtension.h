@@ -37,6 +37,13 @@
  *  @return 该类的所有属性的数组
  */
 + (NSArray *)sy_propertyList;
+/**
+ * 数组对象里面的类名
+ *
+ @return 数组对象里面的类名字典
+ */
++ (NSDictionary *)sy_classNameInArrayProperty;
+
 @end
 /**
  *  字典对应的模型类类名

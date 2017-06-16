@@ -25,5 +25,5 @@
  *
  *  @return 模型数组
  */
-- (NSArray *)sy_objectsWithKeyValues;
+//- (NSArray *)sy_objectsWithKeyValues;
 @end
