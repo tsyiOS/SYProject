@@ -122,18 +122,12 @@ SYSingleton_interface(className)\
 SYSingleton_implementation(className)\
 \
 - (instancetype)init {\
-    if (self == [super init]) {\
-        NSArray *propretyList = [[self class] sy_propertyList];\
-        for (NSString *proprety in propretyList) {\
-            id value = [[NSUserDefaults standardUserDefaults] valueForKey:[NSString stringWithFormat:@"%@%@",NSStringFromClass([self class]),proprety]];\
-            if ([value isKindOfClass:[NSArray class]]) {\
-                [self setValue:[value sy_objectsWithKeyValues] forKey:proprety];\
-            }else if ([value isKindOfClass:[NSDictionary class]]) {\
-                [self setValue:[value sy_objectWithKeyValue] forKey:proprety];\
-            }else {\
-                [self setValue:value forKey:proprety];\
-            }\
-            [self addObserver:self forKeyPath:proprety options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];\
+if (self == [super init]) {\
+    NSArray *propretyList = [[self class] sy_propertyList];\
+    for (NSString *proprety in propretyList) {\
+        id value = [[NSUserDefaults standardUserDefaults] valueForKey:[NSString stringWithFormat:@"%@%@",NSStringFromClass([self class]),proprety]];\
+        [self setValue:value forKey:proprety];\
+        [self addObserver:self forKeyPath:proprety options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];\
         }\
     }\
     return self;\

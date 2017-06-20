@@ -32,5 +32,4 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSDictionary *dict;
 @property (nonatomic, strong) NSAttributedString *attri;
-//+ (NSDictionary *)propretyList;
 @end

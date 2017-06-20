@@ -16,12 +16,6 @@
  */
 + (UIColor *)sy_colorWithRGB:(u_int32_t)rgb;
 /**
- *  默认的分割线颜色
- *
- *  @return 0xdddddd十六进制色
- */
-+ (UIColor *)lineDefaultColor;
-/**
  *  随机色
  *
  *  @return 随机色

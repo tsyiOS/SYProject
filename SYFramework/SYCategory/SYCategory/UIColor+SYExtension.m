@@ -28,10 +28,6 @@
     return [UIColor colorWithRed:((rgb&0xff0000)>>16)/255.0 green:((rgb&0xff00)>>8)/255.0 blue:(rgb&0xff)/255.0 alpha:1.0];
 }
 
-+ (UIColor *)lineDefaultColor {
-    return  [self sy_colorWithRGB:0xdddddd];
-}
-
 + (UIColor *)sy_randomColor {
     NSInteger aRedValue = arc4random() % 255;
     NSInteger aGreenValue = arc4random() % 255;

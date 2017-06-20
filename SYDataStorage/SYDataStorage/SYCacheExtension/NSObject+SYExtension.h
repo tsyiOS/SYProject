@@ -7,6 +7,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define SYPropertyType_Bool @"B"
+#define SYPropertyType_char @"c"
+#define SYPropertyType_int @"i"
+#define SYPropertyType_float @"f"
+#define SYPropertyType_double @"d"
+#define SYPropertyType_NSInteger @"q"
+#define SYPropertyType_Blcok @"@?"
+#define SYPropertyType_id @"@"
+
 /**
  *  该字典转模型只针对于数据存储，不做普通字典转模型
  */
@@ -25,12 +34,12 @@
  *  @return 模型
  */
 + (instancetype)sy_objectWithKeyValueDictionary:(NSDictionary *)dict;
+
 /**
- *  字典转模型 （前提是通过sy_keyValues转换的字典，否则不能使用）
- *
- *  @return 模型
+ 获取对象的所属字典
+ @return dictionary
  */
-- (id)sy_objectWithKeyValue;
++ (NSDictionary *)sy_propertyAndClassTypeDictionary;
 /**
  *  属性列表
  *
@@ -45,7 +54,3 @@
 + (NSDictionary *)sy_classNameInArrayProperty;
 
 @end
-/**
- *  字典对应的模型类类名
- */
-extern NSString *const sy_keyForClassName;

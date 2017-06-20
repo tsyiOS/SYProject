@@ -11,15 +11,6 @@
 #import "NSArray+SYExtension.h"
 #import "SYCoder.h"
 
-#define SYPropertyType_Bool @"B"
-#define SYPropertyType_char @"c"
-#define SYPropertyType_int @"i"
-#define SYPropertyType_float @"f"
-#define SYPropertyType_double @"d"
-#define SYPropertyType_NSInteger @"q"
-#define SYPropertyType_Blcok @"@?"
-#define SYPropertyType_id @"@"
-
 static NSSet *foundationClasses_;
 
 @implementation NSObject (SYExtension)
@@ -74,7 +65,7 @@ static NSSet *foundationClasses_;
         return tempArray;
     }
     //对象
-//    NSArray *keys = [[self class] sy_propertyList];
+
     NSDictionary *keyTypes = [[self class] sy_propertyAndClassTypeDictionary];
     
     NSMutableDictionary *keyValues = [NSMutableDictionary dictionary];
@@ -88,7 +79,7 @@ static NSSet *foundationClasses_;
             [keyValues setValue: [value sy_keyValues] forKey:key];
         }
     }
-//    [keyValues setValue:NSStringFromClass([self class]) forKey:sy_keyForClassName];
+
     return keyValues;
 }
 
@@ -120,17 +111,6 @@ static NSSet *foundationClasses_;
         }
     }
     return model;
-}
-
-- (id)sy_objectWithKeyValue {
-    if ([self isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *keyValue = (NSDictionary *)self;
-        Class c = NSClassFromString(keyValue[sy_keyForClassName]);
-        return [c sy_objectWithKeyValueDictionary:keyValue];
-    }else {
-        return nil;
-    }
-    
 }
 
 + (NSDictionary *)sy_propertyAndClassTypeDictionary {
@@ -203,5 +183,3 @@ static NSSet *foundationClasses_;
     return [@[SYPropertyType_char,SYPropertyType_Bool,SYPropertyType_int,SYPropertyType_float,SYPropertyType_double,SYPropertyType_NSInteger] containsObject:type];
 }
 @end
-
-NSString *const sy_keyForClassName = @"keyForClassName";

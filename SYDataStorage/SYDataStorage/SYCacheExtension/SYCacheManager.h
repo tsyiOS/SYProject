@@ -17,5 +17,12 @@ SYSingleton_interface(SYCacheManager)
 
 @property (nonatomic, copy) NSString *code;
 
-@property (nonatomic, strong) SYModel *user;
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, assign) BOOL isOk;
+
+@property (nonatomic, assign) NSInteger age;
+
+@property (nonatomic, assign) float weight;
+
 @end
