@@ -19,7 +19,7 @@
 - (instancetype)initWithDatePickerMode:(UIDatePickerMode)mode {
     if (self = [super init]) {
         _datePicker = [[UIDatePicker alloc] init];
-        _datePicker.datePickerMode = UIDatePickerModeDate;
+        _datePicker.datePickerMode = mode;
         _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh-Hans"];
     }
     return self;
