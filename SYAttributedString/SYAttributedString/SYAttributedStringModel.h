@@ -26,7 +26,7 @@
 
  @return 富文本
  */
-- (NSAttributedString *)attributedString ;
+- (NSAttributedString *)sy_attributedString ;
 /**
  *  设置部分文字颜色字体
  *

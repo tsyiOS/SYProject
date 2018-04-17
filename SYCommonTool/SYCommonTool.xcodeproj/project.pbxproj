@@ -14,6 +14,8 @@
 		F04E060B1DD16C6800A1C002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04E060A1DD16C6800A1C002 /* Assets.xcassets */; };
 		F04E060E1DD16C6800A1C002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04E060C1DD16C6800A1C002 /* LaunchScreen.storyboard */; };
 		F04E06171DD16C8D00A1C002 /* SYCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E06161DD16C8D00A1C002 /* SYCommonTool.m */; };
+		F09F444F2085E9F20062C4B0 /* SYAuthCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */; };
+		F09F44522085EBDA0062C4B0 /* SYPhonePasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		F04E060F1DD16C6800A1C002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F04E06151DD16C8D00A1C002 /* SYCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCommonTool.h; sourceTree = "<group>"; };
 		F04E06161DD16C8D00A1C002 /* SYCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCommonTool.m; sourceTree = "<group>"; };
+		F09F444D2085E9F20062C4B0 /* SYAuthCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAuthCodeButton.h; sourceTree = "<group>"; };
+		F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAuthCodeButton.m; sourceTree = "<group>"; };
+		F09F44502085EBDA0062C4B0 /* SYPhonePasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYPhonePasswordTextField.h; sourceTree = "<group>"; };
+		F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYPhonePasswordTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				F04E06051DD16C6800A1C002 /* ViewController.m */,
 				F04E06151DD16C8D00A1C002 /* SYCommonTool.h */,
 				F04E06161DD16C8D00A1C002 /* SYCommonTool.m */,
+				F09F444D2085E9F20062C4B0 /* SYAuthCodeButton.h */,
+				F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */,
+				F09F44502085EBDA0062C4B0 /* SYPhonePasswordTextField.h */,
+				F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */,
 				F04E06071DD16C6800A1C002 /* Main.storyboard */,
 				F04E060A1DD16C6800A1C002 /* Assets.xcassets */,
 				F04E060C1DD16C6800A1C002 /* LaunchScreen.storyboard */,
@@ -157,7 +167,9 @@
 				F04E06171DD16C8D00A1C002 /* SYCommonTool.m in Sources */,
 				F04E06061DD16C6800A1C002 /* ViewController.m in Sources */,
 				F04E06031DD16C6800A1C002 /* AppDelegate.m in Sources */,
+				F09F44522085EBDA0062C4B0 /* SYPhonePasswordTextField.m in Sources */,
 				F04E06001DD16C6800A1C002 /* main.m in Sources */,
+				F09F444F2085E9F20062C4B0 /* SYAuthCodeButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 				F04E06141DD16C6800A1C002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
