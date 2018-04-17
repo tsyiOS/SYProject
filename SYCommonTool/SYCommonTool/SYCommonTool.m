@@ -8,9 +8,12 @@
 
 #import "SYCommonTool.h"
 #import <AdSupport/AdSupport.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface SYCommonTool ()<UIAlertViewDelegate>
-@property (nonatomic, copy) void(^completion)();
+@interface SYCommonTool ()<UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@property (nonatomic, copy) void (^imagePickCompletion)(UIImage *image);
+@property (nonatomic, assign) BOOL isCalling;
 @end
 
 @implementation SYCommonTool
@@ -50,6 +53,20 @@ static SYCommonTool *instance;
  */
 + (NSString *)sy_UUID {
     return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+}
+
++ (void)sy_openAppSystemSetting {
+    
+    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+    if ([phoneVersion integerValue] >= 10) {
+        NSString *appId = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleIdentifier"];
+        NSURL *setUrl = [NSURL URLWithString:[NSString stringWithFormat: @"App-Prefs:root=%@", appId]];
+        [[UIApplication sharedApplication] openURL:setUrl];
+    }else {
+        NSString *appId = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleIdentifier"];
+        NSURL *setUrl = [NSURL URLWithString:[NSString stringWithFormat: @"prefs:root=%@", appId]];
+        [[UIApplication sharedApplication] openURL:setUrl];
+    }
 }
 
 #pragma mark - 校验信息
@@ -159,42 +176,63 @@ static SYCommonTool *instance;
     return [regextestmobile evaluateWithObject:number];
 }
 
++ (NSString *)sy_encryptMobileNumber:(NSString *)mobile {
+    if ([self sy_checkMobileNumber:mobile]) {
+        NSString *userTitle1 = [mobile substringToIndex:3];
+        NSString *userTitle2 = [mobile substringFromIndex:7];
+        return [NSString stringWithFormat:@"%@****%@",userTitle1,userTitle2];
+    }else {
+        return mobile;
+    }
+}
+
 #pragma mark - 提示信息
-- (void)sy_showNotice:(NSString *)message completion:(void (^)())completion{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    self.completion = completion;
-    alertView.tag = 1000;
-    [alertView show];
+/*
+ UIAlertActionStyleDefault = 0,
+ UIAlertActionStyleCancel,
+ UIAlertActionStyleDestructive
+ */
+
++ (void)sy_showNotice:(NSString *)message completion:(void (^ __nullable)(UIAlertAction *action))completion {
+    [self sy_showNoticeWithTitle:nil message:message completion:completion];
+}
+
++ (void)sy_showNoticeWithTitle:(NSString *)title message:(NSString *)message completion:(void (^ __nullable)(UIAlertAction *action))completion {
+    UIAlertController *alertvc = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alertvc addAction:action1];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:completion];
+    [alertvc addAction:action2];
+    [[self getCurrentViewController] presentViewController:alertvc animated:YES completion:nil];
 }
 
 + (void)sy_showErrorWithMessage:(NSString *)message {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-    [alertView show];
+    UIAlertController *alertvc = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil];
+    [alertvc addAction:action];
+    [[self getCurrentViewController] presentViewController:alertvc animated:YES completion:nil];
 }
 
 + (void)sy_callWithPhoneNumber:(NSString *)phone {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"呼叫" message:phone delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    alertView.tag = 1001;
-    alertView.delegate = [SYCommonTool shareCommonTool];
-    [alertView show];
+    [self sy_callWithPhoneNumber:phone andTitle:@"呼叫"];
 }
 
-- (void)sy_callWithPhoneNumber:(NSString *)phone andTitle:(NSString *)title {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title message:phone delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    alertView.tag = 1001;
-    alertView.delegate = self;
-    [alertView show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        if (alertView.tag == 1001) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",alertView.message]]];
-        }else if (alertView.tag == 1000){
-            if (self.completion) {
-                self.completion();
-            }
-        }
++ (void)sy_callWithPhoneNumber:(NSString *)phone andTitle:(NSString *)title {
+    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+    if ([SYCommonTool shareCommonTool].isCalling == YES) {
+        return;
+    }else {
+        [SYCommonTool shareCommonTool].isCalling = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SYCommonTool shareCommonTool].isCalling = NO;
+        });
+    }
+    if ([phoneVersion integerValue] >= 10) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://+86%@",phone]]];
+    }else {
+        [self sy_showNoticeWithTitle:title message:phone completion:^(UIAlertAction *action){
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://+86%@",phone]]];
+        }];
     }
 }
 
@@ -206,6 +244,95 @@ static SYCommonTool *instance;
     UIGraphicsEndImageContext();
     return image;
     
+}
+
+- (void)sy_openCameraTakePhoto:(void (^)(UIImage *))completion {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
+//        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"您没有设置权限访问相机，请去设置->隐私进行设置！" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+//        [alertView show];
+        
+        [SYCommonTool sy_showNotice:@"您没有设置权限访问相机，请去设置->隐私进行设置！" completion:^(UIAlertAction *action){
+            [SYCommonTool sy_openAppSystemSetting];
+        }];
+        
+    }else{
+        UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+        ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
+        ipc.delegate = self;
+        self.imagePickCompletion = completion;
+        [[SYCommonTool getCurrentViewController] presentViewController:ipc animated:YES completion:nil];
+    }
+}
+
+- (void)sy_openPhotoPicker:(void (^)(UIImage *))completion {
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+//        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"您没有设置权限访问相册，请去设置->隐私进行设置！" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+//        [alertView show];
+        [SYCommonTool sy_showNotice:@"您没有设置权限访问相册，请去设置->隐私进行设置！" completion:^(UIAlertAction *action){
+            [SYCommonTool sy_openAppSystemSetting];
+        }];
+    }else {
+        UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+        ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        ipc.delegate = self;
+        self.imagePickCompletion = completion;
+        [[SYCommonTool getCurrentViewController] presentViewController:ipc animated:YES completion:nil];
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage * image = info[UIImagePickerControllerEditedImage];
+    if (!image) {
+        image = info[UIImagePickerControllerOriginalImage];
+    }
+    if (self.imagePickCompletion) {
+        self.imagePickCompletion(image);
+    }
+    self.imagePickCompletion = nil;
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    self.imagePickCompletion = nil;
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
++ (UIViewController *)getCurrentViewController {
+    
+    UIViewController *result = nil;
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows) {
+            if (tmpWin.windowLevel == UIWindowLevelNormal) {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]]){
+        result = nextResponder;
+    }else{
+        result = window.rootViewController;
+    }
+    
+    if ([result isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBar = (UITabBarController *)result;
+        UIViewController *baseVc = tabBar.selectedViewController;
+        if ([baseVc isKindOfClass:[UINavigationController class]]) {
+            return baseVc.childViewControllers.lastObject;
+        }else {
+            return baseVc;
+        }
+    }else {
+        return result;
+    }
 }
 
 @end

@@ -16,6 +16,7 @@
 		F04E06171DD16C8D00A1C002 /* SYCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E06161DD16C8D00A1C002 /* SYCommonTool.m */; };
 		F09F444F2085E9F20062C4B0 /* SYAuthCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */; };
 		F09F44522085EBDA0062C4B0 /* SYPhonePasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */; };
+		F09F44552085EF750062C4B0 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44542085EF750062C4B0 /* SYTransitionAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAuthCodeButton.m; sourceTree = "<group>"; };
 		F09F44502085EBDA0062C4B0 /* SYPhonePasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYPhonePasswordTextField.h; sourceTree = "<group>"; };
 		F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYPhonePasswordTextField.m; sourceTree = "<group>"; };
+		F09F44532085EF750062C4B0 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
+		F09F44542085EF750062C4B0 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */,
 				F09F44502085EBDA0062C4B0 /* SYPhonePasswordTextField.h */,
 				F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */,
+				F09F44532085EF750062C4B0 /* SYTransitionAnimation.h */,
+				F09F44542085EF750062C4B0 /* SYTransitionAnimation.m */,
 				F04E06071DD16C6800A1C002 /* Main.storyboard */,
 				F04E060A1DD16C6800A1C002 /* Assets.xcassets */,
 				F04E060C1DD16C6800A1C002 /* LaunchScreen.storyboard */,
@@ -120,11 +125,12 @@
 		F04E05F31DD16C6800A1C002 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = tsy;
 				TargetAttributes = {
 					F04E05FA1DD16C6800A1C002 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YKA8G52B85;
 					};
 				};
 			};
@@ -164,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09F44552085EF750062C4B0 /* SYTransitionAnimation.m in Sources */,
 				F04E06171DD16C8D00A1C002 /* SYCommonTool.m in Sources */,
 				F04E06061DD16C6800A1C002 /* ViewController.m in Sources */,
 				F04E06031DD16C6800A1C002 /* AppDelegate.m in Sources */,
@@ -204,13 +211,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -248,13 +265,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -281,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YKA8G52B85;
 				INFOPLIST_FILE = SYCommonTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -293,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YKA8G52B85;
 				INFOPLIST_FILE = SYCommonTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

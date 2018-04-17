@@ -32,6 +32,10 @@
  */
 + (NSString *)sy_UUID;
 
+/**
+ 打开系统设置
+ */
++ (void)sy_openAppSystemSetting;
 
 #pragma mark - 校验信息
 /**
@@ -70,6 +74,14 @@
  */
 + (BOOL)sy_checkTwoPointNumber:(NSString *)number;
 
+/**
+ 加密手机号
+ 
+ @param mobile 手机号
+ @return 加密后的 138****8888
+ */
++ (NSString *)sy_encryptMobileNumber:(NSString *)mobile;
+
 #pragma mark - 提示信息
 /**
  *  提示信息
@@ -77,7 +89,15 @@
  *  @param message    信息
  *  @param completion 完成回调
  */
-- (void)sy_showNotice:(NSString *)message completion:(void (^)())completion;
++ (void)sy_showNotice:(NSString *)message completion:(void (^ __nullable)(UIAlertAction *action))completion;
+/**
+ *  提示信息
+ *
+ *  @param title    标题
+ *  @param message    信息
+ *  @param completion 完成回调
+ */
++ (void)sy_showNoticeWithTitle:(NSString *)title message:(NSString *)message completion:(void (^ __nullable)(UIAlertAction *action))completion;
 /**
  *  提示错误信息
  *
@@ -96,7 +116,7 @@
  *  @param phone 电话号码
  *  @param title 标题
  */
-- (void)sy_callWithPhoneNumber:(NSString *)phone andTitle:(NSString *)title;
++ (void)sy_callWithPhoneNumber:(NSString *)phone andTitle:(NSString *)title;
 
 #pragma mark - 截图
 /**
@@ -107,4 +127,27 @@
  *  @return 截图
  */
 + (UIImage *)sy_screenShotImageByView:(UIView *)view;
+
+#pragma mark - 相册
+/**
+ 拍照
+ 
+ @param completion 回调
+ */
+- (void)sy_openCameraTakePhoto:(void(^)(UIImage *image))completion;
+
+/**
+ 选择照片
+ 
+ @param completion 回调
+ */
+- (void)sy_openPhotoPicker:(void(^)(UIImage *image))completion;
+
+#pragma mark - 其他
+/**
+ 当前显示的控制器
+ 
+ @return 控制器
+ */
++ (UIViewController *)getCurrentViewController;
 @end
