@@ -13,10 +13,14 @@
 		F04E06091DD16C6800A1C002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04E06071DD16C6800A1C002 /* Main.storyboard */; };
 		F04E060B1DD16C6800A1C002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04E060A1DD16C6800A1C002 /* Assets.xcassets */; };
 		F04E060E1DD16C6800A1C002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04E060C1DD16C6800A1C002 /* LaunchScreen.storyboard */; };
-		F04E06171DD16C8D00A1C002 /* SYCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E06161DD16C8D00A1C002 /* SYCommonTool.m */; };
-		F09F444F2085E9F20062C4B0 /* SYAuthCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */; };
-		F09F44522085EBDA0062C4B0 /* SYPhonePasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */; };
-		F09F44552085EF750062C4B0 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44542085EF750062C4B0 /* SYTransitionAnimation.m */; };
+		F09F44602086DF4C0062C4B0 /* SYCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44582086DF4C0062C4B0 /* SYCommonTool.m */; };
+		F09F44612086DF4C0062C4B0 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F445A2086DF4C0062C4B0 /* SYTransitionAnimation.m */; };
+		F09F44622086DF4C0062C4B0 /* SYAuthCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F445D2086DF4C0062C4B0 /* SYAuthCodeButton.m */; };
+		F09F44632086DF4C0062C4B0 /* SYPhonePasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F445F2086DF4C0062C4B0 /* SYPhonePasswordTextField.m */; };
+		F09F44662086E9AF0062C4B0 /* SYSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F44652086E9AF0062C4B0 /* SYSwitchView.m */; };
+		F09F446E208716350062C4B0 /* SYBezierModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F4469208716350062C4B0 /* SYBezierModel.m */; };
+		F09F446F208716350062C4B0 /* SYSelectBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F446B208716350062C4B0 /* SYSelectBox.m */; };
+		F09F4470208716350062C4B0 /* SYSelectTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F446D208716350062C4B0 /* SYSelectTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +34,22 @@
 		F04E060A1DD16C6800A1C002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F04E060D1DD16C6800A1C002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F04E060F1DD16C6800A1C002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F04E06151DD16C8D00A1C002 /* SYCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCommonTool.h; sourceTree = "<group>"; };
-		F04E06161DD16C8D00A1C002 /* SYCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCommonTool.m; sourceTree = "<group>"; };
-		F09F444D2085E9F20062C4B0 /* SYAuthCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAuthCodeButton.h; sourceTree = "<group>"; };
-		F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAuthCodeButton.m; sourceTree = "<group>"; };
-		F09F44502085EBDA0062C4B0 /* SYPhonePasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYPhonePasswordTextField.h; sourceTree = "<group>"; };
-		F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYPhonePasswordTextField.m; sourceTree = "<group>"; };
-		F09F44532085EF750062C4B0 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
-		F09F44542085EF750062C4B0 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
+		F09F44572086DF4C0062C4B0 /* SYCommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCommonTool.h; sourceTree = "<group>"; };
+		F09F44582086DF4C0062C4B0 /* SYCommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCommonTool.m; sourceTree = "<group>"; };
+		F09F44592086DF4C0062C4B0 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
+		F09F445A2086DF4C0062C4B0 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
+		F09F445C2086DF4C0062C4B0 /* SYAuthCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAuthCodeButton.h; sourceTree = "<group>"; };
+		F09F445D2086DF4C0062C4B0 /* SYAuthCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAuthCodeButton.m; sourceTree = "<group>"; };
+		F09F445E2086DF4C0062C4B0 /* SYPhonePasswordTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPhonePasswordTextField.h; sourceTree = "<group>"; };
+		F09F445F2086DF4C0062C4B0 /* SYPhonePasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPhonePasswordTextField.m; sourceTree = "<group>"; };
+		F09F44642086E9AF0062C4B0 /* SYSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYSwitchView.h; sourceTree = "<group>"; };
+		F09F44652086E9AF0062C4B0 /* SYSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYSwitchView.m; sourceTree = "<group>"; };
+		F09F4468208716350062C4B0 /* SYBezierModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBezierModel.h; sourceTree = "<group>"; };
+		F09F4469208716350062C4B0 /* SYBezierModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBezierModel.m; sourceTree = "<group>"; };
+		F09F446A208716350062C4B0 /* SYSelectBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectBox.h; sourceTree = "<group>"; };
+		F09F446B208716350062C4B0 /* SYSelectBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectBox.m; sourceTree = "<group>"; };
+		F09F446C208716350062C4B0 /* SYSelectTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectTable.h; sourceTree = "<group>"; };
+		F09F446D208716350062C4B0 /* SYSelectTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,18 +82,12 @@
 		F04E05FD1DD16C6800A1C002 /* SYCommonTool */ = {
 			isa = PBXGroup;
 			children = (
+				F09F44562086DF4C0062C4B0 /* SYCommonTool */,
+				F09F445B2086DF4C0062C4B0 /* SYCustomView */,
 				F04E06011DD16C6800A1C002 /* AppDelegate.h */,
 				F04E06021DD16C6800A1C002 /* AppDelegate.m */,
 				F04E06041DD16C6800A1C002 /* ViewController.h */,
 				F04E06051DD16C6800A1C002 /* ViewController.m */,
-				F04E06151DD16C8D00A1C002 /* SYCommonTool.h */,
-				F04E06161DD16C8D00A1C002 /* SYCommonTool.m */,
-				F09F444D2085E9F20062C4B0 /* SYAuthCodeButton.h */,
-				F09F444E2085E9F20062C4B0 /* SYAuthCodeButton.m */,
-				F09F44502085EBDA0062C4B0 /* SYPhonePasswordTextField.h */,
-				F09F44512085EBDA0062C4B0 /* SYPhonePasswordTextField.m */,
-				F09F44532085EF750062C4B0 /* SYTransitionAnimation.h */,
-				F09F44542085EF750062C4B0 /* SYTransitionAnimation.m */,
 				F04E06071DD16C6800A1C002 /* Main.storyboard */,
 				F04E060A1DD16C6800A1C002 /* Assets.xcassets */,
 				F04E060C1DD16C6800A1C002 /* LaunchScreen.storyboard */,
@@ -97,6 +103,45 @@
 				F04E05FF1DD16C6800A1C002 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F09F44562086DF4C0062C4B0 /* SYCommonTool */ = {
+			isa = PBXGroup;
+			children = (
+				F09F44572086DF4C0062C4B0 /* SYCommonTool.h */,
+				F09F44582086DF4C0062C4B0 /* SYCommonTool.m */,
+				F09F44592086DF4C0062C4B0 /* SYTransitionAnimation.h */,
+				F09F445A2086DF4C0062C4B0 /* SYTransitionAnimation.m */,
+			);
+			path = SYCommonTool;
+			sourceTree = "<group>";
+		};
+		F09F445B2086DF4C0062C4B0 /* SYCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F09F4467208716350062C4B0 /* SYSelectBox */,
+				F09F445C2086DF4C0062C4B0 /* SYAuthCodeButton.h */,
+				F09F445D2086DF4C0062C4B0 /* SYAuthCodeButton.m */,
+				F09F445E2086DF4C0062C4B0 /* SYPhonePasswordTextField.h */,
+				F09F445F2086DF4C0062C4B0 /* SYPhonePasswordTextField.m */,
+				F09F44642086E9AF0062C4B0 /* SYSwitchView.h */,
+				F09F44652086E9AF0062C4B0 /* SYSwitchView.m */,
+			);
+			path = SYCustomView;
+			sourceTree = "<group>";
+		};
+		F09F4467208716350062C4B0 /* SYSelectBox */ = {
+			isa = PBXGroup;
+			children = (
+				F09F4468208716350062C4B0 /* SYBezierModel.h */,
+				F09F4469208716350062C4B0 /* SYBezierModel.m */,
+				F09F446A208716350062C4B0 /* SYSelectBox.h */,
+				F09F446B208716350062C4B0 /* SYSelectBox.m */,
+				F09F446C208716350062C4B0 /* SYSelectTable.h */,
+				F09F446D208716350062C4B0 /* SYSelectTable.m */,
+			);
+			name = SYSelectBox;
+			path = ../../../SYSelectBox/SYSelectBox/SYSelectBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,13 +215,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F09F44552085EF750062C4B0 /* SYTransitionAnimation.m in Sources */,
-				F04E06171DD16C8D00A1C002 /* SYCommonTool.m in Sources */,
+				F09F446E208716350062C4B0 /* SYBezierModel.m in Sources */,
+				F09F4470208716350062C4B0 /* SYSelectTable.m in Sources */,
+				F09F446F208716350062C4B0 /* SYSelectBox.m in Sources */,
+				F09F44622086DF4C0062C4B0 /* SYAuthCodeButton.m in Sources */,
+				F09F44632086DF4C0062C4B0 /* SYPhonePasswordTextField.m in Sources */,
+				F09F44662086E9AF0062C4B0 /* SYSwitchView.m in Sources */,
+				F09F44602086DF4C0062C4B0 /* SYCommonTool.m in Sources */,
+				F09F44612086DF4C0062C4B0 /* SYTransitionAnimation.m in Sources */,
 				F04E06061DD16C6800A1C002 /* ViewController.m in Sources */,
 				F04E06031DD16C6800A1C002 /* AppDelegate.m in Sources */,
-				F09F44522085EBDA0062C4B0 /* SYPhonePasswordTextField.m in Sources */,
 				F04E06001DD16C6800A1C002 /* main.m in Sources */,
-				F09F444F2085E9F20062C4B0 /* SYAuthCodeButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

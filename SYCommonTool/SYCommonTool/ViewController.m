@@ -8,12 +8,9 @@
 
 #import "ViewController.h"
 #import "SYCommonTool.h"
-#import <UIKit/UIDevice.h>
-#import <sys/utsname.h>
+#import "SYSwitchView.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (weak, nonatomic) IBOutlet UIImageView *screenShotImageView;
 
 @end
 
@@ -21,24 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    SYSwitchView *view = [[SYSwitchView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 40)];
+    view.titles = @[@"列表1",@"长一点文",@"列表2短"];
+    [self.view addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)tipOne {
-//    NSString *uuid = [SYCommonTool sy_UUID];
-//    BOOL result = [SYCommonTool sy_checkChineseOrEnglishText:@"汉字Eiglish09188"];
-//    NSLog(@"%d---%@",result,uuid);
+
     [SYCommonTool sy_showErrorWithMessage:@"提示什么"];
     
 }
 - (IBAction)tipTwo {
-//    [[SYCommonTool shareCommonTool] sy_openPhotoPicker:^(UIImage *image) {
-//        NSLog(@"%@",NSStringFromCGSize(image.size));
-//    }];
     [SYCommonTool sy_showNoticeWithTitle:@"提示" message:@"打开系统设置" completion:^(UIAlertAction *action){
         [SYCommonTool sy_openAppSystemSetting];
     }];

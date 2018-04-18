@@ -7,6 +7,7 @@
 //
 
 #import "SYAuthCodeButton.h"
+#import "SYCommonTool.h"
 
 @interface SYAuthCodeButton ()
 @property (nonatomic, strong) NSTimer *timer;
@@ -16,7 +17,7 @@
 @dynamic active;
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _totalCount = 60;
+    _totalCount = 30;
     _lastCount = 0;
     _hightLightColor = [UIColor blueColor];
     [self setTitleColor:_hightLightColor forState:UIControlStateNormal];
@@ -26,7 +27,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        _totalCount = 60;
+        _totalCount = 30;
         _lastCount = 0;
         _hightLightColor = [UIColor blueColor];
         [self setTitleColor:_hightLightColor forState:UIControlStateNormal];
@@ -40,6 +41,8 @@
     if (self.sendCodeAction && self.lastCount == 0) {
         self.sendCodeAction();
         self.lastCount = self.totalCount;
+        
+        
     }
 }
 
@@ -98,5 +101,7 @@
     }
     return _timer;
 }
+
+
 
 @end
