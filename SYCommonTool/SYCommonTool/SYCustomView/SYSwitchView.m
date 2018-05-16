@@ -71,6 +71,24 @@
     
 }
 
+- (void)setSelectedColor:(UIColor *)selectedColor {
+    _selectedColor = selectedColor;
+    UIButton *lastBtn = [self viewWithTag:self.selectedIndex + BaseTag];
+    if (lastBtn) {
+        [lastBtn setTitleColor:selectedColor forState:UIControlStateNormal];
+    }
+    self.line.backgroundColor = selectedColor;
+}
+
+- (void)setNormalColor:(UIColor *)normalColor {
+    _normalColor = normalColor;
+    for (UIButton *sub in self.subviews) {
+        if (sub.tag >= BaseTag && sub.tag != self.selectedIndex + BaseTag) {
+           [sub setTitleColor:normalColor forState:UIControlStateNormal];
+        }
+    }
+}
+
 - (void)buttonClick:(UIButton *)sender {
     
     if (sender.tag == self.selectedIndex) {

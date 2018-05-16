@@ -20,6 +20,7 @@
     [super viewDidLoad];
     SYSwitchView *view = [[SYSwitchView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 40)];
     view.titles = @[@"列表1",@"长一点文",@"列表2短"];
+    view.selectedColor = [UIColor redColor];
     [self.view addSubview:view];
 }
 

@@ -249,9 +249,6 @@ static SYCommonTool *instance;
 - (void)sy_openCameraTakePhoto:(void (^)(UIImage *))completion {
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
-//        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"您没有设置权限访问相机，请去设置->隐私进行设置！" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-//        [alertView show];
-        
         [SYCommonTool sy_showNotice:@"您没有设置权限访问相机，请去设置->隐私进行设置！" completion:^(UIAlertAction *action){
             [SYCommonTool sy_openAppSystemSetting];
         }];
@@ -267,8 +264,6 @@ static SYCommonTool *instance;
 
 - (void)sy_openPhotoPicker:(void (^)(UIImage *))completion {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-//        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:@"您没有设置权限访问相册，请去设置->隐私进行设置！" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-//        [alertView show];
         [SYCommonTool sy_showNotice:@"您没有设置权限访问相册，请去设置->隐私进行设置！" completion:^(UIAlertAction *action){
             [SYCommonTool sy_openAppSystemSetting];
         }];
