@@ -95,4 +95,25 @@
     return date;
 }
 
+- (NSString *)sy_showTimeFrom:(NSDate *)date {
+    NSInteger time = (-1)*[self timeIntervalSinceDate:date];
+    if ([self sy_isToday]) {
+        if ( time < 3600) {
+            return [NSString stringWithFormat:@"%zd分钟前",(time/60) + 1];
+        }else  {
+            return [NSString stringWithFormat:@"%zd小时前发布",time/3600];
+        }
+    }else if ([self sy_isYesterday]) {
+        return @"昨天";
+    }else {
+        return [self sy_stringWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+    }
+}
+
++ (NSString *)sy_showTimeFromNowTime:(NSString *)nowTime toCreateTime:(NSString *)createTime {
+    NSDate *now = [NSDate sy_dateWithString:nowTime formate:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *creat = [NSDate sy_dateWithString:createTime formate:@"yyyy-MM-dd HH:mm:ss"];
+    return [now sy_showTimeFrom:creat];
+}
+
 @end

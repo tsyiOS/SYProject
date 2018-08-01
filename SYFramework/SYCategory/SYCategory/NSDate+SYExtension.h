@@ -21,4 +21,7 @@
 - (NSDate *)sy_yesterday;
 - (NSDate *)sy_tomorrow;
 + (NSDate *)sy_dateWithString:(NSString *)str formate:(NSString *)formate;
+
+- (NSString *)sy_showTimeFrom:(NSDate *)date;
++ (NSString *)sy_showTimeFromNowTime:(NSString *)nowTime toCreateTime:(NSString *)createTime;
 @end
