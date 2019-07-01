@@ -51,6 +51,8 @@ typedef NS_ENUM(NSUInteger, SYSelectBoxArrowPosition) {
  *  @param point 依赖的点,改点必须是相对于UIScreen屏幕上的点
  */
 - (void)showDependentOnPoint:(CGPoint)point;
+
+- (void)dismiss;
 @end
 
 
